@@ -2,6 +2,10 @@
 
 Use of species distribution maps in a web application. Currently prototype development using web-based mapping packages and [D3js visualization and interactivity library](https://d3js.org/).
 
+## HI GIO!
+
+Hi, Gio! This is your development branch! It is pretty cool. The README on the Master branch does not have this section I am writing in. Make sure you are always developing in your development branch. Great work! 
+
 ### Thoughts / Ideas:
 
 Project may use a variety of routes to get desired product. Need to figure out best way to go about each step of this project. Etc...
