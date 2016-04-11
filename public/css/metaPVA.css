@@ -1,0 +1,31 @@
+/*body {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+*/
+.doc1 {
+    background: rgba(220, 220, 220, 0.5);
+}
+
+.doc2 {
+    background: rgba(220, 220, 220, 0.2);
+}
+
+.doc3 {
+    background: rgba(220, 220, 220, 0.5);
+}
+
+.doc4 {
+    background: rgba(220, 220, 220, 0.2);
+}
+
+.doc5 {
+    background: rgba(220, 220, 220, 0.5);
+}
+
+/* CSS for Pop h4 titles (stocking page) */
+h4#popH4 {
+    padding-top: 60px;
+}
