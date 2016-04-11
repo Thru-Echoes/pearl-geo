@@ -1,0 +1,74 @@
+/**
+ * Custom modifications to the dropzone.css style
+*/
+.csv-boot-table {
+
+}
+
+.drag-import {
+    margin-left: 40%;
+}
+
+.drag-dropzone {
+    background-color: rgba(233, 234, 233, 0.8);
+    padding: 1% 4%;
+}
+
+.dropzone .dz-preview {
+    margin-left: 34%;
+}
+
+.dropzone .dz-preview .dz-details {
+    max-width: none;
+    font-size: 16px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.dropzone .dz-preview .dz-details .dz-size {
+    margin-bottom: 28%;
+}
+
+.dropzone .dz-preview .dz-image {
+    height: 0;
+}
+
+/* Progress bar */
+.dropzone .dz-preview .dz-progress {
+    width: 200px;
+    margin-left: -50%;
+    margin-top: 0%;
+}
+
+/* Error message & symbol */
+.dropzone .dz-preview .dz-error-message {
+    top: 10%;
+    margin-left: 100%;
+    background: linear-gradient(to bottom, #E48080, #E86262);
+    color: #7D0101;
+}
+
+.dropzone .dz-preview .dz-error-message:after {
+    content: none;
+}
+
+.dropzone .dz-preview .dz-error-mark, .dropzone .dz-preview .dz-success-mark {
+    left: 0;
+    margin-left: 65%;
+    top: 50%;
+}
+
+/* Dynamic Fields */
+.importCSV form.navbar-form.navbar-left.subPop1 {
+    margin-left: 8%;
+}
+
+.importCSV form.navbar-form.navbar-left.subPop2 {
+    margin-left: 8%;
+}
+
+.importCSV form.navbar-form.navbar-left.subPop3 {
+    margin-left: 8%;
+}

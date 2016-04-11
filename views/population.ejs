@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <title>PEARL Prototype</title>
+
+    <!-- Bootstrap -->
+    <link href = "css/bootstrap.min.css" rel = "stylesheet">
+    <link href = "css/custom.css" rel = "stylesheet">
+    <link rel = "stylesheet" href = "css/font-awesome-4.4.0/css/font-awesome.min.css">
+    <link href = 'http://fonts.googleapis.com/css?family=Exo|Exo+2' rel = 'stylesheet' type = 'text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src = "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script-->
+    <!--script type = "text/javascript" src = "js/custom.js"></script-->
+    <script src = "js/jquery-2.2.0.min.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap-table -->
+    <link href = "css/bootstrap-table.css" rel = "stylesheet">
+    <script src = "js/bootstrap-table.js"></script>
+    <script src = "js/bootstrap-table/extensions/export/bootstrap-table-export.js"></script>
+
+    <!-- Dialog box upload csv -->
+    <link rel = "stylesheet" href = "css/csv/dropzone.css">
+    <link rel = "stylesheet" href = "css/csv/basic.css">
+    <link rel = "stylesheet" href = "css/csv/custom-drop.css">
+    <script type="text/javascript" src="js/csv/dropzone.js"></script>
+    <!--script type="text/javascript" src="js/csv/dropzone-amd-module.js"></script-->
+
+    <!-- Import table / csv -->
+    <link href = "css/csvtable.css" rel = "stylesheet">
+    <!--script type="text/javascript" src="js/csv/jquery.csvToTable.js"></script-->
+    <script type="text/javascript" src="js/csv/jquery.modCSVTable.js"></script>
+    <script type="text/javascript" src="js/csv/jquery.tablesorter.min.js"></script>
+
+    <!-- Export table / csv -->
+    <script type="text/javascript" src="js/csv/jquery.tabletoCSV.js"></script>
+
+    <script>
+        var tmpData = <%- JSON.stringify(metaData) %>;
+        var NUM_NODES = JSON.parse(tmpData.nNode);
+        var NUM_CLASS = JSON.parse(tmpData.nClass);
+        var IS_SEX = tmpData.isSex;
+        var IS_YOUNG = tmpData.isYoung;
+        var IS_OLD = tmpData.isOld;
+        var IS_MM = tmpData.isMM;
+        var IS_DEMO = tmpData.isDemo;
+        var IS_ENVIR = tmpData.isEnvir;
+    </script>
+    <script type = "text/javascript" src = "js/dynamic-forms/dynamicPop.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <div class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+        <div class = "container">
+            <div class = "navbar-header">
+                <button type = "button" class = "navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <!-- for screen readers -->
+                    <span class = "sr-only">Toggle navigation</span>
+                    <span class = "icon-bar"></span>
+                    <span class = "icon-bar"></span>
+                    <span class = "icon-bar"></span>
+                </button>
+                <a class = "navbar-brand" href = "/">Meta-population Viability Analysis</a>
+            </div>
+
+            <div class = "navbar-collapse collapse">
+                <ul class = "nav navbar-nav navbar-right">
+                    <li><a href = "/">Home</a></li>
+                    <li><a href = "/">About</a></li>
+                      <li class = "dropdown"><a href = "#" class = "dropdown-toggle" data-toggle="dropdown">Data Layers<b class = "caret"></b></a>
+                          <ul class = "dropdown-menu">
+                              <li class = "active"><a href = "/metapop">Meta-population Level Data</a></li>
+                              <li><a href = "#">Demographic Population Data</a></li>
+                              <li><a href = "#">Stocking and Harvesting Amounts</a></li>
+                              <li><a href = "#">Movement and Connectance</a></li>
+                              <li><a href = "#">Interactive Model</a></li>
+                              <li class = "divider"></li>
+                              <li class = "dropdown-header">Nova Models</li>
+                              <li><a href = "#">Nova Example 1</a></li>
+                              <li><a href = "#">Nova Example 2</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+
+	<!-- Jumbotron -->
+    <div class = "container">
+        <!--div class = "page-header">
+    	<h1>Simple Transitions - Metapopulation PVA</h1-->
+    </div>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-lg-4 aClasses">
+              <h2>Initial Age Classes</h2>
+            </div>
+            <div class = "col-md-4 survClasses">
+                <h2>Survival Rates</h2>
+                <!--form class = "navbar-form navbar-left sRates" role = "search">
+                </form-->
+            </div>
+            <div class = "col-lg-4 bRates">
+                <h2>Birth Rates</h2>
+                <!--form class = "navbar-form navbar-left bRates" role = "search">
+                </form-->
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-lg-4"></div>
+            <div class = "col-lg-4">
+                <h3>Generate Stocking and Harvesting Fields</h3>
+                <p class = "blockText">Generate the stocking and harvesting options for the model - including selective amounts and time intervals.</p>
+                <!--a href = "#" onclick="RedirectURL(mClass1, mClass2, fClass1, fClass2, bRate1, bRate2, sRate1, sRate2, cnct11, cnct12, cnct21, cnct22); return false;" class = "btn btn-default" role = "button">Submit</a-->
+                <a href = "#" onclick = "checkErr()" class = "btn btn-default" role = "button">Submit</a>
+            </div>
+            <div class = "col-lg-4"></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-2"></div>
+            <div class = "col-md-8">
+                <h1 style = "text-align: center">Population Data</h1>
+                <div id = "showExport">
+                    <button id="update" class="btn btn-default">Update Data</button>
+                    <button id="export" data-export="export" class="btn btn-primary">Export Data</button>
+                </div>
+                <table id = "export_table" data-toggle = "table" data-show-export = "false" data-pagination = "false" data-click-to-select = "false" data-toolbar = "#showExport" data-url = "tmpData.json">
+                    <thead>
+                        <tr>
+                            <th data-field = "numNodes">Nodes</th>
+                            <th data-field = "numClass">Age Classes</th>
+                            <th data-field = "isSex">Sex</th>
+                            <th data-field = "isYoung">DD Young</th>
+                            <th data-field = "isOld">DD Old</th>
+                            <th data-field = "isMM">DD Mature Males</th>
+                            <th data-field = "isDemo">Demographic</th>
+                            <th data-field = "isEnvir">Environmental</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class = "col-md-2"></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-2"></div>
+            <div class = "col-md-8">
+                <h2 style = "text-align: center;">Import data from CSV</h2>
+                <br>
+                <p class = "blockText" style = "text-align: center;">Sample upload for a two population, single sex, four age-class structure with initial number of individuals and birth rates per age-class (per region). Column names = init1, init2, birth1, and birth2. Four rows (per age-class).</p>
+                <br>
+                <div id="import-dropzone" class="dropzone drag-dropzone">
+                    <button id="import" class="btn btn-alert drag-import" type="importData">Load this data</button>
+                </div>
+                <br>
+                <!--div id="CSVSource" class="source"> </div-->
+                <div class = "bootstrap-table csv-boot-table">
+                    <div id = "CSVTable"></div>
+                </div>
+
+                <!--div class = "row" id = "CSVTable"></div-->
+                <div class = "row">
+                    <div class = "col-md-4 aClasses importCSV">
+                        <h2>Initial Upload</h2>
+                    </div>
+                    <div class = "col-md-4 survClasses importCSV">
+                        <h2>Survival Rates</h2>
+                    </div>
+                    <div class = "col-md-4 bRates importCSV">
+                        <h2>Birth Upload</h2>
+                    </div>
+                </div>
+
+            </div>
+            <div class = "col-md-2"></div>
+        </div>
+
+        <div id = "push"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class = "footer">
+        <div class = "container">
+            <p class = "footer-text">Nova  ||  Author: Oliver Muellerklein  ||  omuellerklein@berkeley.edu</p>
+        </div>
+    </footer>
+
+<!-- Bootstrap core JavaScript -->
+<!-- placed at end so pages load faster -->
+<script>
+/**
+* Get values for each field of each population.
+*
+* @param {array} initMFields - array of male initial age-class entries.
+* @param {array} initFFields - array of fem initial age-class entries.
+* @param {array} survMFields - array of male survival rate entries.
+* @param {array} survFFields - array of fem survival rate entries.
+* @param {array} birthFields - array of birth rate entries.
+*
+* @returns {object} - Returns object of initial, survival, and birth data for one region.
+*/
+function getFieldValues(initMFields, initFFields, survMFields, survFFields, birthFields) {
+
+    // Enhanced error checking
+    var isType = function (obj) {
+        return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+    };
+
+    // Per region values
+    var mClasses = [];
+    var fClasses = [];
+    var bRates = [];
+    var msRates = [];
+    var fsRates = [];
+    var fieldReturn;
+    var tmpName, tmpVar;
+
+    for (var i = 0; i < NUM_CLASS; i++) {
+
+        tmpName = "bRate" + i;
+        tmpVar = Number(birthFields[i].firstElementChild.value);
+        if (isType(tmpVar) != "number") throw "bRates is not number";
+        bRates.push(tmpVar);
+
+        if (IS_SEX == "one") {
+
+            tmpName = "fClass" + i;
+            tmpVar = Number(initFFields[i].firstElementChild.value);
+            if (isType(tmpVar) != "number") throw "fClass is not number";
+            fClasses.push(tmpVar);
+
+            tmpName = "fsRate" + i;
+            tmpVar = Number(survFFields[i].firstElementChild.value);
+            if (isType(tmpVar) != "number") throw "fsRate is not number";
+            fsRates.push(tmpVar);
+
+        } else {
+
+            tmpName = "mClass" + i;
+            tmpVar = Number(initMFields[i].firstElementChild.value);
+            if (isType(tmpVar) != "number") throw "mClass is not number";
+            mClasses.push(tmpVar);
+
+            tmpName = "fClass" + i;
+            tmpVar = Number(initFFields[i].firstElementChild.value);
+            if (isType(tmpVar) != "number") throw "fClass is not number";
+            fClasses.push(tmpVar);
+
+            tmpName = "msRate" + i;
+            tmpVar = Number(survMFields[i].firstElementChild.value);
+            if (isType(tmpVar) != "number") throw "msRate is not number";
+            msRates.push(tmpVar);
+
+            tmpName = "fsRate" + i;
+            tmpVar = Number(survFFields[i].firstElementChild.value);
+            if (isType(tmpVar) != "number") throw "fsRate is not number";
+            fsRates.push(tmpVar);
+
+        }
+    }
+
+    if (IS_SEX == "one") {
+
+        tmpName = "fsRate" + (NUM_CLASS + 1);
+        tmpVar = Number(survFFields[NUM_CLASS].firstElementChild.value);
+        if (isType(tmpVar) != "number") throw "fsRate extra is not number";
+        fsRates.push(tmpVar);
+
+    } else {
+
+        tmpName = "msRate" + (NUM_CLASS + 1);
+        tmpVar = Number(survMFields[NUM_CLASS].firstElementChild.value);
+        if (isType(tmpVar) != "number") throw "msRate extra is not number";
+        msRates.push(tmpVar);
+
+        tmpName = "fsRate" + (NUM_CLASS + 1);
+        tmpVar = Number(survFFields[NUM_CLASS].firstElementChild.value);
+        if (isType(tmpVar) != "number") throw "fsRate extra is not number";
+        fsRates.push(tmpVar);
+    }
+
+    fieldReturn = {
+        mCReturn: mClasses,
+        fCReturn: fClasses,
+        bReturn: bRates,
+        msReturn: msRates,
+        fsReturn: fsRates
+    }
+
+    return fieldReturn;
+}
+
+function checkErr() {
+    // Enhanced error checking
+    var isType = function (obj) {
+        return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
+    };
+
+    try {
+
+        // Values for all regions
+        var mClassAll = [];
+        var fClassAll = [];
+        var bRatesAll = [];
+        var msRatesAll = [];
+        var fsRatesAll = [];
+
+        // Values per region
+        var popValues;
+        var pop1, pop2, pop3;
+        var initMPop1, initMPop2, initMPop3;
+        var initFPop1, initFPop2, initFPop3;
+        var survMPop1, survMPop2, survMPop3;
+        var survFPop1, survFPop2, survFPop3;
+        var birthsPop1, birthsPop2, birthsPop3;
+
+        console.log("\nEnter loop to get population data\n");
+
+        pop1 = document.getElementsByClassName("subPop1");
+
+        if (IS_SEX == "two") {
+
+            initMPop1 = pop1[0].childNodes;
+            initFPop1 = pop1[1].childNodes;
+            survMPop1 = pop1[2].childNodes;
+            survFPop1 = pop1[3].childNodes;
+            birthsPop1 = pop1[4].childNodes;
+
+        } else {
+
+            initMPop1 = [];
+            initFPop1 = pop1[0].childNodes;
+            survMPop1 = [];
+            survFPop1 = pop1[1].childNodes;
+            birthsPop1 = pop1[2].childNodes;
+
+        }
+
+        popValues = getFieldValues(initMPop1, initFPop1, survMPop1, survFPop1, birthsPop1);
+
+        mClassAll.push(popValues.mCReturn);
+        fClassAll.push(popValues.fCReturn);
+        bRatesAll.push(popValues.bReturn);
+        msRatesAll.push(popValues.msReturn);
+        fsRatesAll.push(popValues.fsReturn);
+
+        if (NUM_NODES != 1) {
+
+            pop2 = document.getElementsByClassName("subPop2");
+
+            if (IS_SEX == "two") {
+
+                initMPop2 = pop2[0].childNodes;
+                initFPop2 = pop2[1].childNodes;
+                survMPop2 = pop2[2].childNodes;
+                survFPop2 = pop2[3].childNodes;
+                birthsPop2 = pop2[4].childNodes;
+
+            } else {
+
+                initMPop2 = [];
+                initFPop2 = pop2[0].childNodes;
+                survMPop2 = [];
+                survFPop2 = pop2[1].childNodes;
+                birthsPop2 = pop2[2].childNodes;
+
+            }
+
+            popValues = getFieldValues(initMPop2, initFPop2, survMPop2, survFPop2, birthsPop2);
+
+            mClassAll.push(popValues.mCReturn);
+            fClassAll.push(popValues.fCReturn);
+            bRatesAll.push(popValues.bReturn);
+            msRatesAll.push(popValues.msReturn);
+            fsRatesAll.push(popValues.fsReturn);
+
+            if (NUM_NODES == 3) {
+
+                pop3 = document.getElementsByClassName("subPop3");
+
+                if (IS_SEX == "two") {
+
+                    initMPop3 = pop3[0].childNodes;
+                    initFPop3 = pop3[1].childNodes;
+                    survMPop3 = pop3[2].childNodes;
+                    survFPop3 = pop3[3].childNodes;
+                    birthsPop3 = pop3[4].childNodes;
+
+                } else {
+
+                    initMPop3 = [];
+                    initFPop3 = pop3[0].childNodes;
+                    survMPop3 = [];
+                    survFPop3 = pop3[1].childNodes;
+                    birthsPop3 = pop3[2].childNodes;
+
+                }
+
+                popValues = getFieldValues(initMPop3, initFPop3, survMPop3, survFPop3, birthsPop3);
+
+                mClassAll.push(popValues.mCReturn);
+                fClassAll.push(popValues.fCReturn);
+                bRatesAll.push(popValues.bReturn);
+                msRatesAll.push(popValues.msReturn);
+                fsRatesAll.push(popValues.fsReturn);
+
+            }
+
+        }
+
+        $.ajax({
+            url: '/population',
+            type: 'POST',
+            cache: false,
+            data: {
+                mClassAll: JSON.stringify(mClassAll),
+                fClassAll: JSON.stringify(fClassAll),
+                bRatesAll: JSON.stringify(bRatesAll),
+                msRatesAll: JSON.stringify(msRatesAll),
+                fsRatesAll: JSON.stringify(fsRatesAll),
+            },
+            success: function (data) {
+                alert('\nSuccess!\n');
+                window.location = "/stocking";
+            },
+            error: function (jqXHR, textStatus, err) {
+                alert('\ntext status: ' + textStatus + ', err: ' + err);
+            }
+        });
+
+        return true;
+
+    } catch (err) {
+        alert("Invalid entry: " + err);
+    }
+    //return false;
+}
+/**
+* Get data user has entered into fields for current session.
+*
+* @param {NA} None
+*
+* @returns {object} - Returns object of entered values.
+*/
+function getUserData() {
+    var rows = [];
+    rows.push({
+        numNodes: NUM_NODES,
+        numClass: NUM_CLASS,
+        isSex: IS_SEX,
+        isYoung: IS_YOUNG,
+        isOld: IS_OLD,
+        isMM: IS_MM,
+        isDemo: IS_DEMO,
+        isEnvir: IS_ENVIR
+    });
+    /*for (var i = 0; i < 1; i++) {
+        rows.push({
+            numNodes: NUM_NODES,
+            numClass: NUM_CLASS,
+            price: '$' + (startId + i)
+        });
+    }*/
+    return rows;
+}
+
+/**
+* Split CSV into array of parts.
+*
+* @param {string} sep - character to split on
+* @param {string} preData - data from csv not split
+*
+* @returns {array} - data as array of parts.
+*/
+function splitCSV(sep, preData) {
+    var lSplit, rSplit, checkNew, modTest;
+
+    var allHeaders = [];
+
+    var init1 = [];
+    var init2 = [];
+    var init3 = [];
+    var allInit = [];
+
+    var surv1 = [];
+    var surv2 = [];
+    var surv3 = [];
+    var allSurv = [];
+
+    var birth1 = [];
+    var birth2 = [];
+    var birth3 = [];
+    var allBirth = [];
+
+    var finData = [];
+
+    /* Always three types per population: Init, Survival, Birth */
+    var numCols = (3) * NUM_NODES;
+    var sexType = (IS_SEX == "two") ? 2 : 1;
+    var numRows = sexType * NUM_CLASS;
+
+    for (var thisCSV = preData.split(sep = sep || ","), x = thisCSV.length - 1, tl; x >= 0; x--) {
+
+        /* Check if contains new line */
+        checkNew = thisCSV[x].search("\n");
+
+        if (checkNew > 0) {
+            thisCSV[x] = thisCSV[x].replace("\n", ',');
+            lSplit = thisCSV[x].split(",")[0];
+            rSplit = thisCSV[x].split(",")[1];
+            finData.push(rSplit);
+            finData.push(lSplit);
+        } else {
+            finData.push(thisCSV[x]);
+        }
+    }
+
+    finData.shift();
+    var finLen = finData.length;
+
+    for (var j = (finLen - 1); j >= 0; j--) {
+
+        /* Is header */
+        if (j >= (finLen - numCols)) {
+
+            //debugger;
+
+            allHeaders.push(finData[j]);
+        } else {
+
+            //debugger;
+
+            modTest = ((j + 1) % numCols);
+
+            if (NUM_NODES == 3) {
+                if (modTest === 0) {
+                    init1.push(finData[j]);
+                } else if (modTest == (numCols - 1)) {
+                    init2.push(finData[j]);
+                } else if (modTest == (numCols - 2)) {
+                    init3.push(finData[j]);
+                } else if (modTest == (numCols - 3)) {
+                    surv1.push(finData[j]);
+                } else if (modTest == (numCols - 4)) {
+                    surv2.push(finData[j]);
+                } else if (modTest == (numCols - 5)) {
+                    surv3.push(finData[j]);
+                } else if (modTest == (numCols - 6)) {
+                    birth1.push(finData[j]);
+                } else if (modTest == (numCols - 7)) {
+                    birth2.push(finData[j]);
+                } else if (modTest == (numCols - 8)) {
+                    birth3.push(finData[j]);
+                }
+            } else if (NUM_NODES == 2) {
+                if (modTest === 0) {
+                    init1.push(finData[j]);
+                } else if (modTest == (numCols - 1)) {
+                    init2.push(finData[j]);
+                } else if (modTest == (numCols - 2)) {
+                    surv1.push(finData[j]);
+                } else if (modTest == (numCols - 3)) {
+                    surv2.push(finData[j]);
+                } else if (modTest == (numCols - 4)) {
+                    birth1.push(finData[j]);
+                } else {
+                    birth2.push(finData[j]);
+                }
+            } else {
+                if (modTest === 0) {
+                    init1.push(finData[j]);
+                } else if (modTest == 1) {
+                    surv1.push(finData[j]);
+                } else {
+                    birth1.push(finData[j]);
+                }
+            }
+        }
+	}
+
+    var finReturn = {
+        headers: allHeaders,
+        init1: init1,
+        init2: init2,
+        init3: init3,
+        surv1: surv1,
+        surv2: surv2,
+        surv3: surv3,
+        birth1: birth1,
+        birth2: birth2,
+        birth3: birth3
+    }
+
+    return finReturn;
+}
+
+/* Index through fields and update with values */
+function indexFields(offSet) {
+    var getPop1 = document.getElementsByClassName("subPop1");
+    var getPop2 = document.getElementsByClassName("subPop2");
+    var getPop3 = document.getElementsByClassName("subPop3");
+    var allInit1, allSurv1, allBirth1;
+    var allInit2, allSurv2, allBirth2;
+    var allInit3, allSurv3, allBirth3;
+
+    var totClass = (IS_SEX == "two") ? (2 * NUM_CLASS) : NUM_CLASS;
+
+    allInit1 = getPop1[offSet + 0];
+    allSurv1 = getPop1[offSet + 1];
+    allBirth1 = getPop1[offSet + 2];
+
+    if (NUM_NODES >= 2) {
+
+        allInit2 = getPop2[offSet + 0];
+        allSurv2 = getPop2[offSet + 1];
+        allBirth2 = getPop2[offSet + 2];
+
+        if (NUM_NODES == 3) {
+
+            allInit3 = getPop3[offSet + 0];
+            allSurv3 = getPop3[offSet + 1];
+            allBirth3 = getPop3[offSet + 2];
+        }
+    }
+
+    var fieldReturn = {
+        init1: allInit1,
+        init2: allInit2,
+        init3: allInit3,
+        surv1: allSurv1,
+        surv2: allSurv2,
+        surv3: allSurv3,
+        birth1: allBirth1,
+        birth2: allBirth2,
+        birth3: allBirth3
+    }
+    return fieldReturn;
+}
+
+/* JS for data table */
+var $table = $('#table');
+$(function () {
+    $('#toolbar').find('select').change(function() {
+        $table.bootstrapTable('refreshOptions', {
+            exportDataType: $(this).val()
+        });
+    });
+})
+
+/* Automate filling tutorial data on button press & update table data */
+var $table = $('#export_table'),
+    $button = $('#update');
+
+var $init = $('#fillInit');
+var $surv = $('#fillSurv');
+var $birth = $('#fillBirth');
+
+$(function() {
+
+    $button.click(function() {
+        $table.bootstrapTable('load', getUserData());
+    });
+
+    /* Tutorial Values */
+    var tutInit1 = [10, 14, 13, 8, 12, 18, 15, 10];
+    var tutInit2 = [6, 8, 18, 12, 13, 13, 8, 7];
+    var tutSurv1 = [0.9, 0.99, 0.99, 0.99, 0.9, 0.85, 0.99, 0.99, 0.99, 0.9];
+    var tutSurv2 = [0.9, 0.99, 0.99, 0.99, 0.9, 0.9, 0.99, 0.99, 0.99, 0.9];
+    var tutBirth1 = [0.9, 0.95, 0.95, 0.8];
+    var tutBirth2 = [0.9, 0.95, 0.95, 0.8];
+
+    var totClass = (IS_SEX == "two") ? (2 * NUM_CLASS) : NUM_CLASS;
+
+    var getFields = indexFields(0);
+    // var getFields = indexFields(NUM_NODES + 1);
+
+    debugger;
+
+    $init.click(function() {
+        for (var i = 0; i < totClass; i++) {
+            getFields.init1[i].value = tutInit1[i];
+            getFields.init2[i].value = tutInit2[i];
+        }
+    });
+
+    $surv.click(function() {
+        for (var i = 0; i <= totClass; i++) {
+            getFields.surv1[i].value = tutSurv1[i];
+            getFields.surv2[i].value = tutSurv2[i];
+        }
+    });
+
+    $birth.click(function() {
+        for (var i = 0; i < NUM_CLASS; i++) {
+            getFields.birth1[i].value = tutBirth1[i];
+            getFields.birth2[i].value = tutBirth2[i];
+        }
+    });
+
+    /*$('#import').click(function() {*/
+        /*$.get('example.csv', function(data) {
+            $('#CSVSource').html('<pre>' + data + '</pre>');
+        });
+        $('#CSVTable').CSVToTable('example.csv', { loadingImage: 'img/loading.gif', startLine: 0 });*/
+    /*});*/
+});
+
+/* Example dropzone file upload */
+Dropzone.options.importDropzone = { // The camelized version of the ID of the form element
+
+    // The configuration we've talked about above
+    url: "/population",
+    autoProcessQueue: false,
+    uploadMultiple: true,
+    parallelUploads: 100,
+    maxFiles: 1,
+    dictDefaultMessage: 'Drag a CSV or select one from your local machine',
+    dictMaxFilesExceeded: 'You can only upload a single CSV file. Refresh the page to upload a different file.',
+
+    // The setting up of the dropzone
+    init: function() {
+        var myDropzone = this;
+
+        // First change the button to actually tell Dropzone to process the queue.
+        this.element.querySelector("button[type=importData]").addEventListener("click", function(e) {
+
+            e.preventDefault();
+            e.stopPropagation();
+            myDropzone.processQueue();
+        });
+
+        this.on('success', function(file, resp) {
+
+            var localName = file.name.toLocaleString();
+            var exData = localName;
+
+            $.get(exData, function(data) {
+
+                var sep = ",";
+                var splitData = splitCSV(sep, data);
+
+                var getPop1 = document.getElementsByClassName("subPop1");
+                var getPop2 = document.getElementsByClassName("subPop2");
+                var getPop3 = document.getElementsByClassName("subPop3");
+                var allInit1, allSurv1, allBirth1;
+                var allInit2, allSurv2, allBirth2;
+                var allInit3, allSurv3, allBirth3;
+
+                var totClass = (IS_SEX == "two") ? (2 * NUM_CLASS) : NUM_CLASS;
+
+                allInit1 = getPop1[NUM_NODES + 1];
+                allSurv1 = getPop1[NUM_NODES + 2];
+                allBirth1 = getPop1[NUM_NODES + 3];
+
+                if (NUM_NODES >= 2) {
+
+                    allInit2 = getPop2[NUM_NODES + 1];
+                    allSurv2 = getPop2[NUM_NODES + 2];
+                    allBirth2 = getPop2[NUM_NODES + 3];
+
+                    if (NUM_NODES == 3) {
+
+                        allInit3 = getPop3[NUM_NODES + 1];
+                        allSurv3 = getPop3[NUM_NODES + 2];
+                        allBirth3 = getPop3[NUM_NODES + 3];
+                    }
+                }
+
+                for (var i = 0; i <= (totClass); i++) {
+
+                    if (i != totClass) {
+
+                        allInit1[i].value = splitData.init1[i];
+                        allSurv1[i].value = splitData.surv1[i];
+                        allBirth1[i].value = splitData.birth1[i];
+
+                        if (NUM_NODES >= 2) {
+                            allInit2[i].value = splitData.init2[i];
+                            allSurv2[i].value = splitData.surv2[i];
+                            allBirth2[i].value = splitData.birth2[i];
+
+                            if (NUM_NODES == 3) {
+                                allInit3[i].value = splitData.init3[i];
+                                allSurv3[i].value = splitData.surv3[i];
+                                allBirth3[i].value = splitData.birth3[i];
+                            }
+                        }
+                    } else {
+
+                        allSurv1[i].value = splitData.surv1[i];
+
+                        if (NUM_NODES >= 2) {
+                            allSurv2[i].value = splitData.surv2[i];
+
+                            if (NUM_NODES == 3) {
+                                allSurv3[i].value = splitData.surv3[i];
+                            }
+                        }
+                    }
+                }
+
+                //$('#CSVSource').html('<pre>' + data + '</pre>');
+            });
+            //$('#CSVTable').CSVToTable(exData, {loadingImage: 'img/loading.gif', startLine: 0});
+
+        });
+    }
+}
+/*
+Dropzone.options.uploadWidget = {
+    autoProcessQueue: false,
+    paramName: 'file',
+    maxFilesize: 10, // MB
+    maxFiles: 1,
+    uploadMultiple: false,
+    dictDefaultMessage: 'Drag a CSV here to upload, or click to select one',
+    headers: {
+        'x-csrf-token': document.querySelectorAll('meta[name=csrf-token]')[0].getAttributeNode('content').value,
+    },
+    init: function() {
+        this.on('success', function(file, resp) {
+            console.log("\nWe have successfully uploaded the file...\n");
+            console.log(file);
+            console.log(resp);
+        });
+        this.on('thumbnail', function(file) {*/
+            /*if (file.width < 640 || file.height < 480) {
+                file.rejectDimensions();
+            } else {
+                file.acceptDimensions();
+            }*/
+            /*file.acceptDimensions();
+        });
+    },
+    accept: function(file, done) {
+        file.acceptDimensions = done;
+        file.rejectDimensions = function() {
+            done('The image must be less than 10 MB');
+        };
+    }
+};*/
+</script>
+</body>
+</html>
