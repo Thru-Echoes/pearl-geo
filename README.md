@@ -2,28 +2,36 @@
 
 Use of species distribution maps in a web application. Currently prototype development using web-based mapping packages and [D3js visualization and interactivity library](https://d3js.org/).
 
-<strong> This is OLIVER-DEV branch...</strong> 
+<strong> This is OLIVER-DEV branch...</strong>
 
-### Thoughts / Ideas:
+## Run this project
 
-Project may use a variety of routes to get desired product. Need to figure out best way to go about each step of this project. Etc...
+This project is using a frontend [Bootstrap skeleton](http://getbootstrap.com/) with [D3js for data visualization](https://d3js.org/) - i.e. mapping. The project is running on an [express engine with NodeJS](https://nodejs.org/en/) in the backend.
 
-* branch for <strong>gio-dev</strong>
+#### To run this project:
 
-* branch for <strong>oliver-dev</strong>
+* open Terminal
+* go to this dir in Terminal: <code>pearl-geo$ </code>
+* start the NodeJS + Express server with this command: <code>pearl-geo$ npm start</code>
+* this will start a local server (on your machine) served at: <code>localhost:5050</code>
+* open any browser (Firefox, Chrome, Safari, etc.) at the local server: <code>localhost:5050</code>
+* ...in other words...just type in <strong>localhost:5050</strong> in your browser like it is a website
+* model will be running - info + errors will appear in Terminal where you started with <strong>npm start</strong>  
 
-* only working product gets pushed to <strong>Master</strong> branch
+<em>
 
-### To Do:
+## Next Steps
+
+#### To Do:
 
 - [x] create README with project structure
 - [x] create development branch for Oliver & Gio
 - [ ] convert .gri to either .tif or .shp files
-- [ ] create [Bootstrap framework](http://getbootstrap.com/) for site
-- [ ] create web-based map with sample data (i.e. 3 maps)
+- [x] create [Bootstrap framework](http://getbootstrap.com/) for site
+- [x] create web-based map with sample data (i.e. 3 maps)
 - [ ] create web-based statistics / data display
 
-### Git How To:
+#### Git How To (initialization):
 
 Refer to this for anything and everything related to command-line + git
 
@@ -63,8 +71,9 @@ Make changes - do whatever - time to add + commit + push:
 
 <strong>Always push changes into your own development branch!</strong>
 
+<em>
 
-### References:
+## References:
 
 * [1. Step 1 Map Tutorial in D3js](https://github.com/emeeks/d3-carto-map/wiki/Let's-Make-a-d3.carto-map-1:-Loading-a-Data-Layer)
 
