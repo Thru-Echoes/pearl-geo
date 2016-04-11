@@ -123,94 +123,30 @@
 <!-- placed at end so pages load faster -->
 <script>
 function checkErr() {
-    var nNode = Number(document.getElementById("numNode").value);
-    var nClass = Number(document.getElementById("numClass").value);
-    var checkS = document.getElementById("twoSex").checked;
-    var checkYoung = document.getElementById("isYoung").checked;
-    var checkOld = document.getElementById("isOld").checked;
-    var checkMM = document.getElementById("isMM").checked;
-    var checkDemo = document.getElementById("isDemo").checked;
-    var checkEnvir = document.getElementById("isEnvir").checked;
 
-    var isSex = "one";
-    var isYoung = "off";
-    var isOld = "off";
-    var isMM = "off";
-    var isDemo = "off";
-    var isEnvir = "off";
-
-    if (checkS) {
-        isSex = "two";
-    }
-
-    if (checkYoung) {
-        isYoung = "on";
-    }
-
-    if (checkOld) {
-        isOld = "on";
-    }
-
-    if (checkMM) {
-        isMM = "on";
-    }
-
-    if (checkDemo) {
-        isDemo = "on";
-    }
-
-    if (checkEnvir) {
-        isEnvir = "on";
-    }
-
-    debugger;
-
-    try {
-        if (nNode < 1) throw "must have at least 1 region.";
-        if (nNode > 3) throw "must have between 1 and 3 regions.";
-        if (nClass < 1) throw "must have at least 1 age class.";
-        if (nClass > 10) throw "must have between 1 and 10 age classes.";
-        if ((isSex != "one") && (isSex != "two")) throw "sex must be 'one' or 'two'.";
-        if ((isYoung != "on") && (isYoung != "off")) throw "DD-young type must be 'on' or 'off'.";
-        if ((isOld != "on") && (isOld != "off")) throw "DD-old type must be 'on' or 'off'.";
-        if ((isMM != "on") && (isMM != "off")) throw "DD-mature-male type must be 'on' or 'off'.";
-        if ((isDemo != "on") && (isDemo != "off")) throw "Demographic must be 'on' or 'off'.";
-        if ((isEnvir != "on") && (isEnvir != "off")) throw "Environmental must be 'on' or 'off'.";
-
-        //return true;
-        //RedirectURL(nClass, nNode, isS);
-        //var myLink = "/population";
-        //return myLink;
-        //return true;
-
-        $.ajax({
-            url: '/foobar',
-            type: 'POST',
-            cache: false,
-            data: {
-                numNode: nNode,
-                numClass: nClass,
-                isSex: isSex,
-                isYoung: isYoung,
-                isOld: isOld,
-                isMM: isMM,
-                isDemo: isDemo,
-                isEnvir: isEnvir
-            },
-            success: function (data) {
-                alert('\nSuccess!\n');
-                window.location = "/population";
-            },
-            error: function (jqXHR, textStatus, err) {
-                alert('\ntext status: ' + textStatus + ', err: ' + err);
-            }
-        });
-        return true;
-
-    } catch(err) {
-        alert("Invalid entry: " + err);
-    }
-    //return false;
+    $.ajax({
+        url: '/foobar',
+        type: 'POST',
+        cache: false,
+        data: {
+            numNode: nNode,
+            numClass: nClass,
+            isSex: isSex,
+            isYoung: isYoung,
+            isOld: isOld,
+            isMM: isMM,
+            isDemo: isDemo,
+            isEnvir: isEnvir
+        },
+        success: function (data) {
+            alert('\nSuccess!\n');
+            window.location = "/population";
+        },
+        error: function (jqXHR, textStatus, err) {
+            alert('\ntext status: ' + textStatus + ', err: ' + err);
+        }
+    });
+    return true;
 }
 </script>
 </body>
