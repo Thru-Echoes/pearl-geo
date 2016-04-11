@@ -9,6 +9,7 @@ var fs = require('fs');
 var routes = require('./routes/index');
 var sobbat = require('./routes/sobbat');
 var foobar = require('./routes/foobar');
+var mdMap = require('./routes/md-map');
 
 var app = express();
 var routes = require('./routes/index');
@@ -100,6 +101,7 @@ module.exports = fPropAll;
 app.use('/', routes);
 app.use('/sobbat', sobbat);
 app.use('/foobar', foobar);
+app.use('/md-map', mdMap);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

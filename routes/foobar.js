@@ -9,9 +9,9 @@ var app = require('../app');
 })*/
 
 routerFoobar.get('/', function(req, res) {
-    console.log("\nIn Foobar.js - in .get()\n");
+    console.log("\nIn foobar.js - in .get()\n");
     res.render('foobar', {
-        title: "Foo Bar"
+        title: "Species: Foo. Bar."
     });
 });
 

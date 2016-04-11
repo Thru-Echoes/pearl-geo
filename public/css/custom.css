@@ -1,3 +1,7 @@
+/*.container {
+    margin-left: 20px;
+    margin-right: 20px;
+}*/
 
 html {
     position: relative;
@@ -51,9 +55,9 @@ body {
 
 .modelWrapper {
     position: relative;
-    /*padding-bottom: 56.25%;
-    padding-top: 25px;*/
-    padding-bottom: 70%;
+    padding-bottom: 56.25%;
+    /*padding-top: 25px;*/
+    /*padding-bottom: 70%;*/
     padding-top: 300px;
     height: 0;
     overflow: auto;
@@ -95,7 +99,7 @@ body {
     background-color: rgba(255, 0, 0, 0.0);
     padding: 0px;
     maring-bottom: 0px;
-    text-align: center; 
+    text-align: center;
 }
 
 /*body {

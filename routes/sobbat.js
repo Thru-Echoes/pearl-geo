@@ -11,7 +11,7 @@ var app = require('../app');
 routerSobbat.get('/', function(req, res) {
     console.log("\nIn sobbat.js - in .get()\n");
     res.render('sobbat', {
-        title: "Sob. Bat."
+        title: "Species: Sob. Bat."
     });
 });
 
