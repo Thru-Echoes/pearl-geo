@@ -241,14 +241,25 @@ function update(data) {
 		.data(data);
 
 	// enter new elements
-	update.enter()
+	/*update.enter()
 		.append("svg:circle").attr("class", "enter")
 		.transition().duration(1000)
 	      .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
 		  .attr("r", 0.0)
 		  .transition().duration(1500)
 			.attr("r", function(d) {
-				return radius(d.properties.population) * 2; })
+				return radius(d.properties.population) * 2; })*/
+
+    update.enter()
+        .append("svg:circle").attr("class", "enter")
+        .transition().duration(1000)
+          .attr("transform", function(d) {
+              return "translate(" + path.centroid(d) + ")";
+          })
+          .attr("r", 0.0)
+          .transition().duration(1500)
+            .attr("r", function(d) {
+                return radius(d.properties.population) * 0.02; })
 
 	// tipsy tooltip
 	$('svg circle').tipsy({
