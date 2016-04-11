@@ -2,7 +2,7 @@
 
 Use of species distribution maps in a web application. Currently prototype development using web-based mapping packages and [D3js visualization and interactivity library](https://d3js.org/).
 
-<strong> This is OLIVER-DEV branch...</strong>
+<strong> This is MASTER branch...</strong>
 
 ## Run this project
 
@@ -22,7 +22,7 @@ We are also going to use <strong>Homebrew</strong>. Homebrew is a package manage
 * instructions for [downloading Homebrew in Terminal](http://brew.sh/)
 * download NodeJS in Terminal using the command: <code>brew install node</code>
 
-Here is a [tutorial / webpage showing how to download all of this](http://blog.teamtreehouse.com/install-node-js-npm-mac). 
+Here is a [tutorial / webpage showing how to download all of this](http://blog.teamtreehouse.com/install-node-js-npm-mac).
 
 <hr>
 
