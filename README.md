@@ -4,6 +4,28 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 <strong> This is GIO-DEV branch...</strong>
 
+<hr>
+
+## Project structure and design:
+
+Gio will only develop frontend components (at least at first). 
+
+##### Frontend (HTML + D3js)
+
+* The <strong>views/</strong> directory contains html files for each page in our web site. These files have the extension <code>.ejs</code> because we are using a template with NodeJS on the server-side. Treat any <code>.ejs</code> file like it is a normal html file.
+
+* The <strong>public</strong> directory contains files for the html files in <code>views/</code>. These include <code>css, js, fonts, images</code> that live in their respective sub-directories. For example, the web page <code>foo.ejs</code> (that would live in <code>views/foo.ejs</code>) may have a styling file that lives in <code>public/css/foo.css</code>.
+
+##### Backend (NodeJS + express)
+
+* The <strong>bin/</strong> directory contains file <code>wwww</code> that starts up the server by executing the <code>app.js</code> file.  
+
+* The <strong>node_modules/</strong> directory contains all of the dependencies and packages being used for this project - this is organized / structured through the <code>package.json</code> file.
+
+* The <strong>routes</strong> directory contains the "middleware" between the server and the frontend web pages. Remember, our server is running NodeJS and our frontend is html + D3js. Each html page in <code>views/</code> has a <code>.js</code> file in <code>routes/</code> that controls executing that file and sending data to it (if data needs to be sent to it - we determine that).
+
+<hr>
+
 ## Run this project
 
 This project is using a frontend [Bootstrap skeleton](http://getbootstrap.com/) with [D3js for data visualization](https://d3js.org/) - i.e. mapping. The project is running on an [express engine with NodeJS](https://nodejs.org/en/) in the backend.
