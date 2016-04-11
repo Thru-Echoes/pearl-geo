@@ -59,277 +59,93 @@
     		</div>
     	</div>
 
-	<!-- Jumbotron -->
-	<div class = "container">
-		<!--div class = "page-header">
-			<h1>Meta-population Viability Analysis</h1>
-		</div-->
-
-        <div class = "row">
-            <div class = "col-lg-1">
-                <ul>
-                </ul>
-            </div>
-            <div class = "col-lg-5">
-                <h2>Number of Regions</h2>
-
-                <p class = "blockText">Enter the number of metapopuations (or regions):</p>
-                <br>
-                <p class = "blockText">The number of regions can be between 1 - 3. A three-region meta-population model will have connectance between nodes 1-2, nodes 1-3, and nodes 2-3 (and vice versa).</p>
-
-                <form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "Enter Number" id = "numNode">
-                    </div>
-                    <!--a href = "#" onclick="RedirectURL(numClass, numNode); return false;" class = "btn btn-default" role = "button">Submit</a-->
-                </form>
-            </div>
-            <div class = "col-lg-5">
-                <h2>Number of Age Classes</h2>
-
-                <p class = "blockText">Enter the number of age classes for this PVA:</p>
-                <br>
-                <p class = "blockText">The number of age classes can be between 1 - 10 per sex. Thus, a two-sex PVA structure could have up to 20 age classes (10 males and 10 females).</p>
-
-                <form class = "navbar-form navbar-left" role = "search" action="/createMeta" method = "post">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" name = "contentClass" placeholder = "Enter Number" id = "numClass">
-                    </div>
-                  <!--a href = "#" onclick="RedirectURL(numClass, numNode); return false;" class = "btn btn-default" role = "button">Submit</a-->
-                </form>
-
-            </div>
-            <div class = "col-lg-1">
-                <ul>
-                </ul>
-            </div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-lg-1">
-                <ul>
-                </ul>
-            </div>
-            <div class = "col-lg-5">
-                <h2>One or Two Sex</h2>
-
-                <p class = "blockText">Enter whether this is a one or two sex model:</p>
-                <div class = "radio">
-                    <label>
-                        <input type = "radio" name = "isSex" id = "oneSex" value = "one">
-                        Option to use single-sex population structure.
-                    </label>
-                </div>
-                <div class = "radio">
-                    <label>
-                        <input type = "radio" name = "isSex" id = "twoSex" value = "two">
-                        Option to use two-sex population structure.
-                    </label>
-                </div>
-                <br>
-                <p class = "blockText">Note: if using the two-sex option, the number you entered for age-classes will be doubled so that there are that many age-classes for both males and females.</p>
-                <!--form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "One or Two" id = "isSex">
-                    </div>
-                </form-->
-            </div>
-            <div class = "col-lg-5">
-                <h2>Density Dependence</h2>
-
-                <p class = "blockText">Enter whether to use DD for young, old, and mature-males (if two-sex):</p>
-                <div class = "checkbox">
-                    <label>
-                        <input type = "checkbox" name = "isDD" id = "isYoung" value = "1">
-                        Option to use young (first age-class) density dependence.
-                    </label>
-                </div>
-                <div class = "checkbox">
-                    <label>
-                        <input type = "checkbox" name = "isDD" id = "isOld" value = "1">
-                        Option to use old (last age-class) density dependence.
-                    </label>
-                </div>
-                <div class = "checkbox">
-                    <label>
-                        <input type = "checkbox" name = "isDD" id = "isMM" value = "1">
-                        Option to use mature-male density dependence.
-                    </label>
-                </div>
-                <br>
-                <p class = "blockText">Note: the mature-male option is ignored if a single-sex population structure is used. Also, what determines mature-males can be determined at a later time.</p>
-                <!--form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "Young: On or Off" id = "isYoung">
-                    </div>
-                </form>
-                <br>
-                <form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "Old: On or Off" id = "isOld">
-                    </div>
-                </form>
-                <br>
-                <form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "MM: On or Off" id = "isMM">
-                    </div>
-                </form-->
-            </div>
-            <div class = "col-lg-1">
-                <ul>
-                </ul>
-            </div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-lg-1">
-                <ul>
-                </ul>
-            </div>
-            <div class = "col-lg-5">
-                <h2>Stochasticity</h2>
-
-                <p class = "blockText">Enter whether to use demographic and environmental (in recruitment) stochasticity:</p>
-                <div class = "checkbox">
-                    <label>
-                        <input type = "checkbox" name = "isStoch" id = "isDemo" value = "1">
-                        Option to use demographic stochasticity.
-                    </label>
-                </div>
-                <div class = "checkbox">
-                    <label>
-                        <input type = "checkbox" name = "isStoch" id = "isEnvir" value = "1">
-                        Option to use environmental stochascticity in recruitment.
-                    </label>
-                </div>
-                <!--form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "Demographic: On or Off" id = "isDemo">
-                    </div>
-                </form>
-                <br>
-                <form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "Environmental: On or Off" id = "isEnvir">
-                    </div>
-                </form-->
-            </div>
-            <div class = "col-lg-5">
-                <h2>Create Framework</h2>
-
-                <p class = "blockText">After entering all of the data:</p>
-                <br>
-                <p class = "blockText">Generate a responsive PVA framework based on the number of nodes and age classes. In the next page, you can add region and age class specific demographic and environmental rates.</p>
-                <a href = "#" id = "setFramework" onclick = "checkErr()" class = "btn btn-default" role = "button">Generate PVA Framework</a>
-            </div>
-            <div class = "col-lg-1">
-                <ul>
-                </ul>
-            </div>
-        </div>
-        <div id = "push"></div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class = "footer">
+        <!-- Jumbotron -->
         <div class = "container">
-            <p class = "footer-text">Nova  ||  Author: Oliver Muellerklein  ||  omuellerklein@berkeley.edu</p>
-        </div>
-    </footer>
 
+            <div class = "row">
+                <div class = "col-md-12">
+                    <h2>See this Map</h2>
+
+                    <p class = "blockText">Here is a map for species Sob. Bat.:</p>
+                    <br>
+                    <div class = "modelWrapper">
+                        <iframe id="myIframe" src = "/md-map" allowfullscreen="" frameborder="1.0">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "col-md-12">
+                    <h2>See Another Map</h2>
+
+                    <p class = "blockText">Here is another map:</p>
+                    <br>
+                    <div class = "modelWrapper">
+                        <iframe id="myIframe" src = "/md-map" allowfullscreen="" frameborder="1.0">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "col-md-6"></div>
+                <div class = "col-md-3">
+                    <form class = "navbar-form navbar-left" role = "search">
+                        <div class = "form-group">
+                            <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfD">
+                        </div>
+                    </form>
+                    <br>
+                    <button id="showD" class="btn btn-default">Show Dispersal Map</button>
+                </div>
+                <div class = "col-md-3">
+                    <form class = "navbar-form navbar-left" role = "search">
+                        <div class = "form-group">
+                            <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfND">
+                        </div>
+                    </form>
+                    <br>
+                    <button id="showND" class="btn btn-default">Show No Dispersal Map</button>
+                </div>
+            </div>
+            <div id = "push"></div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class = "footer">
+            <div class = "container">
+                <p class = "footer-text">Nova  ||  Author: Oliver Muellerklein  ||  omuellerklein@berkeley.edu</p>
+            </div>
+        </footer>
 <!-- Bootstrap core JavaScript -->
 <!-- placed at end so pages load faster -->
 <script>
 function checkErr() {
-    var nNode = Number(document.getElementById("numNode").value);
-    var nClass = Number(document.getElementById("numClass").value);
-    var checkS = document.getElementById("twoSex").checked;
-    var checkYoung = document.getElementById("isYoung").checked;
-    var checkOld = document.getElementById("isOld").checked;
-    var checkMM = document.getElementById("isMM").checked;
-    var checkDemo = document.getElementById("isDemo").checked;
-    var checkEnvir = document.getElementById("isEnvir").checked;
 
-    var isSex = "one";
-    var isYoung = "off";
-    var isOld = "off";
-    var isMM = "off";
-    var isDemo = "off";
-    var isEnvir = "off";
-
-    if (checkS) {
-        isSex = "two";
-    }
-
-    if (checkYoung) {
-        isYoung = "on";
-    }
-
-    if (checkOld) {
-        isOld = "on";
-    }
-
-    if (checkMM) {
-        isMM = "on";
-    }
-
-    if (checkDemo) {
-        isDemo = "on";
-    }
-
-    if (checkEnvir) {
-        isEnvir = "on";
-    }
-
-    debugger;
-
-    try {
-        if (nNode < 1) throw "must have at least 1 region.";
-        if (nNode > 3) throw "must have between 1 and 3 regions.";
-        if (nClass < 1) throw "must have at least 1 age class.";
-        if (nClass > 10) throw "must have between 1 and 10 age classes.";
-        if ((isSex != "one") && (isSex != "two")) throw "sex must be 'one' or 'two'.";
-        if ((isYoung != "on") && (isYoung != "off")) throw "DD-young type must be 'on' or 'off'.";
-        if ((isOld != "on") && (isOld != "off")) throw "DD-old type must be 'on' or 'off'.";
-        if ((isMM != "on") && (isMM != "off")) throw "DD-mature-male type must be 'on' or 'off'.";
-        if ((isDemo != "on") && (isDemo != "off")) throw "Demographic must be 'on' or 'off'.";
-        if ((isEnvir != "on") && (isEnvir != "off")) throw "Environmental must be 'on' or 'off'.";
-
-        //return true;
-        //RedirectURL(nClass, nNode, isS);
-        //var myLink = "/population";
-        //return myLink;
-        //return true;
-
-        $.ajax({
-            url: '/foobar',
-            type: 'POST',
-            cache: false,
-            data: {
-                numNode: nNode,
-                numClass: nClass,
-                isSex: isSex,
-                isYoung: isYoung,
-                isOld: isOld,
-                isMM: isMM,
-                isDemo: isDemo,
-                isEnvir: isEnvir
-            },
-            success: function (data) {
-                alert('\nSuccess!\n');
-                window.location = "/population";
-            },
-            error: function (jqXHR, textStatus, err) {
-                alert('\ntext status: ' + textStatus + ', err: ' + err);
-            }
-        });
-        return true;
-
-    } catch(err) {
-        alert("Invalid entry: " + err);
-    }
-    //return false;
+    $.ajax({
+        url: '/foobar',
+        type: 'POST',
+        cache: false,
+        data: {
+            numNode: nNode,
+            numClass: nClass,
+            isSex: isSex,
+            isYoung: isYoung,
+            isOld: isOld,
+            isMM: isMM,
+            isDemo: isDemo,
+            isEnvir: isEnvir
+        },
+        success: function (data) {
+            alert('\nSuccess!\n');
+            window.location = "/population";
+        },
+        error: function (jqXHR, textStatus, err) {
+            alert('\ntext status: ' + textStatus + ', err: ' + err);
+        }
+    });
+    return true;
 }
 </script>
 </body>
