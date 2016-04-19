@@ -128,19 +128,10 @@ function checkErr() {
         url: '/foobar',
         type: 'POST',
         cache: false,
-        data: {
-            numNode: nNode,
-            numClass: nClass,
-            isSex: isSex,
-            isYoung: isYoung,
-            isOld: isOld,
-            isMM: isMM,
-            isDemo: isDemo,
-            isEnvir: isEnvir
-        },
-        success: function (data) {
+        data: {},
+        success: function(data) {
             alert('\nSuccess!\n');
-            window.location = "/population";
+            window.location = "/";
         },
         error: function (jqXHR, textStatus, err) {
             alert('\ntext status: ' + textStatus + ', err: ' + err);
@@ -156,6 +147,9 @@ var $showND = $('#showND');
 $(function() {
 
     $showD.click(function() {
+        
+        debugger;
+
         document.getElementById('showIfD').value = "You clicked Dispersal";
     });
 
