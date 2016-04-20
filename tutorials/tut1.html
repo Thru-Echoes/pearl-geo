@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo page 1</h2>
+<br>
+<p>Check out the <strong>console</strong> in the developer options in your browser.</p>
+
+<script>
+function foo(arg1, arg2) {
+    var myReturn;
+    myReturn = arg1 / arg2;
+    return myReturn;
+}
+
+var getFooValue = foo(100, 0);
+console.log("getFooValue with foo(100, 0): ", getFooValue);
+
+/* getFooValue will equal NaN... */
+</script>
+
+</body>
+</html>

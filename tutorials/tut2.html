@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Demo page 2</h2>
+<br>
+<p>Check out the <strong>console</strong> in the developer options in your browser.</p>
+
+<script>
+function foo(arg1, arg2) {
+
+    /*
+        arg1 was passed in as 100
+        arg2 was passed in as 0 (line 46 - see below)
+    */
+
+    try {
+
+        var myReturn;
+        myReturn = arg1 / arg2;
+
+        /* We use a throw to pass to catch */
+        if (arg2 === 0) throw "denominator in foo() is zero.";
+        return myReturn;
+
+    } catch(err) {
+        /* We caught the error here and passed it as "err" */
+        console.log("An error happened in foo(): ", err);
+        debugger;
+    }
+}
+
+var getFooValue = foo(100, 0);
+console.log("getFooValue with foo(100, 0): ", getFooValue);
+
+/*
+We will NEVER get to this part of the code!
+
+Instead we will be caught in the "catch(err)" block of code
+*/
+</script>
+
+</body>
+</html>
