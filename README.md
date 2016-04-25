@@ -8,7 +8,7 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 ## Project structure and design:
 
-Gio will only develop frontend components (at least at first). 
+Gio will only develop frontend components (at least at first).
 
 ##### Frontend (HTML + D3js)
 
@@ -23,6 +23,18 @@ Gio will only develop frontend components (at least at first).
 * The <strong>node_modules/</strong> directory contains all of the dependencies and packages being used for this project - this is organized / structured through the <code>package.json</code> file.
 
 * The <strong>routes</strong> directory contains the "middleware" between the server and the frontend web pages. Remember, our server is running NodeJS and our frontend is html + D3js. Each html page in <code>views/</code> has a <code>.js</code> file in <code>routes/</code> that controls executing that file and sending data to it (if data needs to be sent to it - we determine that).
+
+<hr>
+
+## Conversion Search
+
+* Maybe this [discussion forum](http://www.mapwindow.org/phorum/read.php?4,10499) could be helpful.
+
+* Found a [grid converter](http://www.geospatialdesigns.com/gridconvert.htm) here, don't know if it can help us.
+
+* [Helpful stuff](http://www.macwright.org/2012/10/31/gis-with-python-shapely-fiona.html) on shapely and fiona
+
+Damn been having a hard time finding stuff that's not arcgis related.
 
 <hr>
 
