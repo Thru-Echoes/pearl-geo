@@ -1,4 +1,5 @@
-/* Oliver modification to D3js */
+/* Oliver modification to D3js
+ */
 
 ! function() {
     var d3 = {
@@ -11845,7 +11846,7 @@
     });
     d3.json = function(url, callback) {
         try {
-            if (url == "model/sample-md-map/us.json") throw "uh oh! the json url is model/sample-md-map/us.json";
+            //if (url == "model/sample-md-map/us.json") throw "uh oh! the json url is //model/sample-md-map/us.json";
             return d3_xhr(url, "application/json", d3_json, callback);
         } catch (err) {
             console.log("Error in dr.json() in file d3-oliver-mod.js: ", err);
