@@ -8,7 +8,11 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 ## 1 Next Steps
 
+<<<<<<< HEAD
 #### 1.1 To Do (11 May, 2016):
+=======
+Gio will only develop frontend components (at least at first).
+>>>>>>> f1e64fe6b7cbae411c9cf2e52d771f9c0dce9b16
 
 - [ ] @Oliver: convert .gri to either .tif or .shp files
 - [ ] @Oliver: create web-based map with single sample map (from .gri / .grd file) with Leaflet
@@ -20,10 +24,26 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 Make font bold:
 
+<<<<<<< HEAD
 ```
     <strong>Bold font</strong>
     <p><strong>Bold first four words</strong> in the paragraph.</p>
 ```
+=======
+## Conversion Search
+
+* Maybe this [discussion forum](http://www.mapwindow.org/phorum/read.php?4,10499) could be helpful.
+
+* Found a [grid converter](http://www.geospatialdesigns.com/gridconvert.htm) here, don't know if it can help us.
+
+* [Helpful stuff](http://www.macwright.org/2012/10/31/gis-with-python-shapely-fiona.html) on shapely and fiona
+
+Damn been having a hard time finding stuff that's not arcgis related.
+
+<hr>
+
+## Run this project
+>>>>>>> f1e64fe6b7cbae411c9cf2e52d771f9c0dce9b16
 
 Make font italicized:
 
