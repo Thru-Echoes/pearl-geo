@@ -86,7 +86,7 @@
 <!--script type="text/javascript" src="js/d3.js"></script-->
 <script type="text/javascript" src="js/d3-oliver-mod.js"></script>
 <script type="text/javascript" src="model/sample-md-map/topojson.js"></script>
-<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script src = "js/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="model/sample-md-map/jquery.tipsy.js"></script>
 <link type="text/css" href="model/sample-md-map/tipsy.css" rel="stylesheet" />
 <script>
@@ -211,7 +211,7 @@ function update2005() {
     d3.json("model/sample-md-map/us05.json", function(error, md) {
       if (error) return console.error(error);
 
-      debugger; 
+      debugger;
 
 	  var data = topojson.feature(md, md.objects.counties).features
 	        .sort(function(a, b) {
