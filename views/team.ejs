@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "utf-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <title>Main Title</title>
+
+    <!-- Bootstrap -->
+    <link href = "css/bootstrap.min.css" rel = "stylesheet" type = "text/css" />
+    <link href = "css/custom.css" rel = "stylesheet" type = "text/css" />
+    <link href = "css/font-awesome-4.4.0/css/font-awesome.min.css" rel = "stylesheet" type = "text/css" />
+    <link href = "http://fonts.googleapis.com/css?family=Exo|Exo+2" rel = "stylesheet" type = "text/css" />
+    <!--link id = "size-stylesheet" href = "css/narrow.css" rel = "stylesheet" type = "text/css" /-->
+    <script src = "js/jquery-2.2.3.js"></script>
+    <script src = "js/bootstrap.min.js"></script>
+    <!--script src = "js/adjust-screen.js"></script-->
+    <!--script src = "js/getMeta.js"></script-->
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+	<div class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+    		<div class = "container">
+    			<div class = "navbar-header">
+    				<button type = "button" class = "navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    					<!-- for screen readers -->
+    					<span class = "sr-only">Toggle navigation</span>
+    					<span class = "icon-bar"></span>
+    					<span class = "icon-bar"></span>
+    					<span class = "icon-bar"></span>
+    				</button>
+    				<a class = "navbar-brand" href = "/">Main Title</a>
+    			</div>
+
+    			<div class = "navbar-collapse collapse">
+    				<ul class = "nav navbar-nav navbar-right">
+    					<li><a href = "/">Home</a></li>
+    					<li><a href = "/">About</a></li>
+                        <li class = "dropdown"><a href = "#" class = "dropdown-toggle" data-toggle="dropdown">Dropdown Header<b class = "caret"></b></a>
+                            <ul class = "dropdown-menu">
+                                <li class = "active"><a href = "/some-location">Subheader</a></li>
+                                <li><a href = "#">Example 1</a></li>
+                                <li><a href = "#">Example 2</a></li>
+                                <li class = "divider"></li>
+                                <li class = "dropdown-header">Subheader</li>
+                                <li><a href = "#">Example 3</a></li>
+                                <li><a href = "#">Example 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+    			</div>
+    		</div>
+    	</div>
+
+	<!-- Jumbotron -->
+	<div class = "container">
+
+        <div class = "row">
+            <div class = "col-lg-1"></div>
+            <div class = "col-lg-5">
+            </div>
+            <div class = "col-lg-5">
+            </div>
+            <div class = "col-lg-1"></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-lg-1"></div>
+            <div class = "col-lg-5">
+            </div>
+            <div class = "col-lg-5">
+            </div>
+            <div class = "col-lg-1"></div>
+        </div>
+        <div id = "push"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class = "footer">
+        <div class = "container">
+            <p class = "footer-text">Some Title Maybe  ||  Author: Your Name  ||  youraddress@foo.bar</p>
+        </div>
+    </footer>
+
+<!-- Bootstrap core JavaScript -->
+<!-- placed at end so pages load faster -->
+<script>
+/**
+ * @fileOverview This is a JS Docs header comment - use this for JS files.
+ * @author <a href="mailto:youraddress@foo.bar">Your Name</a>
+ * @version 0.0.1
+*/
+
+/**
+ * Describe the function below here (JS).
+ *
+ * @param {number} arg1 - number for arg1
+ * @param {boolean} arg2 - T / F for arg2
+ *
+ * @returns {number} - whatever the return is.
+*/
+function thisFunc(arg1, arg2) {
+    var ourReturn = 3;
+    if (arg2) {
+        ourReturn * arg1;
+    }
+    return ourReturn;
+}
+</script>
+</body>
+</html>

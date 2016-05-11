@@ -17,6 +17,7 @@ routerFoobar.get('/', function(req, res) {
 
 // Grab data from document
 routerFoobar.post('/', function(req, res) {
+
     res.end();
 });
 

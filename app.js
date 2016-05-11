@@ -10,9 +10,11 @@ var routes = require('./routes/index');
 var sobbat = require('./routes/sobbat');
 var foobar = require('./routes/foobar');
 var mdMap = require('./routes/md-map');
+var about = require('./routes/about');
+var team = require('./routes/team');
 
 var app = express();
-var routes = require('./routes/index');
+//var routes = require('./routes/index');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,74 +36,12 @@ var isType = function(obj) {
 };
 module.exports = isType;
 
-var nNode = "test";
-var nClass = "test";
-var isSex = "test";
-var isYoung = "test";
-var isOld = "test";
-var isMM = "test";
-var isDemo = "test";
-var isEnvir = "test";
-
-var mClassAll = "test";
-var fClassAll = "test";
-var bRatesAll = "test";
-var msRatesAll = "test";
-var fsRatesAll = "test";
-
-var msStockAll = "test";
-var fsStockAll = "test";
-var msHarvestAll = "test";
-var fsHarvestAll = "test";
-var intervalsAll = "test";
-var valuesAll = "test";
-
-var ddsAll = "test";
-var ccsAll = "test";
-var connectance = "test";
-var mBioAll = "test";
-var fBioAll = "test";
-var mPropAll = "test";
-var fPropAll = "test";
-
-/* From metapop page */
-module.exports = nNode;
-module.exports = nClass;
-module.exports = isSex;
-module.exports = isYoung;
-module.exports = isOld;
-module.exports = isMM;
-module.exports = isDemo;
-module.exports = isEnvir;
-
-/* From population page */
-module.exports = mClassAll;
-module.exports = fClassAll;
-module.exports = bRatesAll;
-module.exports = msRatesAll;
-module.exports = fsRatesAll;
-
-/* From stocking page */
-module.exports = msStockAll;
-module.exports = fsStockAll;
-module.exports = msHarvestAll;
-module.exports = fsHarvestAll;
-module.exports = intervalsAll;
-module.exports = valuesAll;
-
-/* From movement page */
-module.exports = ddsAll;
-module.exports = ccsAll;
-module.exports = connectance;
-module.exports = mBioAll;
-module.exports = fBioAll;
-module.exports = mPropAll;
-module.exports = fPropAll;
-
 app.use('/', routes);
 app.use('/sobbat', sobbat);
 app.use('/foobar', foobar);
 app.use('/md-map', mdMap);
+app.use('/about', about);
+app.use('/team', team);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

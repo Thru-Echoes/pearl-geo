@@ -6,86 +6,70 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 <hr>
 
-## Project structure and design:
+## 1 Next Steps
 
-Gio will only develop frontend components (at least at first). 
+#### 1.1 To Do (11 May, 2016):
 
-##### Frontend (HTML + D3js)
+- [ ] @Oliver: convert .gri to either .tif or .shp files
+- [ ] @Oliver: create web-based map with single sample map (from .gri / .grd file) with Leaflet
+- [ ] @Gio: add text (below) and Carousel (Bootstrap) to home page (Note: Carousel is for spotlight species)
+- [ ] @Gio: add 'home, about, team / people, search bar' to navbar
+- [ ] @Everyone: create web-based statistics / data display
 
-* The <strong>views/</strong> directory contains html files for each page in our web site. These files have the extension <code>.ejs</code> because we are using a template with NodeJS on the server-side. Treat any <code>.ejs</code> file like it is a normal html file.
+#### 1.2 Helpful HTML and web resources:
 
-* The <strong>public</strong> directory contains files for the html files in <code>views/</code>. These include <code>css, js, fonts, images</code> that live in their respective sub-directories. For example, the web page <code>foo.ejs</code> (that would live in <code>views/foo.ejs</code>) may have a styling file that lives in <code>public/css/foo.css</code>.
+Make font bold:
 
-##### Backend (NodeJS + express)
+```
+    <strong>Bold font</strong>
+    <p><strong>Bold first four words</strong> in the paragraph.</p>
+```
 
-* The <strong>bin/</strong> directory contains file <code>wwww</code> that starts up the server by executing the <code>app.js</code> file.  
+Make font italicized:
 
-* The <strong>node_modules/</strong> directory contains all of the dependencies and packages being used for this project - this is organized / structured through the <code>package.json</code> file.
+```
+    *this is italic*
 
-* The <strong>routes</strong> directory contains the "middleware" between the server and the frontend web pages. Remember, our server is running NodeJS and our frontend is html + D3js. Each html page in <code>views/</code> has a <code>.js</code> file in <code>routes/</code> that controls executing that file and sending data to it (if data needs to be sent to it - we determine that).
+    And also this could be bold:
 
-<hr>
+    **wow another way to do bold**
+```
 
-## Run this project
+And you can make code: <code>here is code</code>
 
-This project is using a frontend [Bootstrap skeleton](http://getbootstrap.com/) with [D3js for data visualization](https://d3js.org/) - i.e. mapping. The project is running on an [express engine with NodeJS](https://nodejs.org/en/) in the backend.
+<br>
 
-<strong>NOTE: You need to download NodeJS with some packages to run this project!</strong>
+Add this is the text to add to the <strong>home and / or about page</strong>:
 
-#### Dependencies:
+```
+    PEARL - the first global Parasite Extinction Assessment & Red List - compiles the preliminary work of an international team of researchers working to produce a mainstream data portal for parasite conservation. An estimated XX% of endoparasites are threatened globally with coextinction from their hosts, and an additional XX% are likely to be driven to extinction by climate change. PEARL compiles the conservation status, distribution and host associations of nearly 500 parasites from a pilot risk assessment study, and makes that data freely available to researchers, managers and the public at large. Preliminary expansions to the dataset are scheduled for 2018.
+```
 
-We are going to use <strong>XCODE</strong> and <strong>Homebrew</strong> at various times. Xcode is Apple's (OS X) development software package thingie that you need to do a lot of programming / development on an Apple (OS X) machine. It is extremely silly that this is a thing you need to download...but that is just my opinion of a very huge and successful company strategy.
+<br>
 
-We are also going to use <strong>Homebrew</strong>. Homebrew is a package manager. It makes installing things very, very easy in Terminal. For example: below I tell you how to install NodeJS through their website (like a normal software download)...but you could also download it through brew with the following command in Terminal: <code>$ brew install node</code>
+And here are some thoughts from Colin and me:
 
-<strong>NOTE: XCODE & Homebrew may or may not actually be needed but will make life better for work on this and future projects!...but I think we do need Xcode.</strong>
+```
+    Colin:
+    Echinococcus granulosus will definitely be one of the things in the carousel and we'll figure out the rest as we go... general overview showing the team would be cool with a separate team bio giving the history of PERP and detailed bios on everyone, search bar would be awesome, all that sounds good
 
-* open Terminal (in any dir)
-* instructions for [downloading Homebrew in Terminal](http://brew.sh/)
-* download NodeJS in Terminal using the command: <code>brew install node</code>
+    Attached is a GIF that I think would be really cool to have on the home page, showing the history of the dataset's creation (I saved these as we georeferenced!). It's not the coolest but it shows how long it took to put together?
 
-Here is a [tutorial / webpage showing how to download all of this](http://blog.teamtreehouse.com/install-node-js-npm-mac).
+    (GIF is in public/img)
 
-<hr>
+    Oliver:
+    Leaflet (JS mobile-friendly mapping library) + D3js!
 
-* [download NodeJS](https://nodejs.org/en/download/)
-* NodeJS will also download the package manager <strong>npm</strong>
-* open Terminal
-* go to this dir in Terminal: <code>pearl-geo$ </code>
-* check if NodeJS is installed: <code>pearl-geo$ node -v</code>
-* check if npm is installed: <code>pearl-geo$ npm -v</code>
-* NodeJS will show something like: <code>v4.4.2</code>
-* Npm will show something like: <code>2.15.0</code>
+    Leaflet: http://leafletjs.com/ Super lightweight - open source - mobile friendly - REALLY pretty (good UI / UX) - works well with my love D3js
 
-<strong>NOTE: If NodeJS or npm not installed...</strong>
+    Leaflet + D3js: https://bost.ocks.org/mike/leaflet/
 
-* [Install npm here](https://www.npmjs.com/package/download)
-* [Re-install NodeJS here](https://nodejs.org/en/download/)
+    Slightly more involved example: http://bl.ocks.org/d3noob/9267535
+```
 
-#### To run this project:
+<strong>Note to Gio:</strong> I added the *about* and *team* pages but you have to fill them (i.e. they are blank). 
 
-* open Terminal
-* go to this dir in Terminal: <code>pearl-geo$ </code>
-* start the NodeJS + Express server with this command: <code>pearl-geo$ npm start</code>
-* this will start a local server (on your machine) served at: <code>localhost:5050</code>
-* open any browser (Firefox, Chrome, Safari, etc.) at the local server: <code>localhost:5050</code>
-* ...in other words...just type in <strong>localhost:5050</strong> in your browser like it is a website
-* model will be running - info + errors will appear in Terminal where you started with <strong>npm start</strong>
-
-<hr>
-
-## Next Steps
-
-#### To Do:
-
-- [x] create README with project structure
-- [x] create development branch for Oliver & Gio
-- [ ] convert .gri to either .tif or .shp files
-- [x] create [Bootstrap framework](http://getbootstrap.com/) for site
-- [x] create web-based map with sample data (i.e. 3 maps)
-- [ ] create web-based statistics / data display
-
-#### Git How To (initialization):
+#### 1.3 Git How To (initialization):
 
 Refer to this for anything and everything related to command-line + git
 
@@ -127,7 +111,75 @@ Make changes - do whatever - time to add + commit + push:
 
 <hr>
 
-## References:
+## 2 Project structure and design:
+
+Gio will only develop frontend components (at least at first).
+
+#### 2.1 Frontend (HTML + D3js)
+
+* The <strong>views/</strong> directory contains html files for each page in our web site. These files have the extension <code>.ejs</code> because we are using a template with NodeJS on the server-side. Treat any <code>.ejs</code> file like it is a normal html file.
+
+* The <strong>public</strong> directory contains files for the html files in <code>views/</code>. These include <code>css, js, fonts, images</code> that live in their respective sub-directories. For example, the web page <code>foo.ejs</code> (that would live in <code>views/foo.ejs</code>) may have a styling file that lives in <code>public/css/foo.css</code>.
+
+#### 2.2 Backend (NodeJS + express)
+
+* The <strong>bin/</strong> directory contains file <code>wwww</code> that starts up the server by executing the <code>app.js</code> file.  
+
+* The <strong>node_modules/</strong> directory contains all of the dependencies and packages being used for this project - this is organized / structured through the <code>package.json</code> file.
+
+* The <strong>routes</strong> directory contains the "middleware" between the server and the frontend web pages. Remember, our server is running NodeJS and our frontend is html + D3js. Each html page in <code>views/</code> has a <code>.js</code> file in <code>routes/</code> that controls executing that file and sending data to it (if data needs to be sent to it - we determine that).
+
+<hr>
+
+## 3 Run this project
+
+This project is using a frontend [Bootstrap skeleton](http://getbootstrap.com/) with [D3js for data visualization](https://d3js.org/) - i.e. mapping. The project is running on an [express engine with NodeJS](https://nodejs.org/en/) in the backend.
+
+<strong>NOTE: You need to download NodeJS with some packages to run this project!</strong>
+
+#### 3.1 Dependencies:
+
+We are going to use <strong>XCODE</strong> and <strong>Homebrew</strong> at various times. Xcode is Apple's (OS X) development software package thingie that you need to do a lot of programming / development on an Apple (OS X) machine. It is extremely silly that this is a thing you need to download...but that is just my opinion of a very huge and successful company strategy.
+
+We are also going to use <strong>Homebrew</strong>. Homebrew is a package manager. It makes installing things very, very easy in Terminal. For example: below I tell you how to install NodeJS through their website (like a normal software download)...but you could also download it through brew with the following command in Terminal: <code>$ brew install node</code>
+
+<strong>NOTE: XCODE & Homebrew may or may not actually be needed but will make life better for work on this and future projects!...but I think we do need Xcode.</strong>
+
+* open Terminal (in any dir)
+* instructions for [downloading Homebrew in Terminal](http://brew.sh/)
+* download NodeJS in Terminal using the command: <code>brew install node</code>
+
+Here is a [tutorial / webpage showing how to download all of this](http://blog.teamtreehouse.com/install-node-js-npm-mac).
+
+<hr>
+
+* [download NodeJS](https://nodejs.org/en/download/)
+* NodeJS will also download the package manager <strong>npm</strong>
+* open Terminal
+* go to this dir in Terminal: <code>pearl-geo$ </code>
+* check if NodeJS is installed: <code>pearl-geo$ node -v</code>
+* check if npm is installed: <code>pearl-geo$ npm -v</code>
+* NodeJS will show something like: <code>v4.4.2</code>
+* Npm will show something like: <code>2.15.0</code>
+
+<strong>NOTE: If NodeJS or npm not installed...</strong>
+
+* [Install npm here](https://www.npmjs.com/package/download)
+* [Re-install NodeJS here](https://nodejs.org/en/download/)
+
+#### To run this project:
+
+* open Terminal
+* go to this dir in Terminal: <code>pearl-geo$ </code>
+* start the NodeJS + Express server with this command: <code>pearl-geo$ npm start</code>
+* this will start a local server (on your machine) served at: <code>localhost:5050</code>
+* open any browser (Firefox, Chrome, Safari, etc.) at the local server: <code>localhost:5050</code>
+* ...in other words...just type in <strong>localhost:5050</strong> in your browser like it is a website
+* model will be running - info + errors will appear in Terminal where you started with <strong>npm start</strong>
+
+<hr>
+
+## 4 References:
 
 * [1. Step 1 Map Tutorial in D3js](https://github.com/emeeks/d3-carto-map/wiki/Let's-Make-a-d3.carto-map-1:-Loading-a-Data-Layer)
 
