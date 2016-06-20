@@ -20,6 +20,30 @@ body {
 ********************* INDEX **********************
 *************************************************/
 
+#home-push-top {
+    height: 120px;
+}
+
+#home-push-bottom {
+    height: 120px;
+}
+
+#btn-push-top {
+    height: 120px;
+}
+
+#btn-push-bottom {
+    height: 120px;
+}
+
+#footer-push {
+    height: 400px;
+}
+
+.home-text {
+    color: rgba(238, 238, 238, 0.8);
+}
+
 .overview-text {
     background-color: rgba(238, 238, 238, 0.4);
 }
@@ -39,6 +63,14 @@ body {
 
 .model-text {
     background-color: rgba(238, 238, 238, 0.4);
+}
+
+.img-section {
+    background-color: rgba(238, 238, 238, 0.9);
+}
+
+.stat-section {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /*************************************************
@@ -124,6 +156,26 @@ body {
     border-color: rgba(27, 72, 85, 0.7);
 }
 
+#showD1 {
+    padding: 6px 27px;
+}
+
+#showD2 {
+    padding: 6px 30px;
+}
+
+#showD3 {
+    padding: 6px 19px;
+}
+
+#showD4 {
+    padding: 6px 32px;
+}
+
+#showD5 {
+    padding: 6px 21px;
+}
+
 
 /*************************************************
 ****************** CONTACT FORM ******************
@@ -181,6 +233,10 @@ p {
 *************************************************/
 
 #push {
+    height: 500px;
+}
+
+#img-push-bottom {
     height: 60px;
 }
 

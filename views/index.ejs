@@ -46,7 +46,8 @@
     					<li><a href = "/">About</a></li>
                         <li class = "dropdown"><a href = "#" class = "dropdown-toggle" data-toggle="dropdown">More PEARL<b class = "caret"></b></a>
                             <ul class = "dropdown-menu">
-                                <li><a href = "/sobbat">Sob. Bat.</a></li>
+                                <!--li><a href = "/sobbat">Sob. Bat.</a></li-->
+                                <li><a href = "/foobar">Foo. Bar.</a></li>
                                 <li><a href = "/foobar">Foo. Bar.</a></li>
                                 <li class = "divider"></li>
                                 <li class = "dropdown-header">PEARL Stuff</li>
@@ -60,68 +61,59 @@
     	</div>
 
 	<!-- Jumbotron -->
-    <div class = "container">
+    <div class = "container-fluid img-section">
         <div class = "row">
-            <div class = "col-md-1"></div>
-            <div class = "col-md-10">
-                <br>
-            </div>
-            <div class = "col-md-1"></div>
-        </div>
-        <div class = "row">
-            <div class = "col-md-1"></div>
-            <div class = "col-md-10 overview-text">
-                <div class = "jumbotron">
-                    <h1>P.E.A.R.L. Project</h1>
-                </div>
-            </div>
-            <div class = "col-md-1"></div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-md-1"></div>
-            <div class = "col-md-10 overview-text">
-                <h2 style = "text-align: center">Interactive Species Distribution</h2>
-                <hr>
-                <br>
+            <div class = "container">
+                <div id = "home-push-top"></div>
                 <div class = "row">
-                    <div class = "col-md-6">
-                        <p class = "blockText" style = "text-align: center">Users can flip between future distributions with and without dispersal for species <strong>Sob. Bat.</strong>. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                        <br>
-                        <p style = "text-align: center"><a href="/sobbat" class = "btn btn-info showBtn" role="button">Go to Sob. Bat.</a></p>
+                    <div class = "col-md-1"></div>
+                    <div class = "col-md-10">
+                        <div class = "jumbotron">
+                            <h1>P.E.A.R.L. Project</h1>
+                            <br>
+                        </div>
                     </div>
-                    <div class = "col-md-6">
-                        <p class = "blockText" style = "text-align: center">Users can flip between future distributions with and without dispersal for species <strong>Foo. Bar.</strong>. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                        <br>
-                        <p style = "text-align: center"><a href="/foobar" class = "btn btn-info showBtn" role="button">Go to Foo. Bar.</a></p>
+                    <div class = "col-md-1"></div>
+                </div>
+                <div class = "row">
+                    <div class = "col-md-1"></div>
+                    <div class = "col-md-10">
+                        <h2 style = "text-align: center">Interactive Species Distribution</h2>
                     </div>
+                    <div class = "col-md-1"></div>
+                </div>
+                <div id = "home-push-bottom"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "container-fluid stat-section">
+        <div class = "row">
+            <div class = "container">
+                <div class = "row">
+                    <div id = "btn-push-top"></div>
+                    <div class = "col-md-1"></div>
+                    <div class = "col-md-10">
+                        <div class = "row">
+                            <div class = "col-md-6">
+                                <p class = "blockText home-text" style = "text-align: center">Users can flip between future distributions with and without dispersal for species <strong>Sob. Bat.</strong>. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                <br>
+                                <!--p style = "text-align: center"><a href="/sobbat" class = "btn btn-info btn-lg showBtn" role="button">Go to Sob. Bat.</a></p-->
+                                <p style = "text-align: center"><a href="/foobar" class = "btn btn-info btn-lg showBtn" role="button">Go to Foo. Bar.</a></p>
+                            </div>
+                            <div class = "col-md-6">
+                                <p class = "blockText home-text" style = "text-align: center">Users can flip between future distributions with and without dispersal for species <strong>Foo. Bar.</strong>. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                <br>
+                                <p style = "text-align: center"><a href="/foobar" class = "btn btn-info btn-lg showBtn" role="button">Go to Foo. Bar.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col-md-1"></div>
+                    <div id = "btn-push-bottom"></div>
                 </div>
             </div>
-            <div class = "col-md-1"></div>
+            <div id = "footer-push"></div>
         </div>
-
-        <div class = "row">
-            <div class = "col-md-1"></div>
-            <div class = "col-md-10 overview-text">
-                <h2 style = "text-align: center">Model Overview</h2>
-                <hr>
-                <br>
-                <p class = "blockText" style = "text-align: center">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-            </div>
-            <div class = "col-md-1"></div>
-        </div>
-        <div class = "row">
-            <div class = "col-md-1"></div>
-            <div class = "col-md-10 interact-text">
-                <h2 style = "text-align: center">Interact with the Model</h2>
-                <hr>
-                <br>
-                <p class = "blockText" style = "text-align: center">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                <br>
-            </div>
-            <div class = "col-md-1"></div>
-        </div>
-        <div id = "push"></div>
     </div>
 
     <!-- FOOTER -->

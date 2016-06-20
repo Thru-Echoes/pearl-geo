@@ -2,7 +2,7 @@
 
 Use of species distribution maps in a web application. Currently prototype development using web-based mapping packages and [D3js visualization and interactivity library](https://d3js.org/).
 
-<strong> This is MASTER branch...</strong>
+<strong> This is GIO-DEV branch...</strong>
 
 <hr>
 
@@ -67,7 +67,7 @@ And here are some thoughts from Colin and me:
     Slightly more involved example: http://bl.ocks.org/d3noob/9267535
 ```
 
-<strong>Note to Gio:</strong> I added the *about* and *team* pages but you have to fill them (i.e. they are blank). 
+<strong>Note to Gio:</strong> I added the *about* and *team* pages but you have to fill them (i.e. they are blank).
 
 #### 1.3 Git How To (initialization):
 

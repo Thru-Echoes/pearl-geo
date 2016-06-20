@@ -47,7 +47,8 @@
                         <li class = "dropdown"><a href = "#" class = "dropdown-toggle" data-toggle="dropdown">More PEARL<b class = "caret"></b></a>
                             <ul class = "dropdown-menu">
                                 <li class = "active"><a href = "/foobar"><%= title %></a></li>
-                                <li><a href = "/sobbat">Sob. Bar.</a></li>
+                                <li><a href = "/foobar">Foo. Bar.</a></li>
+                                <!--li><a href = "/sobbat">Sob. Bar.</a></li-->
                                 <li class = "divider"></li>
                                 <li class = "dropdown-header">PEARL Stuff</li>
                                 <li><a href = "#">Example 1</a></li>
@@ -60,53 +61,87 @@
     	</div>
 
     <!-- Jumbotron -->
-	<div class = "container">
-
+    <div class = "container-fluid img-section">
         <div class = "row">
-            <div class = "col-md-12">
-                <h2>See this Map</h2>
+        	<div class = "container">
 
-                <p class = "blockText">Here is a map for species Foo. Bar.:</p>
-                <br>
-                <div class = "modelWrapper">
-                    <iframe id="myIframe" src = "/md-map" allowfullscreen="" frameborder="1.0">
-                    </iframe>
+                <div class = "row">
+                    <div class = "col-md-6">
+                        <h2>Current Distribution</h2>
+                        <img src = "img/current-ex.png" alt="Current Distribution" height = "380" width = "550">
+                    </div>
+                    <div class = "col-md-6">
+                        <h2>Future Distribution</h2>
+                        <img src = "img/future-ex.png" alt="Future Distribution" height = "380" width = "550">
+                    </div>
                 </div>
             </div>
         </div>
+        <div id = "img-push-bottom"></div>
+    </div>
 
+    <div class = "container-fluid stat-section">
         <div class = "row">
-            <div class = "col-md-12">
-                <h2>See Another Map</h2>
-
-                <p class = "blockText">Here is another map:</p>
-                <br>
-                <div class = "modelWrapper">
-                    <iframe id="myIframe" src = "/md-map" allowfullscreen="" frameborder="1.0">
-                    </iframe>
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col-md-1"></div>
+                    <div class = "col-md-2">
+                        <br>
+                        <br>
+                        <form class = "navbar-form navbar-left" role = "search">
+                            <div class = "form-group">
+                                <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfD1">
+                            </div>
+                        </form>
+                        <br>
+                        <button id="showD1" class="btn btn-info showBtn fooBtn">Show Current Area</button>
+                    </div>
+                    <div class = "col-md-2">
+                        <br>
+                        <br>
+                        <form class = "navbar-form navbar-left" role = "search">
+                            <div class = "form-group">
+                                <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfD2">
+                            </div>
+                        </form>
+                        <br>
+                        <button id="showD2" class="btn btn-info showBtn fooBtn">Show Future Area</button>
+                    </div>
+                    <div class = "col-md-2">
+                        <br>
+                        <br>
+                        <form class = "navbar-form navbar-left" role = "search">
+                            <div class = "form-group">
+                                <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfD3">
+                            </div>
+                        </form>
+                        <br>
+                        <button id="showD3" class="btn btn-info showBtn fooBtn">Show Extinction Risk</button>
+                    </div>
+                    <div class = "col-md-2">
+                        <br>
+                        <br>
+                        <form class = "navbar-form navbar-left" role = "search">
+                            <div class = "form-group">
+                                <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfD4">
+                            </div>
+                        </form>
+                        <br>
+                        <button id="showD4" class="btn btn-info showBtn fooBtn">Show Continents</button>
+                    </div>
+                    <div class = "col-md-2">
+                        <br>
+                        <br>
+                        <form class = "navbar-form navbar-left" role = "search">
+                            <div class = "form-group">
+                                <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfD5">
+                            </div>
+                        </form>
+                        <br>
+                        <button id="showD5" class="btn btn-info showBtn fooBtn">Show Dispersal Map</button>
+                    </div>
+                    <div class = "col-md-1"></div>
                 </div>
-            </div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-md-6"></div>
-            <div class = "col-md-3">
-                <form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfD">
-                    </div>
-                </form>
-                <br>
-                <button id="showD" class="btn btn-info showBtn">Show Dispersal Map</button>
-            </div>
-            <div class = "col-md-3">
-                <form class = "navbar-form navbar-left" role = "search">
-                    <div class = "form-group">
-                        <input type = "text" class = "form-control" placeholder = "Show..." id = "showIfND">
-                    </div>
-                </form>
-                <br>
-                <button id="showND" class="btn btn-info showBtn">Show No Dispersal Map</button>
             </div>
         </div>
         <div id = "push"></div>
@@ -141,20 +176,33 @@ function checkErr() {
 }
 
 /* Switch between Dispersal and No Dispersal */
-var $showD = $('#showD');
+var $showD1 = $('#showD1');
+var $showD2 = $('#showD2');
+var $showD3 = $('#showD3');
+var $showD4 = $('#showD4');
+var $showD5 = $('#showD5');
 var $showND = $('#showND');
 
 $(function() {
 
-    $showD.click(function() {
-
-        debugger;
-
-        document.getElementById('showIfD').value = "You clicked Dispersal";
+    $showD1.click(function() {
+        document.getElementById('showIfD1').value = "100,000 Ha";
     });
 
-    $showND.click(function() {
-        document.getElementById('showIfND').value = "You clicked No Dispersal";
+    $showD2.click(function() {
+        document.getElementById('showIfD2').value = "143,000 Ha";
+    });
+
+    $showD3.click(function() {
+        document.getElementById('showIfD3').value = "12%";
+    });
+
+    $showD4.click(function() {
+        document.getElementById('showIfD4').value = "North America";
+    });
+
+    $showD5.click(function() {
+        document.getElementById('showIfD5').value = "You clicked Dispersal";
     });
 })
 </script>
