@@ -103,6 +103,25 @@ body {
     background-color: rgba(45, 181, 115, 0.7);
 }
 
+
+.cibi-hloss-box {
+    outline: 1px solid black;
+    /*background-color: #eab71e;*/
+    background-color: rgba(222, 70, 57, 0.7);
+}
+
+.cibi-erisk-box {
+    outline: 1px solid black;
+    /*background-color: #2db573;*/
+    background-color: rgba(222, 70, 57, 0.7);
+}
+
+.cibi-cstatus-box {
+    outline: 1px solid black;
+    /*background-color: #2db573;*/
+    background-color: rgba(222, 70, 57, 0.7);
+}
+
 /*************************************************
 ***************** MODEL WRAPPER ******************
 *************************************************/

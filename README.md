@@ -8,9 +8,9 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 #### 1.1 To Do (21 June, 2016):
 
-- [ ] @Oliver: make map header color white or grayish
+- [X] @Oliver: make map header color white or grayish
 - [ ] @Oliver: find 3-5 color palettes
-- [ ] @Oliver: make future map change on button click (2-10 buttons)
+- [X] @Oliver: make future map change on button click (2-10 buttons)
 - [ ] @Gio: add text (below) and Carousel (Bootstrap) to home page (Note: Carousel is for spotlight species)
 - [ ] @Gio: add 'home, about, team / people, search bar' to navbar
 
