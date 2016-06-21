@@ -53,7 +53,7 @@ body {
 }
 
 /*************************************************
-****************** SHOW MODEL ********************
+****************#** MAP PAGES ********************
 *************************************************/
 
 .col-md-12 {
@@ -65,12 +65,39 @@ body {
     background-color: rgba(238, 238, 238, 0.4);
 }
 
-.img-section {
+.stat-section {
     background-color: rgba(238, 238, 238, 0.9);
 }
 
-.stat-section {
+.img-section {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn-section {
+    background-color: rgba(238, 238, 238, 0.9);
+}
+
+#top-push-top {
+    height: 60px;
+}
+
+#top-push-bottom {
+    height: 60px;
+}
+
+.hloss-box {
+    outline: 1px solid black;
+    background-color: #eab71e;
+}
+
+.erisk-box {
+    outline: 1px solid black;
+    background-color: #2db573;
+}
+
+.cstatus-box {
+    outline: 1px solid black;
+    background-color: #2db573;
 }
 
 /*************************************************
