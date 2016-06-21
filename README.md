@@ -2,118 +2,21 @@
 
 Use of species distribution maps in a web application. Currently prototype development using web-based mapping packages and [D3js visualization and interactivity library](https://d3js.org/).
 
-<strong> This is GIO-DEV branch...</strong>
-
 <hr>
 
-## 1 Next Steps
+## 1 Overview
 
-#### 1.1 To Do (11 May, 2016):
+#### 1.1 To Do (21 June, 2016):
 
-- [ ] @Oliver: convert .gri to either .tif or .shp files
-- [ ] @Oliver: create web-based map with single sample map (from .gri / .grd file) with Leaflet
+- [ ] @Oliver: make map header color white or grayish
+- [ ] @Oliver: find 3-5 color palettes
+- [ ] @Oliver: make future map change on button click (2-10 buttons)
 - [ ] @Gio: add text (below) and Carousel (Bootstrap) to home page (Note: Carousel is for spotlight species)
 - [ ] @Gio: add 'home, about, team / people, search bar' to navbar
-- [ ] @Everyone: create web-based statistics / data display
-
-#### 1.2 Helpful HTML and web resources:
-
-Make font bold:
-
-```
-    <strong>Bold font</strong>
-    <p><strong>Bold first four words</strong> in the paragraph.</p>
-```
-
-Make font italicized:
-
-```
-    *this is italic*
-
-    And also this could be bold:
-
-    **wow another way to do bold**
-```
-
-And you can make code: <code>here is code</code>
-
-<br>
-
-Add this is the text to add to the <strong>home and / or about page</strong>:
-
-```
-    PEARL - the first global Parasite Extinction Assessment & Red List - compiles the preliminary work of an international team of researchers working to produce a mainstream data portal for parasite conservation. An estimated XX% of endoparasites are threatened globally with coextinction from their hosts, and an additional XX% are likely to be driven to extinction by climate change. PEARL compiles the conservation status, distribution and host associations of nearly 500 parasites from a pilot risk assessment study, and makes that data freely available to researchers, managers and the public at large. Preliminary expansions to the dataset are scheduled for 2018.
-```
-
-<br>
-
-And here are some thoughts from Colin and me:
-
-```
-    Colin:
-    Echinococcus granulosus will definitely be one of the things in the carousel and we'll figure out the rest as we go... general overview showing the team would be cool with a separate team bio giving the history of PERP and detailed bios on everyone, search bar would be awesome, all that sounds good
-
-    Attached is a GIF that I think would be really cool to have on the home page, showing the history of the dataset's creation (I saved these as we georeferenced!). It's not the coolest but it shows how long it took to put together?
-
-    (GIF is in public/img)
-
-    Oliver:
-    Leaflet (JS mobile-friendly mapping library) + D3js!
-
-    Leaflet: http://leafletjs.com/ Super lightweight - open source - mobile friendly - REALLY pretty (good UI / UX) - works well with my love D3js
-
-    Leaflet + D3js: https://bost.ocks.org/mike/leaflet/
-
-    Slightly more involved example: http://bl.ocks.org/d3noob/9267535
-```
-
-<strong>Note to Gio:</strong> I added the *about* and *team* pages but you have to fill them (i.e. they are blank).
-
-#### 1.3 Git How To (initialization):
-
-Refer to this for anything and everything related to command-line + git
-
-Install Shell Commands in Atom:
-```
-    # Click on the "Atom" icon next to the "Apple" symbol in your menu bar...
-    # Click on "Install Shell Commands"
-```
-Clone the repo (only for first time):
-```
-    git clone https://github.com/Thru-Echoes/pearl-geo.git
-```
-
-Go into repo dir:
-```
-    cd pearl-geo
-```
-
-Check status of repo:
-```
-    git status
-```
-
-What branch does it say you are on? You should be in your development branch! If not...
-
-Go into development branch:
-```
-    git checkout gio-dev
-```
-
-Make changes - do whatever - time to add + commit + push:
-```
-    git add FILE-YOU-CHANGED.js
-    git commit -m "Describe what you did"
-    git push origin gio-dev
-```
-
-<strong>Always push changes into your own development branch!</strong>
 
 <hr>
 
 ## 2 Project structure and design:
-
-Gio will only develop frontend components (at least at first).
 
 #### 2.1 Frontend (HTML + D3js)
 
@@ -179,7 +82,107 @@ Here is a [tutorial / webpage showing how to download all of this](http://blog.t
 
 <hr>
 
-## 4 References:
+## 4 Resources
+
+#### 4.1 Code References
+
+##### 4.1.1 Git How To (initialization):
+
+Refer to this for anything and everything related to command-line + git
+
+Install Shell Commands in Atom:
+```
+    # Click on the "Atom" icon next to the "Apple" symbol in your menu bar...
+    # Click on "Install Shell Commands"
+```
+Clone the repo (only for first time):
+```
+    git clone https://github.com/Thru-Echoes/pearl-geo.git
+```
+
+Go into repo dir:
+```
+    cd pearl-geo
+```
+
+Check status of repo:
+```
+    git status
+```
+
+What branch does it say you are on? You should be in your development branch! If not...
+
+Go into development branch:
+```
+    git checkout gio-dev
+```
+
+Make changes - do whatever - time to add + commit + push:
+```
+    git add FILE-YOU-CHANGED.js
+    git commit -m "Describe what you did"
+    git push origin gio-dev
+```
+
+<strong>Always push changes into your own development branch!</strong>
+
+<hr>
+
+##### 4.1.2 HTML / CSS / JS:
+
+Make font bold:
+
+```
+    <strong>Bold font</strong>
+    <p><strong>Bold first four words</strong> in the paragraph.</p>
+```
+
+Make font italicized:
+
+```
+    *this is italic*
+
+    And also this could be bold:
+
+    **wow another way to do bold**
+```
+
+And you can make code: <code>here is code</code>
+
+<br>
+
+Add this is the text to add to the <strong>home and / or about page</strong>:
+
+```
+    PEARL - the first global Parasite Extinction Assessment & Red List - compiles the preliminary work of an international team of researchers working to produce a mainstream data portal for parasite conservation. An estimated XX% of endoparasites are threatened globally with coextinction from their hosts, and an additional XX% are likely to be driven to extinction by climate change. PEARL compiles the conservation status, distribution and host associations of nearly 500 parasites from a pilot risk assessment study, and makes that data freely available to researchers, managers and the public at large. Preliminary expansions to the dataset are scheduled for 2018.
+```
+
+<br>
+
+And here are some thoughts from Colin and me:
+
+```
+    Colin:
+    Echinococcus granulosus will definitely be one of the things in the carousel and we'll figure out the rest as we go... general overview showing the team would be cool with a separate team bio giving the history of PERP and detailed bios on everyone, search bar would be awesome, all that sounds good
+
+    Attached is a GIF that I think would be really cool to have on the home page, showing the history of the dataset's creation (I saved these as we georeferenced!). It's not the coolest but it shows how long it took to put together?
+
+    (GIF is in public/img)
+
+    Oliver:
+    Leaflet (JS mobile-friendly mapping library) + D3js!
+
+    Leaflet: http://leafletjs.com/ Super lightweight - open source - mobile friendly - REALLY pretty (good UI / UX) - works well with my love D3js
+
+    Leaflet + D3js: https://bost.ocks.org/mike/leaflet/
+
+    Slightly more involved example: http://bl.ocks.org/d3noob/9267535
+```
+
+<strong>Note to Gio:</strong> I added the *about* and *team* pages but you have to fill them (i.e. they are blank).
+
+
+#### 4.2 References
 
 * [1. Step 1 Map Tutorial in D3js](https://github.com/emeeks/d3-carto-map/wiki/Let's-Make-a-d3.carto-map-1:-Loading-a-Data-Layer)
 
