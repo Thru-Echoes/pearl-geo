@@ -211,8 +211,8 @@
                                 <h2 style = "color: #fff">Future Distribution </h2>
                             </div>
                             <div class = "col-md-3">
-                                <h2 id = "cibi-45-header"><small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 4.5)</small></h2>
-                                <h2 id = "cibi-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 8.5)</small></h2>
+                                <h2 id = "cibi-45-header"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 4.5)</small></h2>
+                                <h2 id = "cibi-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 8.5)</small></h2>
                             </div>
                             <div class = "col-md-6"></div>
                         </div>
@@ -254,11 +254,11 @@
                         <div class = "row">
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg">Use Access 1.0 - RCP 4.5</button>
+                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>Use Access 1.0 - RCP 4.5</button>
                             </div>
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg">Use Access 1.0 - RCP 8.5</button>
+                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">Use Access 1.0 - RCP 8.5</button>
                             </div>
                         </div>
                     </div>
@@ -280,6 +280,8 @@
 <script>
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
+
+    $().button('toggle');
 })
 
 function checkErr() {

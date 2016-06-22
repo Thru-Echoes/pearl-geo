@@ -9,9 +9,13 @@ Use of species distribution maps in a web application. Currently prototype devel
 #### 1.1 To Do (21 June, 2016):
 
 - [ ] @Oliver: find 3-5 color palettes
+- [ ] @Oliver: put up parasite background
+- [ ] @Oliver: add Wayne to team page
 - [ ] @Gio: add text (below) and Carousel (Bootstrap) to home page (Note: Carousel is for spotlight species)
 - [ ] @Gio: need to figure out smooth transitions between future maps
 - [ ] @Gio: add 'home, about, team / people, search bar' to navbar
+- [ ] @Oliver_or_Gio: how to pull from database in back?
+- [ ] @Oliver_or_Gio: get 2 more species to create pages for from Colin  
 
 <hr>
 
