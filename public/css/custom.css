@@ -17,6 +17,20 @@ body {
 }
 
 /*************************************************
+********************* TEAM ***********************
+*************************************************/
+
+.img-responsive {
+    max-width: 90%;
+    margin-left: 6%;
+}
+
+.add-img {
+    max-width: 81%;
+    margin-left: 9%;
+}
+
+/*************************************************
 ********************* INDEX **********************
 *************************************************/
 
@@ -28,6 +42,14 @@ body {
     height: 120px;
 }
 
+#team-push-top {
+    height: 120px;
+}
+
+#team-push-bottom {
+    height: 60px;
+}
+
 #btn-push-top {
     height: 120px;
 }
@@ -37,7 +59,11 @@ body {
 }
 
 #footer-push {
-    height: 400px;
+    height: 650px;
+}
+
+#team-footer-push {
+    height: 120px;
 }
 
 .home-text {
@@ -70,7 +96,7 @@ body {
 }
 
 .img-section {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.85);
 }
 
 .btn-section {
@@ -78,12 +104,16 @@ body {
 }
 
 #top-push-top {
-    height: 60px;
+    height: 20px;
 }
 
 #top-push-bottom {
-    height: 60px;
+    height: 20px;
 }
+
+/*************************************************
+****************** MAPS: stats *******************
+*************************************************/
 
 .hloss-box {
     outline: 1px solid black;
@@ -103,23 +133,255 @@ body {
     background-color: rgba(45, 181, 115, 0.7);
 }
 
-
 .cibi-hloss-box {
     outline: 1px solid black;
     /*background-color: #eab71e;*/
     background-color: rgba(222, 70, 57, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .cibi-erisk-box {
     outline: 1px solid black;
     /*background-color: #2db573;*/
     background-color: rgba(222, 70, 57, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .cibi-cstatus-box {
     outline: 1px solid black;
     /*background-color: #2db573;*/
     background-color: rgba(222, 70, 57, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cibi-TSS-box {
+    outline: 1px solid black;
+    /*background-color: #eab71e;*/
+    background-color: rgba(45, 181, 115, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cibi-AUC-box {
+    outline: 1px solid black;
+    /*background-color: #2db573;*/
+    background-color: rgba(45, 181, 115, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cibi-points-box {
+    outline: 1px solid black;
+    /*background-color: #2db573;*/
+    background-color: rgba(234, 183, 30, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cibi-uncertain-box {
+    outline: 1px solid black;
+    /*background-color: #2db573;*/
+    background-color: rgba(45, 181, 115, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cibi-hloss-words {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.cibi-erisk-words {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.cibi-cstatus-words {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.cibi-TSS-words {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.cibi-AUC-words {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.cibi-points-words {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.cibi-uncertain-words {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 992px) {
+    .cibi-hloss-box {
+        width: 30.333%;
+    }
+
+    .cibi-erisk-box {
+        width: 30.333%;
+    }
+
+    .cibi-cstatus-box {
+        width: 30.333%;
+    }
+
+    .cibi-hloss-words {
+        width: 30.333%;
+    }
+
+    .cibi-erisk-words {
+        width: 30.333%;
+    }
+
+    .cibi-cstatus-words {
+        width: 30.333%;
+    }
+
+    .info1-alt {
+        display: none;
+    }
+
+    .cibi-TSS-box {
+        width: 22.5%;
+    }
+
+    .cibi-AUC-box {
+        width: 22.5%;
+    }
+
+    .cibi-points-box {
+        width: 22.5%;
+    }
+
+    .cibi-uncertain-box {
+        width: 22.5%;
+    }
+
+    .cibi-TSS-words {
+        width: 22.5%;
+    }
+
+    .cibi-AUC-words {
+        width: 22.5%;
+    }
+
+    .cibi-points-words {
+        width: 22.5%;
+    }
+
+    .cibi-uncertain-words {
+        width: 22.5%;
+    }
+
+    .info2-alt {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .info1-words1 {
+        display: none;
+    }
+
+    .info1-words2 {
+        display: none;
+    }
+
+    .info1-alt {
+        display: block;
+    }
+
+    .info2-words1 {
+        display: none;
+    }
+
+    .info2-words2 {
+        display: none;
+    }
+
+    .info2-alt {
+        display: block;
+    }
+}
+
+/*************************************************
+*************** MAPS: map layout *****************
+*************************************************/
+
+.curr-dist {
+
+}
+
+.future-dist {
+
 }
 
 /*************************************************
@@ -225,6 +487,10 @@ body {
     padding: 6px 21px;
 }
 
+#showTeamBtn {
+    padding: 10px 48px;
+}
+
 
 /*************************************************
 ****************** CONTACT FORM ******************
@@ -297,7 +563,7 @@ p {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.90);
 }
 
 .footer > .container {
@@ -306,7 +572,7 @@ p {
 }
 
 .container .footer-text {
-    margin: 20px 0;
+    margin: 22px 0;
 }
 
 .footer-text {
