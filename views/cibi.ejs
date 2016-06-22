@@ -205,13 +205,27 @@
                     </div>
                 </div>
                 <div class = "row">
-                    <div id = "cibi-45" class = "col-md-12 future-dist">
-                        <h2 id = "cibi-45-header" style = "color: #fff">Future Distribution <small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 4.5)</small></h2>
-                        <a href = "img/cibi/future45_cibi.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/cibi/future45_cibi.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a>
+                    <div class = "col-md-12 future-dist">
+                        <div class = "row">
+                            <div class = "col-md-3">
+                                <h2 style = "color: #fff">Future Distribution </h2>
+                            </div>
+                            <div class = "col-md-3">
+                                <h2 id = "cibi-45-header"><small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 4.5)</small></h2>
+                                <h2 id = "cibi-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 8.5)</small></h2>
+                            </div>
+                            <div class = "col-md-6"></div>
+                        </div>
+                        <a id = "cibi-45" href = "img/cibi/future45_cibi.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/cibi/future45_cibi.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a>
                     </div>
-                    <div id = "cibi-85" class = "col-md-12 future-dist" style = "display: none">
-                        <h2 id = "cibi-85-header" style = "color: #fff; display: none">Future Distribution <small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 8.5)</small></h2>
-                        <a href = "img/cibi/future85_cibi.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/cibi/future85_cibi.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
+                    <div class = "col-md-12 future-dist">
+                        <div class = "row">
+                            <div class = "col-md-3">
+                                <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                            </div>
+                            <div class = "col-md-6"></div>
+                        </div>
+                        <a id = "cibi-85" style = "display: none" href = "img/cibi/future85_cibi.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/cibi/future85_cibi.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
                     </div>
                 </div>
             </div>
@@ -299,37 +313,45 @@ $(function() {
     $showD1.click(function() {
 
         var is45 = $('#cibi-45');
+        var get85 = $('#cibi-85');
 
         if (is45[0].style.display === "none") {
             $('#cibi-85-header').toggle('slow', function() {
             });
 
-            $('#cibi-85').toggle('slow', function() {
+            /*$('#cibi-85').toggle('slow', function() {
             });
 
             $('#cibi-45').toggle('slow', function() {
-            });
+            });*/
 
             $('#cibi-45-header').toggle('slow', function() {
             });
+
+            get85[0].style.display = "none";
+            is45[0].style.display = "block";
         }
     });
 
     $showD2.click(function() {
         var is85 = $('#cibi-85');
+        var get45 = $('#cibi-45');
 
         if (is85[0].style.display === "none") {
             $('#cibi-45-header').toggle('slow', function() {
             });
 
-            $('#cibi-45').toggle('slow', function() {
+            /*$('#cibi-45').toggle('slow', function() {
             });
 
             $('#cibi-85').toggle('slow', function() {
-            });
+            });*/
 
             $('#cibi-85-header').toggle('slow', function() {
             });
+
+            get45[0].style.display = "none";
+            is85[0].style.display = "block";
         }
     });
 })

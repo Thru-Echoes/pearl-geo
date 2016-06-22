@@ -8,10 +8,9 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 #### 1.1 To Do (21 June, 2016):
 
-- [X] @Oliver: make map header color white or grayish
 - [ ] @Oliver: find 3-5 color palettes
-- [X] @Oliver: make future map change on button click (2-10 buttons)
 - [ ] @Gio: add text (below) and Carousel (Bootstrap) to home page (Note: Carousel is for spotlight species)
+- [ ] @Gio: need to figure out smooth transitions between future maps
 - [ ] @Gio: add 'home, about, team / people, search bar' to navbar
 
 <hr>
@@ -26,7 +25,7 @@ Use of species distribution maps in a web application. Currently prototype devel
 
 #### 2.2 Backend (NodeJS + express)
 
-* The <strong>bin/</strong> directory contains file <code>wwww</code> that starts up the server by executing the <code>app.js</code> file.  
+* The <strong>bin/</strong> directory contains file <code>wwww</code> that starts up the server by executing the <code>app.js</code> file.
 
 * The <strong>node_modules/</strong> directory contains all of the dependencies and packages being used for this project - this is organized / structured through the <code>package.json</code> file.
 
