@@ -7,12 +7,15 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 
 var routes = require('./routes/index');
-var sobbat = require('./routes/sobbat');
-var foobar = require('./routes/foobar');
+
+/* JS routes for middleware species pages */
+var abba = require('./routes/abba');
+var abha = require('./routes/abha');
 var cibi = require('./routes/cibi');
 var tave = require('./routes/tave');
 var ixsc = require('./routes/ixsc');
 var abco = require('./routes/abco');
+
 var mdMap = require('./routes/md-map');
 var about = require('./routes/about');
 var team = require('./routes/team');
@@ -41,12 +44,15 @@ var isType = function(obj) {
 module.exports = isType;
 
 app.use('/', routes);
-app.use('/sobbat', sobbat);
-app.use('/foobar', foobar);
+
+/* Tell middleware to send out species pages...*/
+app.use('/abba', abba);
+app.use('/abha', abha);
 app.use('/cibi', cibi);
 app.use('/tave', tave);
 app.use('/ixsc', ixsc);
 app.use('/abco', abco);
+
 app.use('/md-map', mdMap);
 app.use('/about', about);
 app.use('/team', team);
