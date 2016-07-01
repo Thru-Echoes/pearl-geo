@@ -223,6 +223,7 @@
                                 <h2 id = "ac-45-header"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 4.5)</small></h2>
                                 <h2 id = "ac-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 8.5)</small></h2>
                                 <h2 id = "he-26-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 2.6)</small></h2>
+                                <h2 id = "he-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 4.5)</small></h2>
                             </div>
                             <div class = "col-md-6"></div>
                         </div>
@@ -245,6 +246,15 @@
                             <div class = "col-md-6"></div>
                         </div>
                         <a id = "he-26" style = "display: none" href = "img/abba/he26_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he26_abba.png" class = "img-responsive" alt="Future Distribution He 8.5"></a>
+                    </div>
+                    <div class = "col-md-12 future-dist">
+                        <div class = "row">
+                            <div class = "col-md-3">
+                                <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                            </div>
+                            <div class = "col-md-6"></div>
+                        </div>
+                        <a id = "he-45" style = "display: none" href = "img/abba/he45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he45_abba.png" class = "img-responsive" alt="Future Distribution He 8.5"></a>
                     </div>
                 </div>
             </div>
@@ -292,38 +302,38 @@
                             </div>
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">Access 1.0 - RCP 8.5</button>
+                                <button id="showHe45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">HadGEM2-ES - RCP 4.5</button>
                             </div>
                         </div>
                         <div class = "row">
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>Access 1.0 - RCP 4.5</button>
+                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>HadGEM2-ES - RCP 6.0</button>
                             </div>
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">Access 1.0 - RCP 8.5</button>
+                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">HadGEM2-ES - RCP 8.5</button>
                             </div>
                         </div>
                         <hr>
                         <div class = "row">
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>Access 1.0 - RCP 4.5</button>
+                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>CCSM4 - RCP 2.6</button>
                             </div>
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">Access 1.0 - RCP 8.5</button>
+                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">CCSM4 - RCP 4.5</button>
                             </div>
                         </div>
                         <div class = "row">
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>Access 1.0 - RCP 4.5</button>
+                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>CCSM4 - RCP 6.0</button>
                             </div>
                             <div class = "col-md-6">
                                 <br>
-                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">Access 1.0 - RCP 8.5</button>
+                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">CCSM4 - RCP 8.5</button>
                             </div>
                         </div>
                     </div>
@@ -371,7 +381,7 @@ function checkErr() {
 var $showAc45 = $('#showAc45');
 var $showAc85 = $('#showAc85');
 var $showHe26 = $('#showHe26');
-
+var $showHe45 = $('#showHe45');
 /*
 var $showD3 = $('#showD3');
 var $showD4 = $('#showD4');
@@ -385,6 +395,7 @@ $(function() {
         var is45 = $('#ac-45');
         var get85 = $('#ac-85');
         var getHe26 = $('#he-26');
+        var getHe45 = $('#he-45');
 
         if (is45[0].style.display === "none") {
 
@@ -411,6 +422,18 @@ $(function() {
 
                 getHe26[0].style.display = "none";
                 is45[0].style.display = "block";
+
+            } else if (getHe45[0].style.display !== "none") {
+
+                // He 45 is showing
+                $('#he-45-header').toggle('slow', function() {
+                });
+
+                $('#ac-45-header').toggle('slow', function() {
+                });
+
+                getHe45[0].style.display = "none";
+                is45[0].style.display = "block"
 
             }
 
@@ -444,6 +467,7 @@ $(function() {
         var is85 = $('#ac-85');
         var get45 = $('#ac-45');
         var getHe26 = $('#he-26');
+        var getHe45 = $('#he-45');
 
         if (is85[0].style.display === "none") {
 
@@ -471,7 +495,19 @@ $(function() {
                 getHe26[0].style.display = "none";
                 is85[0].style.display = "block";
 
+            } else if (getHe45[0].style.display !== "none") {
+
+                // He 45 is showing
+                $('#he-45-header').toggle('slow', function() {
+                });
+
+                $('#ac-85-header').toggle('slow', function() {
+                });
+
+                getHe45[0].style.display = "none";
+                is85[0].style.display = "block";
             }
+
         }
 
     });
@@ -494,6 +530,7 @@ $(function() {
         var is26 = $('#he-26');
         var get45 = $('#ac-45');
         var get85 = $('#ac-85');
+        var getHe45 = $('#he-45');
 
         if (is26[0].style.display === "none") {
 
@@ -521,9 +558,62 @@ $(function() {
                 get85[0].style.display = "none";
                 is26[0].style.display = "block";
 
+            } else if (getHe45[0].style.display !== "none") {
+
+                // He 45 is showing
+                $('#he-45-header').toggle('slow', function() {
+                });
+
+                $('#he-26-header').toggle('slow', function() {
+                });
+
+                getHe45[0].style.display = "none";
+                is26[0].style.display = "block";
             }
+
+
         }
 
+    });
+
+    $showHe45.click(function() {
+
+        var is45 = $('#he-45');
+        var get45 = $('#ac-45');
+        var get85 = $('#ac-85');
+        var getHe26 = $('#he-26');
+
+        if (is45[0].style.display === "none") {
+
+            if (get45[0].style.display !== "none") {
+
+                // Ac 45 is showing
+                $('#ac-45-header').toggle('slow', function() {});
+                $('#he-45-header').toggle('slow', function() {});
+
+                get45[0].style.display = "none";
+                is45[0].style.display = "block";
+
+            } else if (get85[0].style.display !== "none") {
+
+                // Ac 85 is showing
+                $('#ac-85-header').toggle('slow', function() {});
+                $('#he-45-header').toggle('slow', function() {});
+
+                get85[0].style.display = "none";
+                is45[0].style.display = "block";
+
+            } else if (getHe26[0].style.display !== "none") {
+
+                // He 45 is showing
+                $('#he-26-header').toggle('slow', function() {});
+                $('#he-45-header').toggle('slow', function() {});
+
+                getHe26[0].style.display = "none";
+                is45[0].style.display = "block";
+            }
+
+        }
     });
 })
 </script>
