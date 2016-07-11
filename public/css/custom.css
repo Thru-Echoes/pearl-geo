@@ -25,7 +25,7 @@ body {
 }
 
 .species-subheader {
-    text-align: left; 
+    text-align: left;
 }
 
 /*************************************************
@@ -153,16 +153,55 @@ img:hover {
     background-color: rgba(45, 181, 115, 0.7);
 }
 
+.abba-cstatus-box {
+    outline: 1px solid black;
+    /*background-color: #2db573;*/
+    /*background-color: rgba(222, 70, 57, 0.7);*/
+    background-color: rgba(45, 181, 115, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .cstatus-box {
     outline: 1px solid black;
     /*background-color: #2db573;*/
     background-color: rgba(45, 181, 115, 0.7);
 }
 
+.abba-hloss-box {
+    outline: 1px solid black;
+    /*background-color: #eab71e;*/
+    /*background-color: rgba(222, 70, 57, 0.7);*/
+    background-color: rgba(45, 181, 115, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .cibi-hloss-box {
     outline: 1px solid black;
     /*background-color: #eab71e;*/
     background-color: rgba(222, 70, 57, 0.7);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.abba-erisk-box {
+    outline: 1px solid black;
+    /*background-color: #2db573;*/
+    /*background-color: rgba(222, 70, 57, 0.7);*/
+    background-color: rgba(45, 181, 115, 0.7);
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 10px;
@@ -311,11 +350,23 @@ img:hover {
         width: 30.333%;
     }
 
+    .abba-hloss-box {
+        width: 30.333%;
+    }
+
     .cibi-erisk-box {
         width: 30.333%;
     }
 
+    .abba-erisk-box {
+        width: 30.333%;
+    }
+
     .cibi-cstatus-box {
+        width: 30.333%;
+    }
+
+    .abba-cstatus-box {
         width: 30.333%;
     }
 
