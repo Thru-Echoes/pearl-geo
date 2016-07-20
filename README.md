@@ -2,6 +2,8 @@
 
 Use of species distribution maps in a web application. Currently prototype development using web-based mapping packages and [D3js visualization and interactivity library](https://d3js.org/).
 
+## IMG_SITE_OLIVES branch ready for development of PDFs as maps 
+
 <hr>
 
 ## 1 Overview
@@ -13,7 +15,7 @@ Use of species distribution maps in a web application. Currently prototype devel
 - [ ] @Gio: need to figure out smooth transitions between future maps
 - [ ] @Gio: add 'home, about, team / people, search bar' to navbar
 - [ ] @Oliver_or_Gio: how to pull from database in back?
-- [ ] @Oliver_or_Gio: get 2 more species to create pages for from Colin  
+- [ ] @Oliver_or_Gio: get 2 more species to create pages for from Colin
 
 <hr>
 
