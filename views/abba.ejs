@@ -25,6 +25,28 @@
     <script src = "js/bootstrap.min.js"></script>
     <!--script src = "js/getMeta.js"></script-->
 </head>
+<style>
+.content {
+   width: 100%;
+   margin: 0px auto;
+}
+
+.embed-container {
+   height: 0;
+   width: 100%;
+   padding-bottom: 56.25%; /* play with this until right */
+   overflow: hidden;
+   position: relative;
+}
+
+.embed-container iframe {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+</style>
 <body>
 
     <!-- NAVIGATION BAR -->
@@ -207,16 +229,18 @@
                         <a href = "img/cibi/future85_cibi.png"><img src = "img/cibi/future85_cibi.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
                     </div>
                 </div-->
-                <div class = "row">
+                <!--div class = "row">
                     <div class = "col-md-8">
                         <div class = "row">
                             <div class = "col-md-12 curr-dist">
                                 <h2 style = "color: #fff">Current Distribution</h2>
-                                <!--object data="img/abba/current_abba.pdf" width="700" height="400">
+                                <object data="img/abba/current_abba.pdf" width="700" height="400">
                                     alt : <a href = "img/abba/current_abba.pdf" data-toggle = "tooltip" data-placement = "top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests."><img src = "img/abba/current_abba.pdf" class = "img-responsive" alt="Current Distribution"></a>
-                                </object-->
+                                </object>
                                 <object data="img/abba/current_abba.pdf#zoom=100" width="700" height="400">
                                     alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
+                                </object>
+                                <object data="img/abba/current_abba.pdf" width = "700" height = "400">
                                 </object>
                             </div>
                         </div>
@@ -237,12 +261,10 @@
                                         <h2 id = "cc-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 4.5)</small></h2>
                                         <h2 id = "cc-60-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 6.0)</small></h2>
                                         <h2 id = "cc-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 8.5)</small></h2>
-
-
                                     </div>
                                     <div class = "col-md-2"></div>
                                 </div>
-                                <!--a id = "ac-45" href = "img/abba/ac45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac45_abba.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a-->
+                                <a id = "ac-45" href = "img/abba/ac45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac45_abba.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a>
                                 <object data="img/abba/tmp-future-pdfs/tmp_merge_abba.pdf#zoom=100" width="700" height="400">
                                     alt : <a href = "img/abba/tmp-future-pdfs/tmp_merge_abba.pdf">tmp_merge_abba.pdf</a>
                                 </object>
@@ -430,6 +452,145 @@
                             </div>
                         </div>
                     </div>
+                </div-->
+                <div class = "row">
+                    <div class = "col-md-12">
+                        <div class = "row">
+                            <div class = "col-md-1"></div>
+                            <div class = "col-md-10 curr-dist">
+                                <h2 style = "color: #fff">Current Distribution</h2>
+                                <!--object data="img/abba/current_abba.pdf" width="700" height="400">
+                                    alt : <a href = "img/abba/current_abba.pdf" data-toggle = "tooltip" data-placement = "top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests."><img src = "img/abba/current_abba.pdf" class = "img-responsive" alt="Current Distribution"></a>
+                                </object-->
+                                <!--object data="img/abba/current_abba.pdf#zoom=100" width="700" height="400">
+                                    alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
+                                </object-->
+                                <!--object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
+                                    alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
+                                </object-->
+                                <div class="content">
+                                    <object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
+                                        alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
+                                    </object>
+                                    <!--div class="embed-container">
+                                        <iframe src="img/abba/current_abba.pdf" frameborder="0"></iframe>
+                                    </div-->
+                                </div>
+                            </div>
+                            <div class = "col-md-1"></div>
+                        </div>
+                        <div class = "row">
+                            <div class = "col-md-1"></div>
+                            <div class = "col-md-10 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-6">
+                                        <h2 style = "color: #fff">Future Distribution </h2>
+                                    </div>
+                                    <div class = "col-md-4">
+                                        <h2 id = "ac-45-header"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 4.5)</small></h2>
+                                        <h2 id = "ac-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 8.5)</small></h2>
+                                        <h2 id = "he-26-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 2.6)</small></h2>
+                                        <h2 id = "he-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 4.5)</small></h2>
+                                        <h2 id = "he-60-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 6.0)</small></h2>
+                                        <h2 id = "he-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 8.5)</small></h2>
+                                        <h2 id = "cc-26-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 2.6)</small></h2>
+                                        <h2 id = "cc-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 4.5)</small></h2>
+                                        <h2 id = "cc-60-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 6.0)</small></h2>
+                                        <h2 id = "cc-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 8.5)</small></h2>
+                                    </div>
+                                    <div class = "col-md-2"></div>
+                                </div>
+                                <!--a id = "ac-45" href = "img/abba/ac45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac45_abba.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a-->
+                                <div id="future-content-id" class="content">
+                                    <object id="future-obj-id" data="img/abba/tmp-future-pdfs/tmp_merge_abba.pdf" width = "100%" height = "550px">
+                                        alt : <a href = "img/abba/tmp-future-pdfs/tmp_merge_abba.pdf">tmp_merge_abba.pdf</a>
+                                    </object>
+                                </div>
+                            </div>
+                            <div class = "col-md-1"></div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "ac-85" style = "display: none" href = "img/abba/ac85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac85_abba.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "he-26" style = "display: none" href = "img/abba/he26_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he26_abba.png" class = "img-responsive" alt="Future Distribution He 2.6"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "he-45" style = "display: none" href = "img/abba/he45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he45_abba.png" class = "img-responsive" alt="Future Distribution He 4.5"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "he-60" style = "display: none" href = "img/abba/he60_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he60_abba.png" class = "img-responsive" alt="Future Distribution He 6.0"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "he-85" style = "display: none" href = "img/abba/he85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he85_abba.png" class = "img-responsive" alt="Future Distribution He 8.5"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "cc-26" style = "display: none" href = "img/abba/cc26_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc26_abba.png" class = "img-responsive" alt="Future Distribution Cc 2.6"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "cc-45" style = "display: none" href = "img/abba/cc45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc45_abba.png" class = "img-responsive" alt="Future Distribution Cc 4.5"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "cc-60" style = "display: none" href = "img/abba/cc60_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc60_abba.png" class = "img-responsive" alt="Future Distribution Cc 6.0"></a>
+                            </div>
+                            <div class = "col-md-12 future-dist">
+                                <div class = "row">
+                                    <div class = "col-md-3">
+                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                                    </div>
+                                    <div class = "col-md-6"></div>
+                                </div>
+                                <a id = "cc-85" style = "display: none" href = "img/abba/cc85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc85_abba.png" class = "img-responsive" alt="Future Distribution Cc 8.5"></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -455,6 +616,7 @@
                     <div class = "col-md-1"></div>
                     <div class = "col-md-6">
                         <br>
+                        <button id="showPDFthing" class="btn btn-info showBtn fooBtn">Mess around with PDF</button>
                         <br>
                         <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5 or access 1.0 - RCP 8.5 for species <strong><i>Abbreviata bancrofti</i></strong>.</h3>
                         <br>
@@ -563,6 +725,8 @@ var $showCc45 = $('#showCc45');
 var $showCc60 = $('#showCc60');
 var $showCc85 = $('#showCc85');
 
+var $wowPDFstop = $('#showPDFthing');
+
 /*
 var $showD3 = $('#showD3');
 var $showD4 = $('#showD4');
@@ -570,6 +734,10 @@ var $showD5 = $('#showD5');
 var $showND = $('#showND');*/
 
 $(function() {
+
+    $wowPDFstop.click(function() {
+        debugger;
+    })
 
     $showAc45.click(function() {
 
