@@ -46,6 +46,19 @@
    top: 0;
    left: 0;
 }
+
+.tooltip-inner {
+    max-width: 400px;
+    padding: 15px 15px;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.tooltip {
+    font-size: 16px;
+}
 </style>
 <body>
 
@@ -100,12 +113,12 @@
                 <div class = "row info1-words1">
                     <div class = "col-md-4 cibi-hloss-box" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy.">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 175%">-82%</strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-disp1" style = "font-size: 175%">11%</strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-4 cibi-erisk-box" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on.">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 175%">-66%</strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-nodisp1" style = "font-size: 175%">-11%</strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-4 cibi-cstatus-box" data-toggle = "tooltip" data-placement = "top" title = "IUCN categories used in our assessment are least concern (LC), vulnerable (VU), endangered (EN), and critically endangered (CR).">
@@ -128,13 +141,13 @@
                 <div class = "row info1-alt">
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong style = "font-size: 175%">-82%</strong></h1>
+                        <h1 class = "cibi-hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong id = "future-disp2" style = "font-size: 175%">11%</strong></h1>
                         <br>
                         <h3 class = "cibi-hloss-words" style = "text-align: center">Net Change in Native Habitat</h3>
                     </div>
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong style = "font-size: 175%">-66%</strong></h1>
+                        <h1 class = "cibi-erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong id = "future-nodisp2" style = "font-size: 175%">-11%</strong></h1>
                         <br>
                         <h3 class = "cibi-erisk-words" style = "text-align: center">Net Change in Global Habitat</h3>
                     </div>
@@ -215,251 +228,13 @@
     <div class = "container-fluid img-section">
         <div class = "row">
         	<div class = "container">
-                <!--div class = "row">
-                    <div class = "col-md-6 curr-dist">
-                        <h2 style = "color: #fff">Current Distribution</h2>
-                        <a href = "img/cibi/current_cibi.png"><img src = "img/cibi/current_cibi.png" class = "img-responsive" alt="Current Distribution"></a>
-                    </div>
-                    <div id = "cibi-45" class = "col-md-6 future-dist">
-                        <h2 id = "cibi-45-header" style = "color: #fff">Future Distribution <small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 4.5)</small></h2>
-                        <a href = "img/cibi/future45_cibi.png"><img src = "img/cibi/future45_cibi.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a>
-                    </div>
-                    <div id = "cibi-85" class = "col-md-6 future-dist" style = "display: none">
-                        <h2 id = "cibi-85-header" style = "color: #fff; display: none">Future Distribution <small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 8.5)</small></h2>
-                        <a href = "img/cibi/future85_cibi.png"><img src = "img/cibi/future85_cibi.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
-                    </div>
-                </div-->
-                <!--div class = "row">
-                    <div class = "col-md-8">
-                        <div class = "row">
-                            <div class = "col-md-12 curr-dist">
-                                <h2 style = "color: #fff">Current Distribution</h2>
-                                <object data="img/abba/current_abba.pdf" width="700" height="400">
-                                    alt : <a href = "img/abba/current_abba.pdf" data-toggle = "tooltip" data-placement = "top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests."><img src = "img/abba/current_abba.pdf" class = "img-responsive" alt="Current Distribution"></a>
-                                </object>
-                                <object data="img/abba/current_abba.pdf#zoom=100" width="700" height="400">
-                                    alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
-                                </object>
-                                <object data="img/abba/current_abba.pdf" width = "700" height = "400">
-                                </object>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-6">
-                                        <h2 style = "color: #fff">Future Distribution </h2>
-                                    </div>
-                                    <div class = "col-md-4">
-                                        <h2 id = "ac-45-header"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 4.5)</small></h2>
-                                        <h2 id = "ac-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 8.5)</small></h2>
-                                        <h2 id = "he-26-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 2.6)</small></h2>
-                                        <h2 id = "he-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 4.5)</small></h2>
-                                        <h2 id = "he-60-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 6.0)</small></h2>
-                                        <h2 id = "he-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 8.5)</small></h2>
-                                        <h2 id = "cc-26-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 2.6)</small></h2>
-                                        <h2 id = "cc-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 4.5)</small></h2>
-                                        <h2 id = "cc-60-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 6.0)</small></h2>
-                                        <h2 id = "cc-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 8.5)</small></h2>
-                                    </div>
-                                    <div class = "col-md-2"></div>
-                                </div>
-                                <a id = "ac-45" href = "img/abba/ac45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac45_abba.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a>
-                                <object data="img/abba/tmp-future-pdfs/tmp_merge_abba.pdf#zoom=100" width="700" height="400">
-                                    alt : <a href = "img/abba/tmp-future-pdfs/tmp_merge_abba.pdf">tmp_merge_abba.pdf</a>
-                                </object>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "ac-85" style = "display: none" href = "img/abba/ac85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac85_abba.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-26" style = "display: none" href = "img/abba/he26_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he26_abba.png" class = "img-responsive" alt="Future Distribution He 2.6"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-45" style = "display: none" href = "img/abba/he45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he45_abba.png" class = "img-responsive" alt="Future Distribution He 4.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-60" style = "display: none" href = "img/abba/he60_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he60_abba.png" class = "img-responsive" alt="Future Distribution He 6.0"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-85" style = "display: none" href = "img/abba/he85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he85_abba.png" class = "img-responsive" alt="Future Distribution He 8.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-26" style = "display: none" href = "img/abba/cc26_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc26_abba.png" class = "img-responsive" alt="Future Distribution Cc 2.6"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-45" style = "display: none" href = "img/abba/cc45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc45_abba.png" class = "img-responsive" alt="Future Distribution Cc 4.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-60" style = "display: none" href = "img/abba/cc60_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc60_abba.png" class = "img-responsive" alt="Future Distribution Cc 6.0"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-85" style = "display: none" href = "img/abba/cc85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc85_abba.png" class = "img-responsive" alt="Future Distribution Cc 8.5"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class = "col-md-4">
-                        <div class = "row">
-                            <br>
-                            <br>
-                            <br>
-                            <br>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showAc45" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>Access 1.0 - RCP 4.5</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showAc85" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">Access 1.0 - RCP 8.5</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe26" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>X HadGEM2-ES - RCP 2.6</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe45" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">X HadGEM2-ES - RCP 4.5</button>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe60" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>X HadGEM2-ES - RCP 6.0</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe85" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">X HadGEM2-ES - RCP 8.5</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc26" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>CCSM4 - RCP 2.6</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc45" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">CCSM4 - RCP 4.5</button>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc60" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>CCSM4 - RCP 6.0</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc85" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">CCSM4 - RCP 8.5</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe26" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>X HadGEM2-ES - RCP 2.6</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe45" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">X HadGEM2-ES - RCP 4.5</button>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe60" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>X HadGEM2-ES - RCP 6.0</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe85" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">X HadGEM2-ES - RCP 8.5</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe26" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>HadGEM2-ES - RCP 2.6</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe45" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">HadGEM2-ES - RCP 4.5</button>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe60" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off" checked>HadGEM2-ES - RCP 6.0</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe85" class="btn btn-info showBtn fooBtn" type = "radio" name = "options" autocomplete = "off">HadGEM2-ES - RCP 8.5</button>
-                            </div>
-                        </div>
-                    </div>
-                </div-->
                 <div class = "row">
                     <div class = "col-md-12">
                         <div class = "row">
                             <div class = "col-md-1"></div>
-                            <div class = "col-md-10 curr-dist">
+                            <div class = "col-md-10 curr-dist" data-toggle = "tooltip" data-placement = "auto top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests.">
                                 <h2 style = "color: #fff">Current Distribution</h2>
-                                <iframe id = "pdfEx" src = "pdf/web/viewer.html?file=abba/current_abba.pdf" width = "100%" height = "600px"></iframe>
+                                <iframe id = "currPDF" src = "pdf/web/viewer.html?file=abba/current_abba.pdf" width = "100%" height = "550px" ></iframe>
                             </div>
                             <div class = "col-md-1"></div>
                         </div>
@@ -467,152 +242,30 @@
                         <br>
                         <div class = "row">
                             <div class = "col-md-1"></div>
-                            <div class = "col-md-10 curr-dist">
-                                <h2 style = "color: #fff">Future Distributions</h2>
-                                <iframe id = "pdfEx" src = "pdf/web/viewer.html?file=abba/abba_future_maps.pdf" width = "100%" height = "600px"></iframe>
+                            <div class = "col-md-10 future-dist" data-toggle = "tooltip" data-placement = "auto bottom" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios.">
+                                <div class = "row">
+                                    <div class = "col-sm-4 col-md-4">
+                                        <h2 style = "color: #fff">Future Distributions</h2>
+                                    </div>
+                                    <div class = "col-sm-4 col-md-6">
+                                        <div class = "row">
+                                            <div class = "col-sm-4 col-md-4">
+                                                <h2><small style = "color: rgba(238, 238, 238, 0.95);">Using model: </small></h2>
+                                            </div>
+                                            <div class = "col-sm-4 col-md-4">
+                                                <h2><small id = "future-headers" style = "color: rgba(238, 238, 238, 0.9);">AC-4.5</small></h2>
+                                            </div>
+                                            <div class = "col-sm-4 col-md-4"></div>
+                                        </div>
+                                    </div>
+                                    <div class = "col-sm-4 col-md-2"></div>
+                                </div>
+                                <iframe id = "futurePDF" src = "pdf/web/viewer.html?file=abba/abba_future_maps.pdf" width = "100%" height = "550px"></iframe>
                             </div>
                             <div class = "col-md-1"></div>
                         </div>
                         <br>
                         <br>
-                        <!--hr>
-                        <br>
-                        <br>
-                        <div class = "row">
-                            <div class = "col-md-1"></div>
-                            <div class = "col-md-10 curr-dist">
-                                <h2 style = "color: #fff">Current Distribution</h2>
-                                <-object data="img/abba/current_abba.pdf" width="700" height="400">
-                                    alt : <a href = "img/abba/current_abba.pdf" data-toggle = "tooltip" data-placement = "top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests."><img src = "img/abba/current_abba.pdf" class = "img-responsive" alt="Current Distribution"></a>
-                                </object>
-                                <-object data="img/abba/current_abba.pdf#zoom=100" width="700" height="400">
-                                    alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
-                                </object->
-                                <-object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
-                                    alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
-                                </object->
-                                <div class="content">
-                                    <object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
-                                        alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
-                                    </object>
-                                    <-div class="embed-container">
-                                        <iframe src="img/abba/current_abba.pdf" frameborder="0"></iframe>
-                                    </div->
-                                </div>
-                            </div>
-                            <div class = "col-md-1"></div>
-                        </div-->
-                        <!--div class = "row">
-                            <div class = "col-md-1"></div>
-                            <div class = "col-md-10 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-6">
-                                        <h2 style = "color: #fff">Future Distribution </h2>
-                                    </div>
-                                    <div class = "col-md-4">
-                                        <h2 id = "ac-45-header"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 4.5)</small></h2>
-                                        <h2 id = "ac-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 8.5)</small></h2>
-                                        <h2 id = "he-26-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 2.6)</small></h2>
-                                        <h2 id = "he-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 4.5)</small></h2>
-                                        <h2 id = "he-60-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 6.0)</small></h2>
-                                        <h2 id = "he-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(HadGEM2-ES 8.5)</small></h2>
-                                        <h2 id = "cc-26-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 2.6)</small></h2>
-                                        <h2 id = "cc-45-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 4.5)</small></h2>
-                                        <h2 id = "cc-60-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 6.0)</small></h2>
-                                        <h2 id = "cc-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(CCSM4 8.5)</small></h2>
-                                    </div>
-                                    <div class = "col-md-2"></div>
-                                </div>
-                                <-a id = "ac-45" href = "img/abba/ac45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac45_abba.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a->
-                                <div id="future-content-id" class="content">
-                                    <object id="future-obj-id" data="img/abba/tmp-future-pdfs/tmp_merge_abba.pdf" width = "100%" height = "550px">
-                                        alt : <a href = "img/abba/tmp-future-pdfs/tmp_merge_abba.pdf">tmp_merge_abba.pdf</a>
-                                    </object>
-                                </div>
-                            </div>
-                            <div class = "col-md-1"></div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "ac-85" style = "display: none" href = "img/abba/ac85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac85_abba.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-26" style = "display: none" href = "img/abba/he26_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he26_abba.png" class = "img-responsive" alt="Future Distribution He 2.6"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-45" style = "display: none" href = "img/abba/he45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he45_abba.png" class = "img-responsive" alt="Future Distribution He 4.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-60" style = "display: none" href = "img/abba/he60_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he60_abba.png" class = "img-responsive" alt="Future Distribution He 6.0"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "he-85" style = "display: none" href = "img/abba/he85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/he85_abba.png" class = "img-responsive" alt="Future Distribution He 8.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-26" style = "display: none" href = "img/abba/cc26_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc26_abba.png" class = "img-responsive" alt="Future Distribution Cc 2.6"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-45" style = "display: none" href = "img/abba/cc45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc45_abba.png" class = "img-responsive" alt="Future Distribution Cc 4.5"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-60" style = "display: none" href = "img/abba/cc60_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc60_abba.png" class = "img-responsive" alt="Future Distribution Cc 6.0"></a>
-                            </div>
-                            <div class = "col-md-12 future-dist">
-                                <div class = "row">
-                                    <div class = "col-md-3">
-                                        <h2 style = "color: #fff; display: none">Future Distribution</h2>
-                                    </div>
-                                    <div class = "col-md-6"></div>
-                                </div>
-                                <a id = "cc-85" style = "display: none" href = "img/abba/cc85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc85_abba.png" class = "img-responsive" alt="Future Distribution Cc 8.5"></a>
-                            </div>
-                        </div-->
                     </div>
                 </div>
             </div>
@@ -632,69 +285,27 @@
                         <br>
                         <h4 style = "text-align: center; color: inherit">Note: Access 1.0 comes from the Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia.</h4>
                         <br>
-                        <h4 style = "text-align: center; color: inherit">Note: Access 1.0 comes from the Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia.</h4>
+                        <h4 style = "text-align: center; color: inherit">Note: BC comes from...EXPLAIN HERE</h4>
                         <br>
-                        <h4 style = "text-align: center; color: inherit">Note: Access 1.0 comes from the Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia.</h4>
+                        <h4 style = "text-align: center; color: inherit">Note: CC comes from...EXPLAIN HERE</h4>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">Note: HD comes from...EXPLAIN HERE</h4>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">Note: HE comes from...EXPLAIN HERE</h4>
                     </div>
                     <div class = "col-md-1"></div>
                     <div class = "col-md-6">
-                        <br>
+                        <!--br>
                         <button id="showPDFthing" class="btn btn-info showBtn fooBtn">Mess around with PDF</button>
+                        <br-->
+                        <br>
                         <br>
                         <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5 or access 1.0 - RCP 8.5 for species <strong><i>Abbreviata bancrofti</i></strong>.</h3>
                         <br>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showAc45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>Access 1.0 - RCP 4.5</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showAc85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">Access 1.0 - RCP 8.5</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe26" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>HadGEM2-ES - RCP 2.6</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">HadGEM2-ES - RCP 4.5</button>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe60" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>HadGEM2-ES - RCP 6.0</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showHe85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">HadGEM2-ES - RCP 8.5</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc26" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>CCSM4 - RCP 2.6</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">CCSM4 - RCP 4.5</button>
-                            </div>
-                        </div>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc60" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>CCSM4 - RCP 6.0</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="showCc85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">CCSM4 - RCP 8.5</button>
-                            </div>
-                        </div>
+                        <br>
+                        <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5... <strong>EXPLAIN HERE</strong>.</h3>
+                        <br>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -736,1100 +347,104 @@ function checkErr() {
     return true;
 }
 
-/* Switch between Dispersal and No Dispersal */
-var $showAc45 = $('#showAc45');
-var $showAc85 = $('#showAc85');
-var $showHe26 = $('#showHe26');
-var $showHe45 = $('#showHe45');
-var $showHe60 = $('#showHe60');
-var $showHe85 = $('#showHe85');
-var $showCc26 = $('#showCc26');
-var $showCc45 = $('#showCc45');
-var $showCc60 = $('#showCc60');
-var $showCc85 = $('#showCc85');
+/******************************************************************
+*** List of all 18 future mapping types:
+*
+* ac45, ac85
+* bc26, bc45, bc60, bc85
+* cc26, cc45, cc60, cc85
+* hd26, hd45, hd60, hd85
+* he26, he45, he60, he85
+******************************************************************/
 
-var $wowPDFstop = $('#showPDFthing');
+var futureMaps = new Map();
+futureMaps.set("1", "AC-4.5");
+futureMaps.set("2", "AC-8.5");
+futureMaps.set("3", "BC-2.6");
+futureMaps.set("4", "BC-4.5");
+futureMaps.set("5", "BC-6.0");
+futureMaps.set("6", "BC-8.5");
+futureMaps.set("7", "CC-2.6");
+futureMaps.set("8", "CC-4.5");
+futureMaps.set("9", "CC-6.0");
+futureMaps.set("10", "CC-8.5");
+futureMaps.set("11", "HD-2.6");
+futureMaps.set("12", "HD-4.5");
+futureMaps.set("13", "HD-6.0");
+futureMaps.set("14", "HD-8.5");
+futureMaps.set("15", "HE-2.6");
+futureMaps.set("16", "HE-4.5");
+futureMaps.set("17", "HE-6.0");
+futureMaps.set("18", "HE-8.5");
 
-/*
-var $showD3 = $('#showD3');
-var $showD4 = $('#showD4');
-var $showD5 = $('#showD5');
-var $showND = $('#showND');*/
+var futureDisp = new Map();
+futureDisp.set("1", "11%");
+futureDisp.set("2", "22%");
+futureDisp.set("3", "33%");
+futureDisp.set("4", "44%");
+futureDisp.set("5", "55%");
+futureDisp.set("6", "66%");
+futureDisp.set("7", "77%");
+futureDisp.set("8", "88%");
+futureDisp.set("9", "91%");
+futureDisp.set("10", "92%");
+futureDisp.set("11", "93%");
+futureDisp.set("12", "94%");
+futureDisp.set("13", "95%");
+futureDisp.set("14", "96%");
+futureDisp.set("15", "97%");
+futureDisp.set("16", "98%");
+futureDisp.set("17", "99%");
+futureDisp.set("18", "100%");
+
+var futureNDisp = new Map();
+futureNDisp.set("1", "-11%");
+futureNDisp.set("2", "-22%");
+futureNDisp.set("3", "-33%");
+futureNDisp.set("4", "-44%");
+futureNDisp.set("5", "-55%");
+futureNDisp.set("6", "-66%");
+futureNDisp.set("7", "-77%");
+futureNDisp.set("8", "-88%");
+futureNDisp.set("9", "-91%");
+futureNDisp.set("10", "-92%");
+futureNDisp.set("11", "-93%");
+futureNDisp.set("12", "-94%");
+futureNDisp.set("13", "-95%");
+futureNDisp.set("14", "-96%");
+futureNDisp.set("15", "-97%");
+futureNDisp.set("16", "-98%");
+futureNDisp.set("17", "-99%");
+futureNDisp.set("18", "-100%");
+
+
+// ...var fooPage = which page in PDF currently on
+// ...if currPage == page1 then get the value of that object in map (key to value)
+var currPage = "1";
+var setMapHeader;
+// setMapHeader = futureMaps.get(currPage);
 
 $(function() {
 
-    $wowPDFstop.click(function() {
-        var thisIsGio = 6;
-        var fooEx = document.getElementById("pdfEx").contentWindow.document;
-        var page1Ex = fooEx.children[0].children[1].children[0].children[1].children[4].children[0].children[0];
-        var page2Ex = fooEx.children[0].children[1].children[0].children[1].children[4].children[0].children[1];
-        var page3Ex = fooEx.children[0].children[1].children[0].children[1].children[4].children[0].children[2];
-        debugger;
-    })
+    /*$('#showPDFthing').click(function() {
+        try {
+            debugger;
 
-    $showAc45.click(function() {
+            var innerPDFDoc = document.getElementById("futurePDF").contentWindow.document;
+            var pageIndxToolbar = innerPDFDoc.getElementById("toolbarViewerLeft");
+            var pageNum = innerPDFDoc.getElementById("pageNumber");
+            var currPageNum = pageNum.value;
+            var maxPageNum = pageNum.max;
 
-        var is45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
+            setMapHeader = futureMaps.get(currPageNum);
 
-        if (is45[0].style.display === "none") {
+            debugger;
+        } catch(err) {
 
-            if (get85[0].style.display !== "none") {
+            debugger;
 
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                get85[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 26 is showing
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getHe26[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-45-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getHe45[0].style.display = "none";
-                is45[0].style.display = "block"
-
-            } else if (getHe60[0].style.display !== "none") {
-
-                $('#he-60-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getHe60[0].style.display = "none";
-                is45[0].style.display = "block"
-
-            } else if (getHe85[0].style.display !== "none") {
-
-                $('#he-85-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getHe85[0].style.display = "none";
-                is45[0].style.display = "block"
-
-            } else if (getCc26[0].style.display !== "none") {
-
-                $('#cc-26-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getCc26[0].style.display = "none";
-                is45[0].style.display = "block"
-
-            } else if (getCc45[0].style.display !== "none") {
-
-                $('#cc-45-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getCc45[0].style.display = "none";
-                is45[0].style.display = "block"
-
-            } else if (getCc60[0].style.display !== "none") {
-
-                $('#cc-60-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getCc60[0].style.display = "none";
-                is45[0].style.display = "block"
-
-            } else if (getCc85[0].style.display !== "none") {
-
-                $('#cc-85-header').toggle('slow', function() {
-                });
-
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                getCc85[0].style.display = "none";
-                is45[0].style.display = "block"
-
-            }
-
-
-            /*$('#ac-85-header').toggle('slow', function() {
-            });
-
-            $('#ac-45-header').toggle('slow', function() {
-            });
-
-            get85[0].style.display = "none";
-            is45[0].style.display = "block";*/
         }
-    });
-
-    $showAc85.click(function() {
-        /*var is85 = $('#cibi-85');
-        var get45 = $('#cibi-45');
-
-        if (is85[0].style.display === "none") {
-            $('#cibi-45-header').toggle('slow', function() {
-            });
-
-            $('#cibi-85-header').toggle('slow', function() {
-            });
-
-            get45[0].style.display = "none";
-            is85[0].style.display = "block";
-        } */
-
-        var is85 = $('#ac-85');
-        var get45 = $('#ac-45');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
-
-        if (is85[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                get45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 26 is showing
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getHe26[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-45-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getHe45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-
-                $('#he-60-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getHe60[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-
-                $('#he-85-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getHe85[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-
-                $('#cc-26-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getCc26[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-
-                $('#cc-45-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getCc45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-
-                $('#cc-60-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getCc60[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-
-                $('#cc-85-header').toggle('slow', function() {
-                });
-
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                getCc85[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            }
-        }
-
-    });
-
-    $showHe26.click(function() {
-        /*var is85 = $('#cibi-85');
-        var get45 = $('#cibi-45');
-
-        if (is85[0].style.display === "none") {
-            $('#cibi-45-header').toggle('slow', function() {
-            });
-
-            $('#cibi-85-header').toggle('slow', function() {
-            });
-
-            get45[0].style.display = "none";
-            is85[0].style.display = "block";
-        } */
-
-        var is26 = $('#he-26');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
-
-        if (is26[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                get45[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                get85[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-45-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                getHe45[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-
-                $('#he-60-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                getHe60[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-
-                $('#he-85-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                getHe85[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-
-                $('#cc-26-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                getCc26[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-
-                $('#cc-45-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                getCc45[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-
-                $('#cc-60-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                getCc60[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-
-                $('#cc-85-header').toggle('slow', function() {
-                });
-
-                $('#he-26-header').toggle('slow', function() {
-                });
-
-                getCc85[0].style.display = "none";
-                is26[0].style.display = "block";
-            }
-        }
-
-    });
-
-    $showHe45.click(function() {
-
-        var is45 = $('#he-45');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
-
-        if (is45[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                get45[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                get85[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-26-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getHe26[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-                $('#he-60-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getHe60[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-                $('#he-85-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getHe85[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-                $('#cc-26-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getCc26[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-                $('#cc-45-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getCc45[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-                $('#cc-60-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getCc60[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-                $('#cc-85-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getCc85[0].style.display = "none";
-                is45[0].style.display = "block";
-            }
-        }
-    });
-
-    $showHe60.click(function() {
-
-        var is60 = $('#he-60');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
-
-        if (is60[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                get45[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                get85[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-26-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                getHe26[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                $('#he-45-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                getHe45[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-                $('#he-85-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                getHe85[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-                $('#cc-26-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                getCc26[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-                $('#cc-45-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                getCc45[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-                $('#cc-60-header').toggle('slow', function() {});
-                $('#he-60-header').toggle('slow', function() {});
-
-                getCc60[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-                $('#cc-85-header').toggle('slow', function() {});
-                $('#he-45-header').toggle('slow', function() {});
-
-                getCc85[0].style.display = "none";
-                is60[0].style.display = "block";
-            }
-        }
-    });
-
-    $showHe85.click(function() {
-
-        var is85 = $('#he-85');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
-
-        if (is85[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                get45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                get85[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-26-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                getHe26[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                $('#he-45-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                getHe45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-                $('#he-60-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                getHe60[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-                $('#cc-26-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                getCc26[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-                $('#cc-45-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                getCc45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-                $('#cc-60-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                getCc60[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-                $('#cc-85-header').toggle('slow', function() {});
-                $('#he-85-header').toggle('slow', function() {});
-
-                getCc85[0].style.display = "none";
-                is85[0].style.display = "block";
-            }
-        }
-    });
-
-    $showCc26.click(function() {
-
-        var is26 = $('#cc-26');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
-
-        if (is26[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                get45[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                get85[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-26-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                getHe26[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                $('#he-45-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                getHe45[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-                $('#he-60-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                getHe60[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-                $('#he-85-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                getHe85[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-                $('#cc-45-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                getCc45[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-                $('#cc-60-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                getCc60[0].style.display = "none";
-                is26[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-                $('#cc-85-header').toggle('slow', function() {});
-                $('#cc-26-header').toggle('slow', function() {});
-
-                getCc85[0].style.display = "none";
-                is26[0].style.display = "block";
-            }
-        }
-    });
-
-    $showCc45.click(function() {
-
-        var is45 = $('#cc-45');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc60 = $('#cc-60');
-        var getCc85 = $('#cc-85');
-
-        if (is45[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                get45[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                get85[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-26-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                getHe26[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                $('#he-45-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                getHe45[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-                $('#he-60-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                getHe60[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-                $('#he-85-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                getHe85[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-                $('#cc-26-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                getCc26[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-                $('#cc-60-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                getCc60[0].style.display = "none";
-                is45[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-                $('#cc-85-header').toggle('slow', function() {});
-                $('#cc-45-header').toggle('slow', function() {});
-
-                getCc85[0].style.display = "none";
-                is45[0].style.display = "block";
-            }
-        }
-    });
-
-    $showCc60.click(function() {
-
-        var is60 = $('#cc-60');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc85 = $('#cc-85');
-
-        if (is60[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                get45[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                get85[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-26-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                getHe26[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                $('#he-45-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                getHe45[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-                $('#he-60-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                getHe60[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-                $('#he-85-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                getHe85[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-                $('#cc-26-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                getCc26[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-                $('#cc-45-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                getCc45[0].style.display = "none";
-                is60[0].style.display = "block";
-
-            } else if (getCc85[0].style.display !== "none") {
-
-                $('#cc-85-header').toggle('slow', function() {});
-                $('#cc-60-header').toggle('slow', function() {});
-
-                getCc85[0].style.display = "none";
-                is60[0].style.display = "block";
-            }
-        }
-    });
-
-    $showCc85.click(function() {
-
-        var is85 = $('#cc-85');
-        var get45 = $('#ac-45');
-        var get85 = $('#ac-85');
-        var getHe26 = $('#he-26');
-        var getHe45 = $('#he-45');
-        var getHe60 = $('#he-60');
-        var getHe85 = $('#he-85');
-        var getCc26 = $('#cc-26');
-        var getCc45 = $('#cc-45');
-        var getCc60 = $('#cc-60');
-
-        if (is85[0].style.display === "none") {
-
-            if (get45[0].style.display !== "none") {
-
-                // Ac 45 is showing
-                $('#ac-45-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                get45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (get85[0].style.display !== "none") {
-
-                // Ac 85 is showing
-                $('#ac-85-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                get85[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe26[0].style.display !== "none") {
-
-                // He 45 is showing
-                $('#he-26-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                getHe26[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe45[0].style.display !== "none") {
-
-                $('#he-45-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                getHe45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe60[0].style.display !== "none") {
-
-                $('#he-60-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                getHe60[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getHe85[0].style.display !== "none") {
-
-                $('#he-85-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                getHe85[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc26[0].style.display !== "none") {
-
-                $('#cc-26-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                getCc26[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc45[0].style.display !== "none") {
-
-                $('#cc-45-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                getCc45[0].style.display = "none";
-                is85[0].style.display = "block";
-
-            } else if (getCc60[0].style.display !== "none") {
-
-                $('#cc-60-header').toggle('slow', function() {});
-                $('#cc-85-header').toggle('slow', function() {});
-
-                getCc60[0].style.display = "none";
-                is85[0].style.display = "block";
-            }
-        }
-    });
-
+    })*/
 })
 </script>
 </body>

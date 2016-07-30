@@ -6877,11 +6877,11 @@ var PDFViewerApplication = {
       self.metadata = metadata;
 
       // Provides some basic debug information
-      console.log('PDF ' + pdfDocument.fingerprint + ' [' +
+      /*console.log('PDF ' + pdfDocument.fingerprint + ' [' +
                   info.PDFFormatVersion + ' ' + (info.Producer || '-').trim() +
                   ' / ' + (info.Creator || '-').trim() + ']' +
                   ' (PDF.js: ' + (PDFJS.version || '-') +
-                  (!PDFJS.disableWebGL ? ' [WebGL]' : '') + ')');
+                  (!PDFJS.disableWebGL ? ' [WebGL]' : '') + ')');*/
 
       var pdfTitle;
       if (metadata && metadata.has('dc:title')) {
@@ -7667,6 +7667,33 @@ window.addEventListener('scalechange', function scalechange(evt) {
 window.addEventListener('pagechange', function pagechange(evt) {
   var page = evt.pageNumber;
   if (evt.previousPageNumber !== page) {
+
+    /********************************************************************
+    **** Change header of future maps on page change:
+    *
+    *   This is how to get value for page key:
+    *   >   var newPage = parent.futureMaps.get(JSON.stringify(page))
+    *   need to set the header now...
+    *   >   parent.$('#future-headers').innerHTML = JSON.parse(newPage);
+    *
+    ********************************************************************/
+
+    var newPage = parent.futureMaps.get(JSON.stringify(page));
+    var newDisp = parent.futureDisp.get(JSON.stringify(page));
+    var newNDisp = parent.futureNDisp.get(JSON.stringify(page));
+
+    parent.$('#future-headers')[0].innerHTML = newPage;
+    parent.$('#future-disp1')[0].innerHTML = newDisp;
+    parent.$('#future-disp2')[0].innerHTML = newDisp;
+    parent.$('#future-nodisp1')[0].innerHTML = newNDisp;
+    parent.$('#future-nodisp2')[0].innerHTML = newNDisp;
+
+    // ^ also changed the values of the data boxes (top of species page)
+
+    /********************************************************************
+    **** END OF OLIVES CHANGES: 29July
+    ********************************************************************/
+
     document.getElementById('pageNumber').value = page;
     if (PDFViewerApplication.sidebarOpen) {
       PDFViewerApplication.pdfThumbnailViewer.scrollThumbnailIntoView(page);
@@ -7997,4 +8024,3 @@ window.addEventListener('afterprint', function afterPrint(evt) {
     window.requestAnimationFrame(resolve);
   });
 })();
-
