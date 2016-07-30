@@ -458,46 +458,51 @@
                         <div class = "row">
                             <div class = "col-md-1"></div>
                             <div class = "col-md-10 curr-dist">
-                                <h2 style = "color: #fff">Sample PDF Viewer</h2>
-                                <!--div class="content">
-                                    <object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
-                                        alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
-                                    </object>
-                                </div-->
-                                <iframe id = "pdfEx" src = "pdf/web/viewer.html?file=abba/tmp_merge_abba.pdf" width = "100%" height = "600px"></iframe>
+                                <h2 style = "color: #fff">Current Distribution</h2>
+                                <iframe id = "pdfEx" src = "pdf/web/viewer.html?file=abba/current_abba.pdf" width = "100%" height = "600px"></iframe>
                             </div>
                             <div class = "col-md-1"></div>
                         </div>
                         <br>
                         <br>
-                        <hr>
+                        <div class = "row">
+                            <div class = "col-md-1"></div>
+                            <div class = "col-md-10 curr-dist">
+                                <h2 style = "color: #fff">Future Distributions</h2>
+                                <iframe id = "pdfEx" src = "pdf/web/viewer.html?file=abba/abba_future_maps.pdf" width = "100%" height = "600px"></iframe>
+                            </div>
+                            <div class = "col-md-1"></div>
+                        </div>
+                        <br>
+                        <br>
+                        <!--hr>
                         <br>
                         <br>
                         <div class = "row">
                             <div class = "col-md-1"></div>
                             <div class = "col-md-10 curr-dist">
                                 <h2 style = "color: #fff">Current Distribution</h2>
-                                <!--object data="img/abba/current_abba.pdf" width="700" height="400">
+                                <-object data="img/abba/current_abba.pdf" width="700" height="400">
                                     alt : <a href = "img/abba/current_abba.pdf" data-toggle = "tooltip" data-placement = "top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests."><img src = "img/abba/current_abba.pdf" class = "img-responsive" alt="Current Distribution"></a>
-                                </object-->
-                                <!--object data="img/abba/current_abba.pdf#zoom=100" width="700" height="400">
+                                </object>
+                                <-object data="img/abba/current_abba.pdf#zoom=100" width="700" height="400">
                                     alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
-                                </object-->
-                                <!--object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
+                                </object->
+                                <-object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
                                     alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
-                                </object-->
+                                </object->
                                 <div class="content">
                                     <object data="img/abba/current_abba.pdf" width = "100%" height = "600px">
                                         alt : <a href = "img/abba/current_abba.pdf">current_abba.pdf</a>
                                     </object>
-                                    <!--div class="embed-container">
+                                    <-div class="embed-container">
                                         <iframe src="img/abba/current_abba.pdf" frameborder="0"></iframe>
-                                    </div-->
+                                    </div->
                                 </div>
                             </div>
                             <div class = "col-md-1"></div>
-                        </div>
-                        <div class = "row">
+                        </div-->
+                        <!--div class = "row">
                             <div class = "col-md-1"></div>
                             <div class = "col-md-10 future-dist">
                                 <div class = "row">
@@ -518,7 +523,7 @@
                                     </div>
                                     <div class = "col-md-2"></div>
                                 </div>
-                                <!--a id = "ac-45" href = "img/abba/ac45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac45_abba.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a-->
+                                <-a id = "ac-45" href = "img/abba/ac45_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/ac45_abba.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a->
                                 <div id="future-content-id" class="content">
                                     <object id="future-obj-id" data="img/abba/tmp-future-pdfs/tmp_merge_abba.pdf" width = "100%" height = "550px">
                                         alt : <a href = "img/abba/tmp-future-pdfs/tmp_merge_abba.pdf">tmp_merge_abba.pdf</a>
@@ -607,7 +612,7 @@
                                 </div>
                                 <a id = "cc-85" style = "display: none" href = "img/abba/cc85_abba.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/abba/cc85_abba.png" class = "img-responsive" alt="Future Distribution Cc 8.5"></a>
                             </div>
-                        </div>
+                        </div-->
                     </div>
                 </div>
             </div>
@@ -754,7 +759,7 @@ var $showND = $('#showND');*/
 $(function() {
 
     $wowPDFstop.click(function() {
-        var thisIsGio = 6; 
+        var thisIsGio = 6;
         var fooEx = document.getElementById("pdfEx").contentWindow.document;
         var page1Ex = fooEx.children[0].children[1].children[0].children[1].children[4].children[0].children[0];
         var page2Ex = fooEx.children[0].children[1].children[0].children[1].children[4].children[0].children[1];
