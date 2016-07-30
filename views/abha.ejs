@@ -25,6 +25,41 @@
     <script src = "js/bootstrap.min.js"></script>
     <!--script src = "js/getMeta.js"></script-->
 </head>
+<style>
+.content {
+   width: 100%;
+   margin: 0px auto;
+}
+
+.embed-container {
+   height: 0;
+   width: 100%;
+   padding-bottom: 56.25%; /* play with this until right */
+   overflow: hidden;
+   position: relative;
+}
+
+.embed-container iframe {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.tooltip-inner {
+    max-width: 400px;
+    padding: 15px 15px;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.tooltip {
+    font-size: 16px;
+}
+</style>
 <body>
 
     <!-- NAVIGATION BAR -->
@@ -45,13 +80,13 @@
     				<ul class = "nav navbar-nav navbar-right">
     					<li><a href = "/">Home</a></li>
     					<li><a href = "/team">Team</a></li>
-                        <li class = "dropdown active"><a href = "#" class = "dropdown-toggle" data-toggle="dropdown">Species Pages<b class = "caret"></b></a>
+                        <li class = "active"><a href = "#">Species: <i><%= title %></i></a></li>
+                        <!--li class = "dropdown active"><a href = "#" class = "dropdown-toggle" data-toggle="dropdown">Species Pages<b class = "caret"></b></a>
                             <ul class = "dropdown-menu">
-                                <li class = "active"><a href = "#">Species: <i>Citellinema bifurcatum</i></a></li>
-                                <li><a href = "/abco">Species: <i>Abbreviata confusa</i></a></li>
-                                <li><a href = "/ixsc">Species: <i>Ixodes scapularis</i></a></li>
+                                <li><a href = "#">Species: <i><%= title %></i></a></li>
+                                <li><a href = "/abha">Species: <i>Abbreviata hastaspicula</i></a></li>
                             </ul>
-                        </li>
+                        </li-->
                     </ul>
     			</div>
     		</div>
@@ -64,19 +99,27 @@
         	<div class = "container">
                 <div class = "row">
                     <div class = "col-md-12">
-                        <h1 style = "text-align: left"><i style = "font-size: 150%">Citellinema bifurcatum</i></h1>
-                        <h3 style = "text-align: left">Nematoda</h3>
+                        <h1 style = "text-align: left"><i style = "font-size: 150%"><%= title %></i></h1>
                     </div>
+                </div>
+                <div class = "row">
+                    <div class = "col-md-2">
+                        <h3 style = "text-align: left"><strong><%= clade %></strong></h3>
+                    </div>
+                    <div class = "col-md-3">
+                        <h3 style = "text-align: left">Source: <strong><%= source %></strong></h3>
+                    </div>
+                    <div class = "col-md-7"></div>
                 </div>
                 <div class = "row info1-words1">
                     <div class = "col-md-4 cibi-hloss-box" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy.">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 175%">-82%</strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-disp1" style = "font-size: 175%">11%</strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-4 cibi-erisk-box" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on.">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 175%">-66%</strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-nodisp1" style = "font-size: 175%">-11%</strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-4 cibi-cstatus-box" data-toggle = "tooltip" data-placement = "top" title = "IUCN categories used in our assessment are least concern (LC), vulnerable (VU), endangered (EN), and critically endangered (CR).">
@@ -99,13 +142,13 @@
                 <div class = "row info1-alt">
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong style = "font-size: 175%">-82%</strong></h1>
+                        <h1 class = "cibi-hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong id = "future-disp2" style = "font-size: 175%">11%</strong></h1>
                         <br>
                         <h3 class = "cibi-hloss-words" style = "text-align: center">Net Change in Native Habitat</h3>
                     </div>
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong style = "font-size: 175%">-66%</strong></h1>
+                        <h1 class = "cibi-erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong id = "future-nodisp2" style = "font-size: 175%">-11%</strong></h1>
                         <br>
                         <h3 class = "cibi-erisk-words" style = "text-align: center">Net Change in Global Habitat</h3>
                     </div>
@@ -186,48 +229,44 @@
     <div class = "container-fluid img-section">
         <div class = "row">
         	<div class = "container">
-                <!--div class = "row">
-                    <div class = "col-md-6 curr-dist">
-                        <h2 style = "color: #fff">Current Distribution</h2>
-                        <a href = "img/cibi/current_cibi.png"><img src = "img/cibi/current_cibi.png" class = "img-responsive" alt="Current Distribution"></a>
-                    </div>
-                    <div id = "cibi-45" class = "col-md-6 future-dist">
-                        <h2 id = "cibi-45-header" style = "color: #fff">Future Distribution <small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 4.5)</small></h2>
-                        <a href = "img/cibi/future45_cibi.png"><img src = "img/cibi/future45_cibi.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a>
-                    </div>
-                    <div id = "cibi-85" class = "col-md-6 future-dist" style = "display: none">
-                        <h2 id = "cibi-85-header" style = "color: #fff; display: none">Future Distribution <small style = "color: rgba(238, 238, 238, 0.8);">(ACCESS 8.5)</small></h2>
-                        <a href = "img/cibi/future85_cibi.png"><img src = "img/cibi/future85_cibi.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
-                    </div>
-                </div-->
                 <div class = "row">
-                    <div class = "col-md-12 curr-dist">
-                        <h2 style = "color: #fff">Current Distribution</h2>
-                        <a href = "img/cibi/current_cibi.png" data-toggle = "tooltip" data-placement = "top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests."><img src = "img/cibi/current_cibi.png" class = "img-responsive" alt="Current Distribution"></a>
-                    </div>
-                </div>
-                <div class = "row">
-                    <div class = "col-md-12 future-dist">
+                    <div class = "col-md-12">
                         <div class = "row">
-                            <div class = "col-md-3">
-                                <h2 style = "color: #fff">Future Distribution </h2>
+                            <div class = "col-md-1"></div>
+                            <div class = "col-md-10 curr-dist" data-toggle = "tooltip" data-placement = "auto top" title = "Over current range map: Ecological niche models are built from occurrence data and bioclimatic variables, using an ensemble of general linear models, artificial neural networks, maximum entropy and random forests.">
+                                <h2 style = "color: #fff">Current Distribution</h2>
+                                <iframe id = "currPDF" src = "pdf/web/viewer.html?file=abha/ABBREVIATA HASTASPICULA current.pdf" width = "100%" height = "550px" ></iframe>
                             </div>
-                            <div class = "col-md-3">
-                                <h2 id = "cibi-45-header"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 4.5)</small></h2>
-                                <h2 id = "cibi-85-header" style = "display: none"><small style = "color: rgba(238, 238, 238, 0.9);">(ACCESS 8.5)</small></h2>
-                            </div>
-                            <div class = "col-md-6"></div>
+                            <div class = "col-md-1"></div>
                         </div>
-                        <a id = "cibi-45" href = "img/cibi/future45_cibi.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/cibi/future45_cibi.png" class = "img-responsive" alt="Future Distribution Access 4.5"></a>
-                    </div>
-                    <div class = "col-md-12 future-dist">
+                        <br>
+                        <br>
                         <div class = "row">
-                            <div class = "col-md-3">
-                                <h2 style = "color: #fff; display: none">Future Distribution</h2>
+                            <div class = "col-md-1"></div>
+                            <div class = "col-md-10 future-dist" data-toggle = "tooltip" data-placement = "auto bottom" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios.">
+                                <div class = "row">
+                                    <div class = "col-sm-4 col-md-4">
+                                        <h2 style = "color: #fff">Future Distributions</h2>
+                                    </div>
+                                    <div class = "col-sm-4 col-md-6">
+                                        <div class = "row">
+                                            <div class = "col-sm-4 col-md-4">
+                                                <h2><small style = "color: rgba(238, 238, 238, 0.95);">Using model: </small></h2>
+                                            </div>
+                                            <div class = "col-sm-4 col-md-4">
+                                                <h2><small id = "future-headers" style = "color: rgba(238, 238, 238, 0.9);">AC-4.5</small></h2>
+                                            </div>
+                                            <div class = "col-sm-4 col-md-4"></div>
+                                        </div>
+                                    </div>
+                                    <div class = "col-sm-4 col-md-2"></div>
+                                </div>
+                                <iframe id = "futurePDF" src = "pdf/web/viewer.html?file=abha/future-maps/ABBREVIATA HASTASPICULA ac45.pdf" width = "100%" height = "550px"></iframe>
                             </div>
-                            <div class = "col-md-6"></div>
+                            <div class = "col-md-1"></div>
                         </div>
-                        <a id = "cibi-85" style = "display: none" href = "img/cibi/future85_cibi.png" data-toggle = "tooltip" data-placement = "top" title = "Over future range map: Future forecasts are calculated for a particular combination of global climate model and representative concentration pathway, and summary statistics are averaged across climate scenarios."><img src = "img/cibi/future85_cibi.png" class = "img-responsive" alt="Future Distribution Access 8.5"></a>
+                        <br>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -246,23 +285,28 @@
                         <h4 style = "text-align: center; color: inherit">The maps above represent <strong>Global Climate Models (GCM)</strong> using <strong>Representative Concentration Pathways (RCP)</strong> in order to account for the complex relationships between climate-change, anthropogenic effects, and species distributions.</h4>
                         <br>
                         <h4 style = "text-align: center; color: inherit">Note: Access 1.0 comes from the Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia.</h4>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">Note: BC comes from...EXPLAIN HERE</h4>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">Note: CC comes from...EXPLAIN HERE</h4>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">Note: HD comes from...EXPLAIN HERE</h4>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">Note: HE comes from...EXPLAIN HERE</h4>
                     </div>
                     <div class = "col-md-1"></div>
                     <div class = "col-md-6">
+                        <!--br>
+                        <button id="showPDFthing" class="btn btn-info showBtn fooBtn">Mess around with PDF</button>
+                        <br-->
                         <br>
                         <br>
-                        <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5 or access 1.0 - RCP 8.5 for species <strong><i>Citellinema bifurcatum</i></strong>.</h3>
+                        <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5 or access 1.0 - RCP 8.5 for species <strong><i>Abbreviata bancrofti</i></strong>.</h3>
                         <br>
-                        <div class = "row">
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="show45" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off" checked>Use Access 1.0 - RCP 4.5</button>
-                            </div>
-                            <div class = "col-md-6">
-                                <br>
-                                <button id="show85" class="btn btn-info showBtn fooBtn btn-lg" type = "radio" name = "options" autocomplete = "off">Use Access 1.0 - RCP 8.5</button>
-                            </div>
-                        </div>
+                        <br>
+                        <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5... <strong>EXPLAIN HERE</strong>.</h3>
+                        <br>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -289,7 +333,7 @@ $(function () {
 function checkErr() {
 
     $.ajax({
-        url: '/cibi',
+        url: '/abba',
         type: 'POST',
         cache: false,
         data: {},
@@ -304,60 +348,104 @@ function checkErr() {
     return true;
 }
 
-/* Switch between Dispersal and No Dispersal */
-var $showD1 = $('#show45');
-var $showD2 = $('#show85');
-var $showD3 = $('#showD3');
-var $showD4 = $('#showD4');
-var $showD5 = $('#showD5');
-var $showND = $('#showND');
+/******************************************************************
+*** List of all 18 future mapping types:
+*
+* ac45, ac85
+* bc26, bc45, bc60, bc85
+* cc26, cc45, cc60, cc85
+* hd26, hd45, hd60, hd85
+* he26, he45, he60, he85
+******************************************************************/
+
+var futureMaps = new Map();
+futureMaps.set("1", "AC-4.5");
+futureMaps.set("2", "AC-8.5");
+futureMaps.set("3", "BC-2.6");
+futureMaps.set("4", "BC-4.5");
+futureMaps.set("5", "BC-6.0");
+futureMaps.set("6", "BC-8.5");
+futureMaps.set("7", "CC-2.6");
+futureMaps.set("8", "CC-4.5");
+futureMaps.set("9", "CC-6.0");
+futureMaps.set("10", "CC-8.5");
+futureMaps.set("11", "HD-2.6");
+futureMaps.set("12", "HD-4.5");
+futureMaps.set("13", "HD-6.0");
+futureMaps.set("14", "HD-8.5");
+futureMaps.set("15", "HE-2.6");
+futureMaps.set("16", "HE-4.5");
+futureMaps.set("17", "HE-6.0");
+futureMaps.set("18", "HE-8.5");
+
+var futureDisp = new Map();
+futureDisp.set("1", "11%");
+futureDisp.set("2", "22%");
+futureDisp.set("3", "33%");
+futureDisp.set("4", "44%");
+futureDisp.set("5", "55%");
+futureDisp.set("6", "66%");
+futureDisp.set("7", "77%");
+futureDisp.set("8", "88%");
+futureDisp.set("9", "91%");
+futureDisp.set("10", "92%");
+futureDisp.set("11", "93%");
+futureDisp.set("12", "94%");
+futureDisp.set("13", "95%");
+futureDisp.set("14", "96%");
+futureDisp.set("15", "97%");
+futureDisp.set("16", "98%");
+futureDisp.set("17", "99%");
+futureDisp.set("18", "100%");
+
+var futureNDisp = new Map();
+futureNDisp.set("1", "-11%");
+futureNDisp.set("2", "-22%");
+futureNDisp.set("3", "-33%");
+futureNDisp.set("4", "-44%");
+futureNDisp.set("5", "-55%");
+futureNDisp.set("6", "-66%");
+futureNDisp.set("7", "-77%");
+futureNDisp.set("8", "-88%");
+futureNDisp.set("9", "-91%");
+futureNDisp.set("10", "-92%");
+futureNDisp.set("11", "-93%");
+futureNDisp.set("12", "-94%");
+futureNDisp.set("13", "-95%");
+futureNDisp.set("14", "-96%");
+futureNDisp.set("15", "-97%");
+futureNDisp.set("16", "-98%");
+futureNDisp.set("17", "-99%");
+futureNDisp.set("18", "-100%");
+
+
+// ...var fooPage = which page in PDF currently on
+// ...if currPage == page1 then get the value of that object in map (key to value)
+var currPage = "1";
+var setMapHeader;
+// setMapHeader = futureMaps.get(currPage);
 
 $(function() {
 
-    $showD1.click(function() {
+    /*$('#showPDFthing').click(function() {
+        try {
+            debugger;
 
-        var is45 = $('#cibi-45');
-        var get85 = $('#cibi-85');
+            var innerPDFDoc = document.getElementById("futurePDF").contentWindow.document;
+            var pageIndxToolbar = innerPDFDoc.getElementById("toolbarViewerLeft");
+            var pageNum = innerPDFDoc.getElementById("pageNumber");
+            var currPageNum = pageNum.value;
+            var maxPageNum = pageNum.max;
 
-        if (is45[0].style.display === "none") {
-            $('#cibi-85-header').toggle('slow', function() {
-            });
+            setMapHeader = futureMaps.get(currPageNum);
 
-            /*$('#cibi-85').toggle('slow', function() {
-            });
+            debugger;
+        } catch(err) {
 
-            $('#cibi-45').toggle('slow', function() {
-            });*/
+            debugger;
 
-            $('#cibi-45-header').toggle('slow', function() {
-            });
-
-            get85[0].style.display = "none";
-            is45[0].style.display = "block";
         }
-    });
-
-    $showD2.click(function() {
-        var is85 = $('#cibi-85');
-        var get45 = $('#cibi-45');
-
-        if (is85[0].style.display === "none") {
-            $('#cibi-45-header').toggle('slow', function() {
-            });
-
-            /*$('#cibi-45').toggle('slow', function() {
-            });
-
-            $('#cibi-85').toggle('slow', function() {
-            });*/
-
-            $('#cibi-85-header').toggle('slow', function() {
-            });
-
-            get45[0].style.display = "none";
-            is85[0].style.display = "block";
-        }
-    });
+    })*/
 })
 </script>
 </body>

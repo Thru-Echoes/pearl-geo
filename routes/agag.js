@@ -1,21 +1,21 @@
 var express = require('express');
-var routerAbha = express.Router();
+var routerAgag = express.Router();
 var bodyParser = require('body-parser');
 var app = require('../app');
 
-routerAbha.get('/', function(req, res) {
+routerAgag.get('/', function(req, res) {
     var renderObj = {
-        title: "Abbreviata hastaspicula",
+        title: "Aglenchus agricola",
         clade: "Nematoda",
         source: "GBIF",
     };
-    res.render('abha', renderObj);
+    res.render('Agag', renderObj);
 });
 
 // Grab data from document
-routerAbha.post('/', function(req, res) {
+routerAgag.post('/', function(req, res) {
 
     res.end();
 });
 
-module.exports = routerAbha;
+module.exports = routerAgag;

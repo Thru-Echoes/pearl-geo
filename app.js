@@ -11,6 +11,15 @@ var routes = require('./routes/index');
 /* JS routes for middleware species pages */
 var abba = require('./routes/abba');
 var abha = require('./routes/abha');
+var agag = require('./routes/agag');
+
+
+
+// Add species above here and then scroll down
+// to add page reference
+/*******************************************/
+
+
 var cibi = require('./routes/cibi');
 var tave = require('./routes/tave');
 var ixsc = require('./routes/ixsc');
@@ -48,6 +57,13 @@ app.use('/', routes);
 /* Tell middleware to send out species pages...*/
 app.use('/abba', abba);
 app.use('/abha', abha);
+app.use('/agag', agag);
+
+
+
+// Add page reference here (step 2)
+/*******************************************/
+
 app.use('/cibi', cibi);
 app.use('/tave', tave);
 app.use('/ixsc', ixsc);
