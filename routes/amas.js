@@ -5,7 +5,7 @@ var app = require('../app');
 
 routerAmas.get('/', function(req, res) {
     var renderObj = {
-        title: "Amblyomma Astrion",
+        title: "Amblyomma astrion",
         clade: "Ixodida",
         source: "Cumming GBIF",
     };

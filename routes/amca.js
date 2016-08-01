@@ -5,7 +5,7 @@ var app = require('../app');
 
 routerAmca.get('/', function(req, res) {
     var renderObj = {
-        title: "Amblyomma Cajennense",
+        title: "Amblyomma cajennense",
         clade: "Ixodida",
         source: "GBIF USNPC",
     };

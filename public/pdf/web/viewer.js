@@ -7678,15 +7678,21 @@ window.addEventListener('pagechange', function pagechange(evt) {
     *
     ********************************************************************/
 
-    var newPage = parent.futureMaps.get(JSON.stringify(page));
-    var newDisp = parent.futureDisp.get(JSON.stringify(page));
-    var newNDisp = parent.futureNDisp.get(JSON.stringify(page));
+    try {
+        var newPage = parent.futureMaps.get(JSON.stringify(page));
+        /*var newDisp = parent.futureDisp.get(JSON.stringify(page));
+        var newNDisp = parent.futureNDisp.get(JSON.stringify(page));*/
+        var newDisp = parent.futureDisp[page - 1];
+        var newNDisp = parent.futureNDisp[page - 1];
 
-    parent.$('#future-headers')[0].innerHTML = newPage;
-    parent.$('#future-disp1')[0].innerHTML = newDisp;
-    parent.$('#future-disp2')[0].innerHTML = newDisp;
-    parent.$('#future-nodisp1')[0].innerHTML = newNDisp;
-    parent.$('#future-nodisp2')[0].innerHTML = newNDisp;
+        parent.$('#future-headers')[0].innerHTML = newPage;
+        parent.$('#future-disp1')[0].innerHTML = newDisp;
+        parent.$('#future-disp2')[0].innerHTML = newDisp;
+        parent.$('#future-nodisp1')[0].innerHTML = newNDisp;
+        parent.$('#future-nodisp2')[0].innerHTML = newNDisp;
+    } catch(err) {
+        debugger;
+    }
 
     // ^ also changed the values of the data boxes (top of species page)
 

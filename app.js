@@ -62,9 +62,9 @@ var tave = require('./routes/tave');
 var ixsc = require('./routes/ixsc');
 var abco = require('./routes/abco');
 
-var mdMap = require('./routes/md-map');
 var about = require('./routes/about');
 var team = require('./routes/team');
+var atlas = require('./routes/atlas');
 
 var app = express();
 //var routes = require('./routes/index');
@@ -142,9 +142,9 @@ app.use('/tave', tave);
 app.use('/ixsc', ixsc);
 app.use('/abco', abco);
 
-app.use('/md-map', mdMap);
 app.use('/about', about);
 app.use('/team', team);
+app.use('/atlas', atlas);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

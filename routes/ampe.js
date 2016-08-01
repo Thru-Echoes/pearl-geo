@@ -5,7 +5,7 @@ var app = require('../app');
 
 routerAmpe.get('/', function(req, res) {
     var renderObj = {
-        title: "Amalaraeus Penicilliger",
+        title: "Amalaraeus penicilliger",
         clade: "Siphonaptera",
         source: "GBIF",
     };
