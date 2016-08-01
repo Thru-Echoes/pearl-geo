@@ -8,7 +8,7 @@ var fs = require('fs');
 
 var routes = require('./routes/index');
 
-/* JS routes for middleware species pages */
+/* JS routes for middleware species pages (step 1) */
 var abba = require('./routes/abba');
 var abha = require('./routes/abha');
 var agag = require('./routes/agag');
@@ -53,7 +53,7 @@ var angr = require('./routes/angr');
 
 
 // Add species above here and then scroll down
-// to add page reference
+// to add page reference (step 1 of 2)
 /*******************************************/
 
 

@@ -5,7 +5,7 @@ var app = require('../app');
 
 routerAmam.get('/', function(req, res) {
     var renderObj = {
-        title: "Amblyomma Americanum",
+        title: "Amblyomma americanum",
         clade: "Ixodida",
         source: "GBIF USNPC",
     };
