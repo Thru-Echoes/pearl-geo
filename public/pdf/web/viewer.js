@@ -7686,10 +7686,10 @@ window.addEventListener('pagechange', function pagechange(evt) {
         var newNDisp = parent.futureNDisp[page - 1];
 
         parent.$('#future-headers')[0].innerHTML = newPage;
-        parent.$('#future-disp1')[0].innerHTML = newDisp;
-        parent.$('#future-disp2')[0].innerHTML = newDisp;
-        parent.$('#future-nodisp1')[0].innerHTML = newNDisp;
-        parent.$('#future-nodisp2')[0].innerHTML = newNDisp;
+        parent.$('#future-disp1')[0].innerHTML = newDisp + '%';
+        parent.$('#future-disp2')[0].innerHTML = newDisp + '%';
+        parent.$('#future-nodisp1')[0].innerHTML = newNDisp + '%';
+        parent.$('#future-nodisp2')[0].innerHTML = newNDisp + '%';
     } catch(err) {
         debugger;
     }

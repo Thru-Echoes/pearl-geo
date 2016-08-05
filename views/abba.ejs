@@ -24,6 +24,9 @@
     <script src = "js/jquery-2.2.3.js"></script>
     <script src = "js/bootstrap.min.js"></script>
     <!--script src = "js/getMeta.js"></script-->
+
+    <!-- Papa Parse for CSV parsing (importing) -->
+    <script type="text/javascript" src="js/papaparse.js"></script>
 </head>
 <style>
 .content {
@@ -61,8 +64,55 @@
 }
 </style>
 <script>
-    var futureDisp = <%- JSON.stringify(futureDisp) %>;
-    var futureNDisp = <%- JSON.stringify(futureNDisp) %>;
+    /* Round and fix to 2 decimal places */
+    function round2Fixed(value) {
+        value = +value;
+
+        if (isNaN(value)) {
+            return NaN;
+        }
+
+        // Shift
+        value = value.toString().split('e');
+        value = Math.round(+(value[0] + 'e' + (value[1] ? (+value[1] + 2) : 2)));
+
+        // Shift back
+        value = value.toString().split('e');
+        return (+(value[0] + 'e' + (value[1] ? (+value[1] - 2) : -2))).toFixed(2);
+    }
+
+    var inputCSV = <%- JSON.stringify(urlCSV) %>;
+    var csvData;
+    var futureDisp = [];
+    var futureNDisp = [];
+
+    var csvFile = inputCSV;
+
+    $.get(csvFile, function(data) {
+
+        csvData = Papa.parse(data, {
+            header: true,
+            dynamicTyping: true,
+            complete: function(results) {
+                csvData = results;
+
+                document.getElementById("tss-ver1").innerHTML = round2Fixed(csvData.data[0].tss);
+                document.getElementById("tss-ver2").innerHTML = round2Fixed(csvData.data[0].tss);
+                document.getElementById("auc-ver1").innerHTML = round2Fixed(csvData.data[0].roc);
+                document.getElementById("auc-ver2").innerHTML = round2Fixed(csvData.data[0].roc);
+
+                for (var i = 2; i <= 19; i++) {
+                    futureDisp.push(round2Fixed(csvData.data[i].tss));
+                    futureNDisp.push(round2Fixed(csvData.data[i].roc));
+                }
+            },
+            error: function(err, file) {
+                alert("Unable to upload and process file: " + file + "\nwith error: " + err);
+                window.location.href = "/";
+            }
+        });
+    });
+
 </script>
 <body>
 
@@ -119,12 +169,12 @@
                 <div class = "row info1-words1">
                     <div class = "col-md-4 cibi-hloss-box" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy.">
                         <br>
-                        <h1 style = "text-align: center"><strong id = "future-disp1" style = "font-size: 175%"></strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-disp1" style = "font-size: 175%">%</strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-4 cibi-erisk-box" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on.">
                         <br>
-                        <h1 style = "text-align: center"><strong id = "future-nodisp1" style = "font-size: 175%"></strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-nodisp1" style = "font-size: 175%">%</strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-4 cibi-cstatus-box" data-toggle = "tooltip" data-placement = "top" title = "IUCN categories used in our assessment are least concern (LC), vulnerable (VU), endangered (EN), and critically endangered (CR).">
@@ -147,13 +197,13 @@
                 <div class = "row info1-alt">
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong id = "future-disp2" style = "font-size: 175%"></strong></h1>
+                        <h1 class = "cibi-hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong id = "future-disp2" style = "font-size: 175%">%</strong></h1>
                         <br>
                         <h3 class = "cibi-hloss-words" style = "text-align: center">Net Change in Native Habitat</h3>
                     </div>
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong id = "future-nodisp2" style = "font-size: 175%"></strong></h1>
+                        <h1 class = "cibi-erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong id = "future-nodisp2" style = "font-size: 175%"></strong>%</h1>
                         <br>
                         <h3 class = "cibi-erisk-words" style = "text-align: center">Net Change in Global Habitat</h3>
                     </div>
@@ -167,12 +217,14 @@
                 <div class = "row info2-words1">
                     <div class = "col-md-3 cibi-TSS-box" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1).">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 150%" ><%= JSON.parse(tss) %></strong></h1>
+                        <!--h1 style = "text-align: center"><strong style = "font-size: 150%" ><%= JSON.parse(tss) %></strong></h1-->
+                        <h1 style = "text-align: center"><strong id = "tss-ver1" style = "font-size: 150%" ></strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-3 cibi-AUC-box" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1.">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 150%"><%= JSON.parse(auc) %></strong></h1>
+                        <!--h1 style = "text-align: center"><strong style = "font-size: 150%"><%= JSON.parse(auc) %></strong></h1-->
+                        <h1 style = "text-align: center"><strong id = "auc-ver1" style = "font-size: 150%"></strong></h1>
                         <br>
                     </div>
                     <div class = "col-md-3 cibi-points-box" data-toggle = "tooltip" data-placement = "top" title = "The number of points used in niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%).">
@@ -203,13 +255,16 @@
                 <div class = "row info2-alt">
                     <div class = "col-md-3">
                         <br>
-                        <h1 class = "cibi-TSS-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1)."><strong style = "font-size: 200%"><%= JSON.parse(tss) %></strong></h1>
+                        <!--h1 class = "cibi-TSS-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1)."><strong style = "font-size: 200%"><%= JSON.parse(tss) %></strong></h1-->
+                        <h1 class = "cibi-TSS-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1)."><strong id = "tss-ver2" style = "font-size: 200%"></strong></h1>
+
                         <br>
                         <h2 class = "cibi-TSS-words" style = "text-align: center">True Skill Statistic</h2>
                     </div>
                     <div class = "col-md-3">
                         <br>
-                        <h1 class = "cibi-AUC-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1."><strong style = "font-size: 200%"><%= JSON.parse(auc) %></strong></h1>
+                        <!--h1 class = "cibi-AUC-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1."><strong style = "font-size: 200%"><%= JSON.parse(auc) %></strong></h1-->
+                        <h1 class = "cibi-AUC-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1."><strong id = "auc-ver2" style = "font-size: 200%"></strong></h1>
                         <br>
                         <h2 class = "cibi-AUC-words" style = "text-align: center">Area Under Curve</h2>
                     </div>
@@ -383,58 +438,25 @@ futureMaps.set("16", "HE-4.5");
 futureMaps.set("17", "HE-6.0");
 futureMaps.set("18", "HE-8.5");
 
-try {
-    var currMapLoc = <%- JSON.stringify(currMap) %>;
-    var futMapLoc = <%- JSON.stringify(futMap) %>;
+$(window).load(function() {
 
-    document.getElementById("future-disp1").innerHTML = futureDisp[0];
-    document.getElementById("future-disp2").innerHTML = futureDisp[0];
-    document.getElementById("future-nodisp1").innerHTML = futureNDisp[0];
-    document.getElementById("future-nodisp2").innerHTML = futureNDisp[0];
-} catch(err) {
-    debugger;
-}
+    try {
+        var currMapLoc = <%- JSON.stringify(currMap) %>;
+        var futMapLoc = <%- JSON.stringify(futMap) %>;
 
-/*var futureDisp = new Map();
-futureDisp.set("1", "11%");
-futureDisp.set("2", "22%");
-futureDisp.set("3", "33%");
-futureDisp.set("4", "44%");
-futureDisp.set("5", "55%");
-futureDisp.set("6", "66%");
-futureDisp.set("7", "77%");
-futureDisp.set("8", "88%");
-futureDisp.set("9", "91%");
-futureDisp.set("10", "92%");
-futureDisp.set("11", "93%");
-futureDisp.set("12", "94%");
-futureDisp.set("13", "95%");
-futureDisp.set("14", "96%");
-futureDisp.set("15", "97%");
-futureDisp.set("16", "98%");
-futureDisp.set("17", "99%");
-futureDisp.set("18", "100%");
+        document.getElementById("future-disp1").insertAdjacentHTML("afterbegin", futureDisp[0]);
+        document.getElementById("future-disp2").insertAdjacentHTML("afterbegin", futureDisp[0]);
+        document.getElementById("future-nodisp1").insertAdjacentHTML("afterbegin", futureNDisp[0]);
+        document.getElementById("future-nodisp2").insertAdjacentHTML("afterbegin", futureNDisp[0]);
 
-var futureNDisp = new Map();
-futureNDisp.set("1", "-11%");
-futureNDisp.set("2", "-22%");
-futureNDisp.set("3", "-33%");
-futureNDisp.set("4", "-44%");
-futureNDisp.set("5", "-55%");
-futureNDisp.set("6", "-66%");
-futureNDisp.set("7", "-77%");
-futureNDisp.set("8", "-88%");
-futureNDisp.set("9", "-91%");
-futureNDisp.set("10", "-92%");
-futureNDisp.set("11", "-93%");
-futureNDisp.set("12", "-94%");
-futureNDisp.set("13", "-95%");
-futureNDisp.set("14", "-96%");
-futureNDisp.set("15", "-97%");
-futureNDisp.set("16", "-98%");
-futureNDisp.set("17", "-99%");
-futureNDisp.set("18", "-100%");*/
-
+        /*document.getElementById("future-disp1").innerHTML = futureDisp[0] + '%';
+        document.getElementById("future-disp2").innerHTML = futureDisp[0] + '%';
+        document.getElementById("future-nodisp1").innerHTML = futureNDisp[0] + '%';
+        document.getElementById("future-nodisp2").innerHTML = futureNDisp[0] + '%';*/
+    } catch(err) {
+        debugger;
+    }
+})
 
 // ...var fooPage = which page in PDF currently on
 // ...if currPage == page1 then get the value of that object in map (key to value)
@@ -442,9 +464,9 @@ var currPage = "1";
 var setMapHeader;
 // setMapHeader = futureMaps.get(currPage);
 
-$(function() {
+/*$(function() {
 
-    /*$('#showPDFthing').click(function() {
+    $('#showPDFthing').click(function() {
         try {
             debugger;
 
@@ -462,8 +484,8 @@ $(function() {
             debugger;
 
         }
-    })*/
-})
+    })
+})*/
 </script>
 </body>
 </html>
