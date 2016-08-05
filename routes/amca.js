@@ -8,6 +8,13 @@ routerAmca.get('/', function(req, res) {
         title: "Amblyomma cajennense",
         clade: "Ixodida",
         source: "GBIF USNPC",
+        currMap: "pdf/web/viewer.html?file=species-pages/amca/AMBLYOMMA CAJENNENSE current.pdf",
+        futMap: "pdf/web/viewer.html?file=species-pages/amca/future-maps/AMBLYOMMA CAJENNENSE future.pdf",
+        crStatus: "CR",
+        dataQuality: "Fair",
+        modelQuality: "Good",
+        url: "/amca",
+        urlCSV: "pdf/web/species-pages/amca/AMBLYOMMA CAJENNENSE pearldata.csv"
     };
     res.render('Amca', renderObj);
 });

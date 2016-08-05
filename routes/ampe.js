@@ -8,6 +8,13 @@ routerAmpe.get('/', function(req, res) {
         title: "Amalaraeus penicilliger",
         clade: "Siphonaptera",
         source: "GBIF",
+        currMap: "pdf/web/viewer.html?file=species-pages/ampe/AMALARAEUS PENICILLIGER current.pdf",
+        futMap: "pdf/web/viewer.html?file=species-pages/ampe/future-maps/AMALARAEUS PENICILLIGER future.pdf",
+        crStatus: "CR",
+        dataQuality: "Fair",
+        modelQuality: "Good",
+        url: "/ampe",
+        urlCSV: "pdf/web/species-pages/ampe/AMALARAEUS PENICILLIGER pearldata.csv"
     };
     res.render('Ampe', renderObj);
 });

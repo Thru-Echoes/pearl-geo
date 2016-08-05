@@ -13,11 +13,6 @@ routerAbba.get('/', function(req, res) {
         source: "GBIF",
         currMap: "pdf/web/viewer.html?file=species-pages/abba/ABBREVIATA BANCROFTI current.pdf",
         futMap: "pdf/web/viewer.html?file=species-pages/abba/future-maps/ABBREVIATA BANCROFTI future.pdf",
-        crStatus: "CR",
-        tss: "0.71",
-        auc: "0.90",
-        dataQuality: "Fair",
-        modelQuality: "Good",
         url: "/abba",
         urlCSV: "pdf/web/species-pages/abba/ABBREVIATA BANCROFTI pearldata.csv"
     };

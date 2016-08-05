@@ -8,6 +8,13 @@ routerAlfi.get('/', function(req, res) {
         title: "Allocorrigia filiformis",
         clade: "Trematoda",
         source: "USNPC",
+        currMap: "pdf/web/viewer.html?file=species-pages/alfi/ALLOCORRIGIA FILIFORMIS current.pdf",
+        futMap: "pdf/web/viewer.html?file=species-pages/alfi/future-maps/ALLOCORRIGIA FILIFORMIS future.pdf",
+        crStatus: "CR",
+        dataQuality: "Fair",
+        modelQuality: "Good",
+        url: "/alfi",
+        urlCSV: "pdf/web/species-pages/alfi/ALLOCORRIGIA FILIFORMIS pearldata.csv"
     };
     res.render('Alfi', renderObj);
 });
