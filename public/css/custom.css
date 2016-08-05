@@ -16,16 +16,76 @@ body {
     margin-left: -15px;
 }
 
+.navbar-default {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-color: rgba(238, 238, 238, 0.75);
+}
+
+.navbar-default .navbar-brand {
+    color: rgba(238, 238, 238, 0.75);
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: rgba(238, 238, 238, 0.75);
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    /*color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(238, 238, 238, 0.9);*/
+    color: rgba(238, 238, 238, 0.75);
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: rgba(238, 238, 238, 0.75);
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.dropdown-menu {
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+.dropdown-menu > li > a {
+    color: rgba(238, 238, 238, 0.3);
+}
+
 /*************************************************
-********************* ABCO ***********************
+**************** SPECIES PAGES *******************
 *************************************************/
+
+#data-line-top {
+    border-top: 1px solid #000;
+}
+
+.h1-title {
+    font-size: 150%;
+}
+
+.h1-top-row {
+    font-size: 215%;
+}
+
+.h2-top-row {
+}
+
+.h1-bottom-row {
+    font-size: 135%;
+}
+
+.h2-bottom-row {
+
+}
+
+.h1-bottom-row2 {
+    font-size: 200%:
+}
 
 .species-header {
     text-align: left;
 }
 
 .species-subheader {
-    text-align: left; 
+    text-align: left;
 }
 
 /*************************************************
@@ -118,7 +178,7 @@ img:hover {
 }
 
 .stat-section {
-    background-color: rgba(238, 238, 238, 0.9);
+    background-color: rgba(238, 238, 238, 0.75);
 }
 
 .img-section {
@@ -141,23 +201,23 @@ img:hover {
 ****************** MAPS: stats *******************
 *************************************************/
 
-.hloss-box {
-    outline: 1px solid black;
+/*.hloss-box {
+    outline: 1px solid black;*/
     /*background-color: #eab71e;*/
-    background-color: rgba(234, 183, 30, 0.7);
-}
+    /*background-color: rgba(234, 183, 30, 0.7);
+}*/
 
-.erisk-box {
-    outline: 1px solid black;
+/*.erisk-box {
+    outline: 1px solid black;*/
     /*background-color: #2db573;*/
-    background-color: rgba(45, 181, 115, 0.7);
-}
+    /*background-color: rgba(45, 181, 115, 0.7);
+}*/
 
-.cstatus-box {
-    outline: 1px solid black;
+/*.cstatus-box {
+    outline: 1px solid black;*/
     /*background-color: #2db573;*/
-    background-color: rgba(45, 181, 115, 0.7);
-}
+    /*background-color: rgba(45, 181, 115, 0.7);
+}*/
 
 .cibi-hloss-box {
     outline: 1px solid black;
@@ -307,65 +367,65 @@ img:hover {
 }
 
 @media (min-width: 992px) {
-    .cibi-hloss-box {
+    /*.hloss-box {
         width: 30.333%;
     }
 
-    .cibi-erisk-box {
+    .erisk-box {
         width: 30.333%;
     }
 
-    .cibi-cstatus-box {
+    .cstatus-box {
         width: 30.333%;
     }
 
-    .cibi-hloss-words {
+    .hloss-words {
         width: 30.333%;
     }
 
-    .cibi-erisk-words {
+    .erisk-words {
         width: 30.333%;
     }
 
-    .cibi-cstatus-words {
+    .cstatus-words {
         width: 30.333%;
-    }
+    }*/
 
     .info1-alt {
         display: none;
     }
 
-    .cibi-TSS-box {
+    /*.TSS-box {
         width: 22.5%;
     }
 
-    .cibi-AUC-box {
+    .AUC-box {
         width: 22.5%;
     }
 
-    .cibi-points-box {
+    .points-box {
         width: 22.5%;
     }
 
-    .cibi-uncertain-box {
+    .uncertain-box {
         width: 22.5%;
     }
 
-    .cibi-TSS-words {
+    .TSS-words {
         width: 22.5%;
     }
 
-    .cibi-AUC-words {
+    .AUC-words {
         width: 22.5%;
     }
 
-    .cibi-points-words {
+    .points-words {
         width: 22.5%;
     }
 
-    .cibi-uncertain-words {
+    .uncertain-words {
         width: 22.5%;
-    }
+    }*/
 
     .info2-alt {
         display: none;
@@ -577,7 +637,7 @@ p {
     height: 500px;
 }
 
-#cibi-push-bottom {
+#push-bottom {
     height: 420px;
 }
 
