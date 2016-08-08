@@ -10,10 +10,7 @@ routerAmam.get('/', function(req, res) {
         clade: "Ixodida",
         source: "GBIF USNPC",
         currMap: "pdf/web/viewer.html?file=species-pages/amam/AMBLYOMMA AMERICANUM current.pdf",
-        futMap: "pdf/web/viewer.html?file=species-pages/amam/future-maps/AMBLYOMMA AMERICANUM future.pdf",
-        crStatus: "CR",
-        dataQuality: "Fair",
-        modelQuality: "Good",
+        futMap: "pdf/web/viewer.html?file=species-pages/amam/future-maps/future.pdf",
         url: "/amam",
         urlCSV: "pdf/web/species-pages/amam/AMBLYOMMA AMERICANUM pearldata.csv"
     };

@@ -10,11 +10,8 @@ routerAlco.get('/', function(req, res) {
         clade: "Trematoda",
         source: "GBIF",
         currMap: "pdf/web/viewer.html?file=species-pages/alco/ALLOGLOSSIDIUM CORTI current.pdf",
-        futMap: "pdf/web/viewer.html?file=species-pages/alco/future-maps/ALLOGLOSSIDIUM CORTI future.pdf",
-        crStatus: "CR",
-        dataQuality: "Fair",
-        modelQuality: "Good",
-        url: "/agag",
+        futMap: "pdf/web/viewer.html?file=species-pages/alco/future-maps/future.pdf",
+        url: "/alco",
         urlCSV: "pdf/web/species-pages/alco/ALLOGLOSSIDIUM CORTI pearldata.csv"
     };
     res.render('Alco', renderObj);

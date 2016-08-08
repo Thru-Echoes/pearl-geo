@@ -42,11 +42,12 @@ body {
 }
 
 .dropdown-menu {
-    background-color: rgba(238, 238, 238, 0.3);
+    /*background-color: rgba(238, 238, 238, 0.3);*/
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .dropdown-menu > li > a {
-    color: rgba(238, 238, 238, 0.3);
+    color: rgba(238, 238, 238, 0.9);
 }
 
 /*************************************************
@@ -69,7 +70,7 @@ body {
 }
 
 .h1-bottom-row {
-    font-size: 135%;
+    font-size: 100%;
 }
 
 .h2-bottom-row {
@@ -190,7 +191,7 @@ img:hover {
 }
 
 #top-push-top {
-    height: 20px;
+    height: 30px;
 }
 
 #top-push-bottom {

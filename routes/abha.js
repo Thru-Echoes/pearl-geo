@@ -10,10 +10,7 @@ routerAbha.get('/', function(req, res) {
         clade: "Nematoda",
         source: "GBIF",
         currMap: "pdf/web/viewer.html?file=species-pages/abha/ABBREVIATA HASTASPICULA current.pdf",
-        futMap: "pdf/web/viewer.html?file=species-pages/abha/future-maps/ABBREVIATA HASTASPICULA future.pdf",
-        crStatus: "CR",
-        dataQuality: "Fair",
-        modelQuality: "Good",
+        futMap: "pdf/web/viewer.html?file=species-pages/abha/future-maps/future.pdf",
         url: "/abha",
         urlCSV: "pdf/web/species-pages/abha/ABBREVIATA HASTASPICULA pearldata.csv"
     };

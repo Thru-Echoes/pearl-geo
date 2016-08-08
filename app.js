@@ -49,7 +49,8 @@ var amtr = require('./routes/amtr');
 var amva = require('./routes/amva');
 var angr = require('./routes/angr');
 
-
+var hydr = require('./routes/hydr');
+var hyimpe = require('./routes/hyimpe');
 
 
 // Add species above here and then scroll down
@@ -132,7 +133,8 @@ app.use('/amtr', amtr);
 app.use('/amva', amva);
 app.use('/angr', angr);
 
-
+app.use('/hydr', hydr);
+app.use('/hyimpe', hyimpe);
 
 // Add page reference here (step 2)
 /*******************************************/

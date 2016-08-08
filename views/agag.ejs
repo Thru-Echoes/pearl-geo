@@ -101,6 +101,13 @@
                 document.getElementById("auc-ver1").innerHTML = round2Fixed(csvData.data[0].roc);
                 document.getElementById("auc-ver2").innerHTML = round2Fixed(csvData.data[0].roc);
 
+                document.getElementById("iucn-ver1").innerHTML = csvData.data[0].iucn;
+                document.getElementById("iucn-ver2").innerHTML = csvData.data[0].iucn;
+                document.getElementById("cover-ver1").innerHTML = csvData.data[0].coverage;
+                document.getElementById("cover-ver2").innerHTML = csvData.data[0].coverage;
+                document.getElementById("uncertain-ver1").innerHTML = csvData.data[0].uncertain;
+                document.getElementById("uncertain-ver2").innerHTML = csvData.data[0].uncertain;
+
                 for (var i = 2; i <= 19; i++) {
                     futureDisp.push(round2Fixed(csvData.data[i].tss));
                     futureNDisp.push(round2Fixed(csvData.data[i].roc));
@@ -154,7 +161,7 @@
         	<div class = "container">
                 <div class = "row">
                     <div class = "col-md-12">
-                        <h1 style = "text-align: left"><i style = "font-size: 150%"><%= title %></i></h1>
+                        <h1 style = "text-align: left"><i class = "h1-title"><%= title %></i></h1>
                     </div>
                 </div>
                 <div class = "row">
@@ -167,114 +174,114 @@
                     <div class = "col-md-6"></div>
                 </div>
                 <div class = "row info1-words1">
-                    <div class = "col-md-4 cibi-hloss-box" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy.">
+                    <div class = "col-md-4 hloss-box" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy.">
                         <br>
-                        <h1 style = "text-align: center"><strong id = "future-disp1" style = "font-size: 175%">%</strong></h1>
-                        <br>
-                    </div>
-                    <div class = "col-md-4 cibi-erisk-box" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on.">
-                        <br>
-                        <h1 style = "text-align: center"><strong id = "future-nodisp1" style = "font-size: 175%">%</strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-disp1" class = "h1-top-row">%</strong></h1>
                         <br>
                     </div>
-                    <div class = "col-md-4 cibi-cstatus-box" data-toggle = "tooltip" data-placement = "top" title = "IUCN categories used in our assessment are least concern (LC), vulnerable (VU), endangered (EN), and critically endangered (CR).">
+                    <div class = "col-md-4 erisk-box" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on.">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 175%"><%= crStatus %></strong></h1>
+                        <h1 style = "text-align: center"><strong id = "future-nodisp1" class = "h1-top-row">%</strong></h1>
+                        <br>
+                    </div>
+                    <div class = "col-md-4 cstatus-box" data-toggle = "tooltip" data-placement = "top" title = "IUCN categories used in our assessment are least concern (LC), vulnerable (VU), endangered (EN), and critically endangered (CR).">
+                        <br>
+                        <h1 style = "text-align: center"><strong id = "iucn-ver1" class = "h1-top-row"></strong></h1>
                         <br>
                     </div>
                 </div>
                 <div class = "row info1-words2">
-                    <div class = "col-md-4 cibi-hloss-words">
+                    <div class = "col-md-4 hloss-words">
                         <h3 style = "text-align: center">Net Change in Native Habitat</h3>
                     </div>
-                    <div class = "col-md-4 cibi-erisk-words">
+                    <div class = "col-md-4 erisk-words">
                         <h3 style = "text-align: center">Net Change in Global Habitat</h3>
                     </div>
-                    <div class = "col-md-4 cibi-cstatus-words">
+                    <div class = "col-md-4 cstatus-words">
                         <h3 style = "text-align: center">Suggested IUCN Red Listing</h3>
                     </div>
                 </div>
                 <div class = "row info1-alt">
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong id = "future-disp2" style = "font-size: 175%">%</strong></h1>
+                        <h2 class = "hloss-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Native habitat' assumes parasites have zero capacity for dispersal from regions they already occupy."><strong id = "future-disp2" class = "h2-top-row">%</strong></h2>
                         <br>
-                        <h3 class = "cibi-hloss-words" style = "text-align: center">Net Change in Native Habitat</h3>
+                        <h5 class = "hloss-words" style = "text-align: center">Net Change in Native Habitat</h5>
                     </div>
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong id = "future-nodisp2" style = "font-size: 175%">%</strong></h1>
+                        <h2 class = "erisk-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "'Global habitat' assumes optimistically that parasites can disperse to any suitable habitat within continents which they have previously been documented on."><strong id = "future-nodisp2" class = "h2-top-row">%</strong></h2>
                         <br>
-                        <h3 class = "cibi-erisk-words" style = "text-align: center">Net Change in Global Habitat</h3>
+                        <h5 class = "erisk-words" style = "text-align: center">Net Change in Global Habitat</h5>
                     </div>
                     <div class = "col-md-4">
                         <br>
-                        <h1 class = "cibi-cstatus-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "IUCN categories used in our assessment are least concern (LC), vulnerable (VU), endangered (EN), and critically endangered (CR)."><strong style = "font-size: 175%"><%= crStatus %></strong></h1>
+                        <h2 class = "cstatus-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "IUCN categories used in our assessment are least concern (LC), vulnerable (VU), endangered (EN), and critically endangered (CR)."><strong id = "iucn-ver2" class = "h2-top-row"></strong></h2>
                         <br>
-                        <h3 class = "cibi-cstatus-words" style = "text-align: center">Suggested IUCN Red Listing</h3>
+                        <h5 class = "cstatus-words" style = "text-align: center">Suggested IUCN Red Listing</h5>
                     </div>
                 </div>
+                <hr id = "data-line-top">
                 <div class = "row info2-words1">
-                    <div class = "col-md-3 cibi-TSS-box" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1).">
+                    <div class = "col-md-3 TSS-box" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1).">
                         <br>
-                        <h1 style = "text-align: center"><strong id = "tss-ver1" style = "font-size: 150%" ></strong></h1>
-                        <br>
-                    </div>
-                    <div class = "col-md-3 cibi-AUC-box" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1.">
-                        <br>
-                        <h1 style = "text-align: center"><strong id = "auc-ver1" style = "font-size: 150%"></strong></h1>
+                        <h2 style = "text-align: center"><strong id = "tss-ver1" class = "h2-bottom-row" ></strong></h2>
                         <br>
                     </div>
-                    <div class = "col-md-3 cibi-points-box" data-toggle = "tooltip" data-placement = "top" title = "The number of points used in niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%).">
+                    <div class = "col-md-3 AUC-box" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1.">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 150%"><%= dataQuality %></strong></h1>
+                        <h2 style = "text-align: center"><strong id = "auc-ver1" class = "h2-bottom-row"></strong></h2>
                         <br>
                     </div>
-                    <div class = "col-md-3 cibi-uncertain-box" data-toggle = "tooltip" data-placement = "top" title = "The average uncertainty radius of points used to generate niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%).">
+                    <div class = "col-md-3 points-box" data-toggle = "tooltip" data-placement = "top" title = "The number of points used in niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%).">
                         <br>
-                        <h1 style = "text-align: center"><strong style = "font-size: 150%"><%= modelQuality %></strong></h1>
+                        <h2 style = "text-align: center"><strong id = "cover-ver1" class = "h2-bottom-row"></strong></h2>
+                        <br>
+                    </div>
+                    <div class = "col-md-3 uncertain-box" data-toggle = "tooltip" data-placement = "top" title = "The average uncertainty radius of points used to generate niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%).">
+                        <br>
+                        <h2 style = "text-align: center"><strong id = "uncertain-ver1" class = "h2-bottom-row"></strong></h2>
                         <br>
                     </div>
                 </div>
                 <div class = "row info2-words2">
-                    <div class = "col-md-3 cibi-TSS-words">
-                        <h3 style = "text-align: center">True Skill Statistic</h3>
+                    <div class = "col-md-3 TSS-words">
+                        <h5 style = "text-align: center">True Skill Statistic</h5>
                     </div>
-                    <div class = "col-md-3 cibi-AUC-words">
-                        <h3 style = "text-align: center">Area Under Curve</h3>
+                    <div class = "col-md-3 AUC-words">
+                        <h5 style = "text-align: center">Area Under Curve</h5>
                     </div>
-                    <div class = "col-md-3 cibi-points-words">
-                        <h3 style = "text-align: center">Data Quality</h3>
+                    <div class = "col-md-3 points-words">
+                        <h5 style = "text-align: center">Data Quality</h5>
                     </div>
-                    <div class = "col-md-3 cibi-uncertain-words">
-                        <h3 style = "text-align: center">Model Uncertainty</h3>
+                    <div class = "col-md-3 uncertain-words">
+                        <h5 style = "text-align: center">Model Uncertainty</h5>
                     </div>
                 </div>
                 <div class = "row info2-alt">
                     <div class = "col-md-3">
                         <br>
-                        <h1 class = "cibi-TSS-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1)."><strong id = "tss-ver2" style = "font-size: 200%"></strong></h1>
-
+                        <h2 class = "TSS-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The Hanssen-Kuiper Skill statistic or true skill statistic ranges from -1 to +1, where 0 represents no skill, and is (sensitivity + specificity - 1)."><strong id = "tss-ver2" class = "h2-bottom-row2"></strong></h2>
                         <br>
-                        <h2 class = "cibi-TSS-words" style = "text-align: center">True Skill Statistic</h2>
+                        <h5 class = "TSS-words" style = "text-align: center">True Skill Statistic</h5>
                     </div>
                     <div class = "col-md-3">
                         <br>
-                        <h1 class = "cibi-AUC-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1."><strong id = "auc-ver2" style = "font-size: 200%"></strong></h1>
+                        <h2 class = "AUC-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The AUC is the area under the receiver-operating characteristic curve which compares correct and false positive rates with different cutoffs, and ranges from 0 to 1."><strong id = "auc-ver2" class = "h2-bottom-row2"></strong></h2>
                         <br>
-                        <h2 class = "cibi-AUC-words" style = "text-align: center">Area Under Curve</h2>
+                        <h5 class = "AUC-words" style = "text-align: center">Area Under Curve</h5>
                     </div>
                     <div class = "col-md-3">
                         <br>
-                        <h1 class = "cibi-points-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The number of points used in niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%)."><strong style = "font-size: 200%"><%= dataQuality %></strong></h1>
+                        <h2 class = "points-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The number of points used in niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%)."><strong id = "cover-ver2" class = "h2-bottom-row2"></strong></h2>
                         <br>
-                        <h2 class = "cibi-points-words" style = "text-align: center">Data Quality</h2>
+                        <h5 class = "points-words" style = "text-align: center">Data Quality</h5>
                     </div>
                     <div class = "col-md-3">
                         <br>
-                        <h1 class = "cibi-uncertain-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The average uncertainty radius of points used to generate niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%)."><strong style = "font-size: 200%"><%= modelQuality %></strong></h1>
+                        <h2 class = "uncertain-box" style = "text-align: center" data-toggle = "tooltip" data-placement = "top" title = "The average uncertainty radius of points used to generate niche models is classified by quantile from the entire sample of species in the study, as: fair (0-25%), average (25-50%), good (50-75%) or excellent (75-100%)."><strong id = "uncertain-ver2" class = "h2-bottom-row2"></strong></h2>
                         <br>
-                        <h2 class = "cibi-uncertain-words" style = "text-align: center">Model Uncertainty</h2>
+                        <h5 class = "uncertain-words" style = "text-align: center">Model Uncertainty</h5>
                     </div>
                 </div>
             </div>
@@ -334,40 +341,46 @@
         <div class = "row">
             <div class = "container">
                 <div class = "row">
+                    <div class = "col-md-4"></div>
+                    <div class = "col-md-4">
+                        <br>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">The 18 future projections above can be compared to the current projected range for this species. In addition, the change in range with and without dispersal opportunity is shown in the data boxes at the top of this page. Users can download the 18 future predicted ranges through the embedded PDF viewers.</h4>
+                    </div>
+                    <div class = "col-md-4"></div>
+                </div>
+                <br>
+                <div class = "row">
                     <div class = "col-md-1"></div>
                     <div class = "col-md-4">
                         <br>
                         <br>
                         <h4 style = "text-align: center; color: inherit">The maps above represent <strong>Global Climate Models (GCM)</strong> using <strong>Representative Concentration Pathways (RCP)</strong> in order to account for the complex relationships between climate-change, anthropogenic effects, and species distributions.</h4>
                         <br>
-                        <h4 style = "text-align: center; color: inherit">Note: Access 1.0 comes from the Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia.</h4>
-                        <br>
+                        <!--h4 style = "text-align: center; color: inherit">Note: Access 1.0 comes from the Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia.</h4-->
+                        <!--br>
                         <h4 style = "text-align: center; color: inherit">Note: BC comes from...EXPLAIN HERE</h4>
                         <br>
                         <h4 style = "text-align: center; color: inherit">Note: CC comes from...EXPLAIN HERE</h4>
                         <br>
                         <h4 style = "text-align: center; color: inherit">Note: HD comes from...EXPLAIN HERE</h4>
                         <br>
-                        <h4 style = "text-align: center; color: inherit">Note: HE comes from...EXPLAIN HERE</h4>
+                        <h4 style = "text-align: center; color: inherit">Note: HE comes from...EXPLAIN HERE</h4-->
                     </div>
-                    <div class = "col-md-1"></div>
-                    <div class = "col-md-6">
+                    <div class = "col-md-2"></div>
+                    <div class = "col-md-4">
+                        <br>
+                        <br>
+                        <h4 style = "text-align: center; color: inherit">Note - as an example: Access 1.0 comes from the Commonwealth Scientific and Industrial Research Organisation (CSIRO), Australia.</h4>
                         <!--br>
                         <button id="showPDFthing" class="btn btn-info showBtn fooBtn">Mess around with PDF</button>
                         <br-->
-                        <br>
-                        <br>
-                        <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5 or access 1.0 - RCP 8.5 for species <strong><i>Abbreviata bancrofti</i></strong>.</h3>
-                        <br>
-                        <br>
-                        <h3 style = "text-align: center; color: inherit">Users can flip between future distributions using either access 1.0 - RCP 4.5... <strong>EXPLAIN HERE</strong>.</h3>
-                        <br>
-                        <br>
                     </div>
+                    <div class = "col-md-1"></div>
                 </div>
             </div>
         </div>
-        <div id = "cibi-push-bottom"></div>
+        <div id = "push-bottom"></div>
     </div>
 
     <!-- FOOTER -->

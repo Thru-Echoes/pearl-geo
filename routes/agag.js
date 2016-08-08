@@ -10,10 +10,7 @@ routerAgag.get('/', function(req, res) {
         clade: "Nematoda",
         source: "GBIF",
         currMap: "pdf/web/viewer.html?file=species-pages/agag/AGLENCHUS AGRICOLA current.pdf",
-        futMap: "pdf/web/viewer.html?file=species-pages/agag/future-maps/AGLENCHUS AGRICOLA future.pdf",
-        crStatus: "CR",
-        dataQuality: "Fair",
-        modelQuality: "Good",
+        futMap: "pdf/web/viewer.html?file=species-pages/agag/future-maps/future.pdf",
         url: "/agag",
         urlCSV: "pdf/web/species-pages/agag/AGLENCHUS AGRICOLA pearldata.csv"
     };
