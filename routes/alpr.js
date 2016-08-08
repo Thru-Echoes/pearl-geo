@@ -9,14 +9,11 @@ routerAlpr.get('/', function(req, res) {
         clade: "Nematoda",
         source: "GBIF",
         currMap: "pdf/web/viewer.html?file=species-pages/alpr/ALAIMUS PRIMITIVUS current.pdf",
-        futMap: "pdf/web/viewer.html?file=species-pages/alpr/future-maps/ALAIMUS PRIMITIVUS future.pdf",
-        crStatus: "CR",
-        dataQuality: "Fair",
-        modelQuality: "Good",
+        futMap: "pdf/web/viewer.html?file=species-pages/alpr/future-maps/future.pdf",
         url: "/alpr",
         urlCSV: "pdf/web/species-pages/alpr/ALAIMUS PRIMITIVUS pearldata.csv"
     };
-    res.render('Alpr', renderObj);
+    res.render('alpr', renderObj);
 });
 
 // Grab data from document

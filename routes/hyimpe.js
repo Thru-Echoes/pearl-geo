@@ -9,7 +9,7 @@ routerHyimpe.get('/', function(req, res) {
 
     var renderObj = {
         title: "Hyalomma impeltatum",
-        clade: "Nematoda",
+        clade: "Ixodida",
         source: "GBIF",
         currMap: "pdf/web/viewer.html?file=species-pages/hyimpe/HYALOMMA IMPELTATUM current.pdf",
         futMap: "pdf/web/viewer.html?file=species-pages/hyimpe/future-maps/future.pdf",

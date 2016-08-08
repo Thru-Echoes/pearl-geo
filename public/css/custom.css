@@ -23,6 +23,8 @@ body {
 
 .navbar-default .navbar-brand {
     color: rgba(238, 238, 238, 0.75);
+    margin-bottom: 1%;
+    margin-right: -2%;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -67,6 +69,7 @@ body {
 }
 
 .h2-top-row {
+    font-size: 175%;
 }
 
 .h1-bottom-row {
@@ -74,7 +77,7 @@ body {
 }
 
 .h2-bottom-row {
-
+    font-size: 175%;
 }
 
 .h1-bottom-row2 {
@@ -87,6 +90,38 @@ body {
 
 .species-subheader {
     text-align: left;
+}
+
+#tss-ver1 {
+    font-size: 150%;
+}
+
+#auc-ver1 {
+    font-size: 150%;
+}
+
+#cover-ver1 {
+    font-size: 150%;
+}
+
+#uncertain-ver1 {
+    font-size: 150%;
+}
+
+#tss-ver2 {
+    font-size: 175%;
+}
+
+#auc-ver2 {
+    font-size: 175%;
+}
+
+#cover-ver2 {
+    font-size: 150%;
+}
+
+#uncertain-ver2 {
+    font-size: 150%;
 }
 
 /*************************************************
