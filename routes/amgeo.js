@@ -9,7 +9,7 @@ routerAmgeo.get('/', function(req, res) {
         clade: "Ixodida",
         source: "GBIF",
     };
-    res.render('Amgeo', renderObj);
+    res.render('amgeo', renderObj);
 });
 
 // Grab data from document

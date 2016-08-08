@@ -9,7 +9,7 @@ routerAmja.get('/', function(req, res) {
         clade: "Ixodida",
         source: "GBIF",
     };
-    res.render('Amja', renderObj);
+    res.render('amja', renderObj);
 });
 
 // Grab data from document

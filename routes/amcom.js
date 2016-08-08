@@ -9,7 +9,7 @@ routerAmcom.get('/', function(req, res) {
         clade: "Ixodida",
         source: "Cumming GBIF",
     };
-    res.render('Amcom', renderObj);
+    res.render('amcom', renderObj);
 });
 
 // Grab data from document

@@ -9,7 +9,7 @@ routerAmfl.get('/', function(req, res) {
         clade: "Ixodida",
         source: "Cumming",
     };
-    res.render('Amfl', renderObj);
+    res.render('amfl', renderObj);
 });
 
 // Grab data from document

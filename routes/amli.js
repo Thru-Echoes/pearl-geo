@@ -9,7 +9,7 @@ routerAmli.get('/', function(req, res) {
         clade: "Ixodida",
         source: "GBIF",
     };
-    res.render('Amli', renderObj);
+    res.render('amli', renderObj);
 });
 
 // Grab data from document

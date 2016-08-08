@@ -14,7 +14,7 @@ routerAgag.get('/', function(req, res) {
         url: "/agag",
         urlCSV: "pdf/web/species-pages/agag/AGLENCHUS AGRICOLA pearldata.csv"
     };
-    res.render('Agag', renderObj);
+    res.render('agag', renderObj);
 });
 
 // Grab data from document

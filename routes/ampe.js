@@ -13,7 +13,7 @@ routerAmpe.get('/', function(req, res) {
         url: "/ampe",
         urlCSV: "pdf/web/species-pages/ampe/AMALARAEUS PENICILLIGER pearldata.csv"
     };
-    res.render('Ampe', renderObj);
+    res.render('ampe', renderObj);
 });
 
 // Grab data from document

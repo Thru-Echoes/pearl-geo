@@ -14,7 +14,7 @@ routerAlco.get('/', function(req, res) {
         url: "/alco",
         urlCSV: "pdf/web/species-pages/alco/ALLOGLOSSIDIUM CORTI pearldata.csv"
     };
-    res.render('Alco', renderObj);
+    res.render('alco', renderObj);
 });
 
 // Grab data from document

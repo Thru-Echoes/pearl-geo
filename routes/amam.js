@@ -14,7 +14,7 @@ routerAmam.get('/', function(req, res) {
         url: "/amam",
         urlCSV: "pdf/web/species-pages/amam/AMBLYOMMA AMERICANUM pearldata.csv"
     };
-    res.render('Amam', renderObj);
+    res.render('amam', renderObj);
 });
 
 // Grab data from document

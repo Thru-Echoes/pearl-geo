@@ -9,7 +9,7 @@ routerAmhel.get('/', function(req, res) {
         clade: "Ixodida",
         source: "GBIF",
     };
-    res.render('Amhel', renderObj);
+    res.render('amhel', renderObj);
 });
 
 // Grab data from document

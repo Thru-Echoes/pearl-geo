@@ -13,7 +13,7 @@ routerAmca.get('/', function(req, res) {
         url: "/amca",
         urlCSV: "pdf/web/species-pages/amca/AMBLYOMMA CAJENNENSE pearldata.csv"
     };
-    res.render('Amca', renderObj);
+    res.render('amca', renderObj);
 });
 
 // Grab data from document

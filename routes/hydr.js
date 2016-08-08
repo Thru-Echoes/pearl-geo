@@ -2,8 +2,6 @@ var express = require('express');
 var routerHydr = express.Router();
 var bodyParser = require('body-parser');
 var app = require('../app');
-var fs = require('fs');
-var parse = require('csv-parse');
 
 routerHydr.get('/', function(req, res) {
 

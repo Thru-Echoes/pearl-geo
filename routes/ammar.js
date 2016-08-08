@@ -9,7 +9,7 @@ routerAmmar.get('/', function(req, res) {
         clade: "Ixodida",
         source: "Cumming GBIF",
     };
-    res.render('Ammar', renderObj);
+    res.render('ammar', renderObj);
 });
 
 // Grab data from document

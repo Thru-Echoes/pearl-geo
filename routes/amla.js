@@ -9,7 +9,7 @@ routerAmla.get('/', function(req, res) {
         clade: "Ixodida",
         source: "Cumming",
     };
-    res.render('Amla', renderObj);
+    res.render('amla', renderObj);
 });
 
 // Grab data from document

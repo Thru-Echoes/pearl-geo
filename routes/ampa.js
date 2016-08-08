@@ -9,7 +9,7 @@ routerAmpa.get('/', function(req, res) {
         clade: "Ixodida",
         source: "Cumming",
     };
-    res.render('Ampa', renderObj);
+    res.render('ampa', renderObj);
 });
 
 // Grab data from document

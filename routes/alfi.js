@@ -13,7 +13,7 @@ routerAlfi.get('/', function(req, res) {
         url: "/alfi",
         urlCSV: "pdf/web/species-pages/alfi/ALLOCORRIGIA FILIFORMIS pearldata.csv"
     };
-    res.render('Alfi', renderObj);
+    res.render('alfi', renderObj);
 });
 
 // Grab data from document

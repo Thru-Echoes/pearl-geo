@@ -9,7 +9,7 @@ routerAmcu.get('/', function(req, res) {
         clade: "Ixodida",
         source: "Cumming",
     };
-    res.render('Amcu', renderObj);
+    res.render('amcu', renderObj);
 });
 
 // Grab data from document

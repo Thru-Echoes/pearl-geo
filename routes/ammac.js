@@ -9,7 +9,7 @@ routerAmmac.get('/', function(req, res) {
         clade: "Ixodida",
         source: "GBIF USNPC",
     };
-    res.render('Ammac', renderObj);
+    res.render('ammac', renderObj);
 });
 
 // Grab data from document
