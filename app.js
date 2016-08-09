@@ -9,59 +9,25 @@ var fs = require('fs');
 var routes = require('./routes/index');
 
 /* JS routes for middleware species pages (step 1) */
-var abba = require('./routes/abba');
-var abha = require('./routes/abha');
-var agag = require('./routes/agag');
-var alpr = require('./routes/alpr');
-var alfi = require('./routes/alfi');
-var alco = require('./routes/alco');
-var ampe = require('./routes/ampe');
-var amam = require('./routes/amam');
-var amas = require('./routes/amas');
-var amca = require('./routes/amca');
-var amcoh = require('./routes/amcoh');
-var amcom = require('./routes/amcom');
-var amcu = require('./routes/amcu');
-var ameb = require('./routes/ameb');
-var amex = require('./routes/amex');
-var amfa = require('./routes/amfa');
-var amfi = require('./routes/amfi');
-var amfl = require('./routes/amfl');
-var amgem = require('./routes/amgem');
-var amgeo = require('./routes/amgeo');
-var amheb = require('./routes/amheb');
-var amhel = require('./routes/amhel');
-var amja = require('./routes/amja');
-var amla = require('./routes/amla');
-var amle = require('./routes/amle');
-var amli = require('./routes/amli');
-var ammac = require('./routes/ammac');
-var ammar = require('./routes/ammar');
-var amnu = require('./routes/amnu');
-var ampa = require('./routes/ampa');
-var ampo = require('./routes/ampo');
-var amrh = require('./routes/amrh');
-var amspa = require('./routes/amspa');
-var amspl = require('./routes/amspl');
-var amte = require('./routes/amte');
-var amth = require('./routes/amth');
-var amtr = require('./routes/amtr');
-var amva = require('./routes/amva');
-var angr = require('./routes/angr');
+var ABBREVIATA_BANCROFTI = require('./routes/ABBREVIATA_BANCROFTI');
+var ABBREVIATA_HASTASPICULA = require('./routes/ABBREVIATA_HASTASPICULA');
+var AGLENCHUS_AGRICOLA = require('./routes/AGLENCHUS_AGRICOLA');
+var ALAIMUS_PRIMITIVUS = require('./routes/ALAIMUS_PRIMITIVUS');
+var ALLOCORRIGIA_FILIFORMIS = require('./routes/ALLOCORRIGIA_FILIFORMIS');
+var ALLOGLOSSIDIUM_CORTI = require('./routes/ALLOGLOSSIDIUM_CORTI');
+var AMALARAEUS_PENICILLIGER = require('./routes/AMALARAEUS_PENICILLIGER');
+var AMBLYOMMA_AMERICANUM = require('./routes/AMBLYOMMA_AMERICANUM');
+
+var AMBLYOMMA_CAJENNENSE = require('./routes/AMBLYOMMA_CAJENNENSE');
 
 var hydr = require('./routes/hydr');
 var hyimpe = require('./routes/hyimpe');
+var hyimpr = require('./routes/hyimpr');
 
 
 // Add species above here and then scroll down
 // to add page reference (step 1 of 2)
 /*******************************************/
-
-
-var cibi = require('./routes/cibi');
-var tave = require('./routes/tave');
-var ixsc = require('./routes/ixsc');
-var abco = require('./routes/abco');
 
 var about = require('./routes/about');
 var team = require('./routes/team');
@@ -93,56 +59,23 @@ module.exports = isType;
 app.use('/', routes);
 
 /* Tell middleware to send out species pages...*/
-app.use('/abba', abba);
-app.use('/abha', abha);
-app.use('/agag', agag);
-app.use('/alpr', alpr);
-app.use('/alfi', alfi);
-app.use('/alco', alco);
-app.use('/ampe', ampe);
-app.use('/amam', amam);
-app.use('/amas', amas);
-app.use('/amca', amca);
-app.use('/amcoh', amcoh);
-app.use('/amcom', amcom);
-app.use('/amcu', amcu);
-app.use('/ameb', ameb);
-app.use('/amex', amex);
-app.use('/amfa', amfa);
-app.use('/amfi', amfi);
-app.use('/amfl', amfl);
-app.use('/amgem', amgem);
-app.use('/amgeo', amgeo);
-app.use('/amheb', amheb);
-app.use('/amhel', amhel);
-app.use('/amja', amja);
-app.use('/amla', amla);
-app.use('/amle', amle);
-app.use('/amli', amli);
-app.use('/ammac', ammac);
-app.use('/ammar', ammar);
-app.use('/amnu', amnu);
-app.use('/ampa', ampa);
-app.use('/ampo', ampo);
-app.use('/amrh', amrh);
-app.use('/amspa', amspa);
-app.use('/amspl', amspl);
-app.use('/amte', amte);
-app.use('/amth', amth);
-app.use('/amtr', amtr);
-app.use('/amva', amva);
-app.use('/angr', angr);
+app.use('/ABBREVIATA_BANCROFTI', ABBREVIATA_BANCROFTI);
+app.use('/ABBREVIATA_HASTASPICULA', ABBREVIATA_HASTASPICULA);
+app.use('/AGLENCHUS_AGRICOLA', AGLENCHUS_AGRICOLA);
+app.use('/ALAIMUS_PRIMITIVUS', ALAIMUS_PRIMITIVUS);
+app.use('/ALLOCORRIGIA_FILIFORMIS', ALLOCORRIGIA_FILIFORMIS);
+app.use('/ALLOGLOSSIDIUM_CORTI', ALLOGLOSSIDIUM_CORTI);
+app.use('/AMALARAEUS_PENICILLIGER', AMALARAEUS_PENICILLIGER);
+app.use('/AMBLYOMMA_AMERICANUM', AMBLYOMMA_AMERICANUM);
+
+app.use('/AMBLYOMMA_CAJENNENSE', AMBLYOMMA_CAJENNENSE);
 
 app.use('/hydr', hydr);
 app.use('/hyimpe', hyimpe);
+app.use('/hyimpr', hyimpr);
 
 // Add page reference here (step 2)
 /*******************************************/
-
-app.use('/cibi', cibi);
-app.use('/tave', tave);
-app.use('/ixsc', ixsc);
-app.use('/abco', abco);
 
 app.use('/about', about);
 app.use('/team', team);
