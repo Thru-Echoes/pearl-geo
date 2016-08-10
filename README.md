@@ -2,20 +2,22 @@
 
 Use of species distribution maps in a web application. Currently prototype development using web-based mapping packages and [D3js visualization and interactivity library](https://d3js.org/).
 
-## IMG_SITE_OLIVES branch ready for development of PDFs as maps 
+## IMG_SITE_OLIVES branch ready for development of PDFs as maps
 
 <hr>
 
 ## 1 Overview
 
-#### 1.1 To Do (21 June, 2016):
+#### 1.1 To Do (9 Aug, 2016):
 
-- [ ] @Oliver: find 3-5 color palettes
-- [ ] @Gio: add text (below) and Carousel (Bootstrap) to home page (Note: Carousel is for spotlight species)
-- [ ] @Gio: need to figure out smooth transitions between future maps
-- [ ] @Gio: add 'home, about, team / people, search bar' to navbar
-- [ ] @Oliver_or_Gio: how to pull from database in back?
-- [ ] @Oliver_or_Gio: get 2 more species to create pages for from Colin
+<strong>Make species pages by the following steps:</strong>
+
+- [ ] Add "clade, iucn, coverage, uncertain" columns to "SPECIES SPECIES pearldata.csv" file
+- [ ] Create routes/SPECIES_SPECIES.js
+- [ ] Copy views/SAMPLE_PAGE.ejs to views/SPECIES_SPECIES.ejs
+- [ ] Make future map in public/pdf/web/species-pages/SPECIES_SPECIES/future-maps directory
+- [ ] Move future map into public/pdf/web/species-pages/SPECIES_SPECIES/future-maps directory
+- [ ] Add source of where data was collected per species (into routes/SPECIES_SPECIES.js)
 
 <hr>
 

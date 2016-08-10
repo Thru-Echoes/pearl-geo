@@ -48,10 +48,12 @@ var AMBLYOMMA_THOLLONI = require('./routes/AMBLYOMMA_THOLLONI');
 var AMBLYOMMA_TRIGUTTATUM = require('./routes/AMBLYOMMA_TRIGUTTATUM');
 var AMBLYOMMA_VARIEGATUM = require('./routes/AMBLYOMMA_VARIEGATUM');
 
-var hydr = require('./routes/hydr');
-var hyimpe = require('./routes/hyimpe');
-var hyimpr = require('./routes/hyimpr');
-
+var HYALOMMA_DROMEDARII = require('./routes/HYALOMMA_DROMEDARII');
+var HYALOMMA_IMPELTATUM = require('./routes/HYALOMMA_IMPELTATUM');
+var HYALOMMA_IMPRESSUM = require('./routes/HYALOMMA_IMPRESSUM');
+var HYALOMMA_RUFIPES = require('./routes/HYALOMMA_RUFIPES');
+var HYALOMMA_TRUNCATUM = require('./routes/HYALOMMA_TRUNCATUM');
+var HYALOMMA_TURANICUM = require('./routes/HYALOMMA_TURANICUM');
 
 // Add species above here and then scroll down
 // to add page reference (step 1 of 2)
@@ -126,9 +128,12 @@ app.use('/AMBLYOMMA_THOLLONI', AMBLYOMMA_THOLLONI);
 app.use('/AMBLYOMMA_TRIGUTTATUM', AMBLYOMMA_TRIGUTTATUM);
 app.use('/AMBLYOMMA_VARIEGATUM', AMBLYOMMA_VARIEGATUM);
 
-app.use('/hydr', hydr);
-app.use('/hyimpe', hyimpe);
-app.use('/hyimpr', hyimpr);
+app.use('/HYALOMMA_DROMEDARII', HYALOMMA_DROMEDARII);
+app.use('/HYALOMMA_IMPELTATUM', HYALOMMA_IMPELTATUM);
+app.use('/HYALOMMA_IMPRESSUM', HYALOMMA_IMPRESSUM);
+app.use('/HYALOMMA_RUFIPES', HYALOMMA_RUFIPES);
+app.use('/HYALOMMA_TRUNCATUM', HYALOMMA_TRUNCATUM);
+app.use('/HYALOMMA_TURANICUM', HYALOMMA_TURANICUM);
 
 // Add page reference here (step 2)
 /*******************************************/
