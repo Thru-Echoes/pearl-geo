@@ -19,6 +19,56 @@ Use of species distribution maps in a web application. Currently prototype devel
 - [ ] Move future map into public/pdf/web/species-pages/SPECIES_SPECIES/future-maps directory
 - [ ] Add source of where data was collected per species (into routes/SPECIES_SPECIES.js)
 
+#### Steps:
+
+```
+# Step 1: in excel
+Copy 'clade, iucn, coverage, uncertain, sources' columns from "public/csv/data_summary.csv" into the correct species row in "public/pdf/web/species-pages/NEXT_SPECIES/NEXT SPECIES pearldata.csv"
+
+####################################################################
+####################################################################
+####################################################################
+
+# Step 2: in command line (Terminal)
+$ cp views/SAMPLE_PAGE.ejs views/NEXT_SPECIES.ejs
+$ cp routes/SAMPLE_ROUTE.js routes/NEXT_SPECIES.js
+
+####################################################################
+####################################################################
+####################################################################
+
+# Step 3: go into "routes/NEXT_SPECIES.js" file (Javascript)
+Search (use the find command) for "SPECIES_SPECIES" and replace with "NEXT_SPECIES"
+and then search for "SPECIES SPECIES" and replace with "NEXT SPECIES" but then copy over the lowercase "Next species" into the 'title' attribute in the JS page (NOTE: make sure the 's' is lowercase - second name!)
+
+####################################################################
+####################################################################
+####################################################################
+
+# Step 4: make future.pdf (Terminal - but uses Python)
+Go to "public/pdf/web/species-pages" in Terminal
+> python mergePDF.py -p NEXT_SPECIES/future-maps/
+
+This makes a pdf up at the top directory (where you currently are) so you need to move it into the "NEXT_SPECIES/future-maps" dir.
+
+> mv future.pdf NEXT_SPECIES/future-maps/
+
+####################################################################
+####################################################################
+####################################################################
+
+# Step 5: Add to app.js (Javascript - top project directory)
+var NEXT_SPECIES = ('./routes/NEXT_SPECIES')
+
+...
+
+app.use('/NEXT_SPECIES', NEXT_SPECIES)
+
+####################################################################
+########## THE END
+####################################################################
+```
+
 <hr>
 
 ## 2 Project structure and design:
