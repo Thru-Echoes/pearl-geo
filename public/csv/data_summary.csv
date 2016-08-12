@@ -79,28 +79,28 @@
 78,CERATOPHYLLUS GAREI,Siphonaptera,VU,Weak,Perfect,GBIF,,Ceratophyllus Garei
 79,CERATOPHYLLUS HIRUNDINIS,Siphonaptera,VU,Good,Perfect,GBIF,,Ceratophyllus Hirundinis
 80,CERATOPHYLLUS STYX,Siphonaptera,EN,Good,Perfect,GBIF,,Ceratophyllus Styx
-81,CHABERTIA OVINA,Nematoda,LC,Weak,Excellent,GBIF USNPC,,Chabertia Ovina
-82,CHAETODACTYLUS KROMBEINI,Astigmata,LC,Weak,Perfect,BeeMites GBIF,,Chaetodactylus Krombeini
+81,CHABERTIA OVINA,Nematoda,LC,Weak,Excellent,GBIF | USNPC,,Chabertia Ovina
+82,CHAETODACTYLUS KROMBEINI,Astigmata,LC,Weak,Perfect,BeeMites | GBIF,,Chaetodactylus Krombeini
 83,CHAETODACTYLUS MICHENERI,Astigmata,VU,Good,Perfect,BeeMites,,Chaetodactylus Micheneri
 84,CHAETODACTYLUS SP.,Astigmata,VU,Good,Perfect,BeeMites,,Chaetodactylus Sp.
-85,CHEILOSPIRURA HAMULOSA,Nematoda,LC,Weak,Fair,GBIF USNPC,,Cheilospirura Hamulosa
+85,CHEILOSPIRURA HAMULOSA,Nematoda,LC,Weak,Fair,GBIF | USNPC,,Cheilospirura Hamulosa
 86,CICHLASOTREMA UJATI,Trematoda,LC,Fair,Perfect,GBIF,,Cichlasotrema Ujati
-87,CITELLINEMA BIFURCATUM,Nematoda,VU,Fair,Fair,GBIF USNPC,,Citellinema Bifurcatum
+87,CITELLINEMA BIFURCATUM,Nematoda,VU,Fair,Fair,GBIF | USNPC,,Citellinema Bifurcatum
 88,CITTOTAENIA VARIABILIS,Cestoda,LC,Fair,Weak,USNPC,,Cittotaenia Variabilis
 89,CLARKUS PAPILLATUS,Nematoda,EN,Weak,Perfect,GBIF,,Clarkus Papillatus
-90,CLINOSTOMUM COMPLANATUM,Trematoda,LC,Excellent,Excellent,GBIF USNPC,,Clinostomum Complanatum
-91,CLONORCHIS SINENSIS,Trematoda,LC,Fair,Weak,GBIF USNPC,,Clonorchis Sinensis
-92,CONTRACAECUM MULTIPAPILLATUM,Nematoda,LC,Good,Good,GBIF USNPC,,Contracaecum Multipapillatum
-93,CONTRACAECUM SPICULIGERUM,Nematoda,LC,Fair,Excellent,GBIF USNPC,,Contracaecum Spiculigerum
-94,COOPERIA CURTICEI,Nematoda,LC,Weak,Excellent,GBIF USNPC,,Cooperia Curticei
-95,COOPERIA ONCOPHORA,Nematoda,LC,Good,Good,GBIF USNPC,,Cooperia Oncophora
-96,COOPERIA PUNCTATA,Nematoda,LC,Good,Good,GBIF USNPC,,Cooperia Punctata
+90,CLINOSTOMUM COMPLANATUM,Trematoda,LC,Excellent,Excellent,GBIF | USNPC,,Clinostomum Complanatum
+91,CLONORCHIS SINENSIS,Trematoda,LC,Fair,Weak,GBIF | USNPC,,Clonorchis Sinensis
+92,CONTRACAECUM MULTIPAPILLATUM,Nematoda,LC,Good,Good,GBIF | USNPC,,Contracaecum Multipapillatum
+93,CONTRACAECUM SPICULIGERUM,Nematoda,LC,Fair,Excellent,GBIF | USNPC,,Contracaecum Spiculigerum
+94,COOPERIA CURTICEI,Nematoda,LC,Weak,Excellent,GBIF | USNPC,,Cooperia Curticei
+95,COOPERIA ONCOPHORA,Nematoda,LC,Good,Good,GBIF | USNPC,,Cooperia Oncophora
+96,COOPERIA PUNCTATA,Nematoda,LC,Good,Good,GBIF | USNPC,,Cooperia Punctata
 97,COOPERIA SURNABADA,Nematoda,LC,Fair,Excellent,USNPC,,Cooperia Surnabada
 98,CORACIACARUS CUCULI,Astigmata,LC,Fair,Perfect,Feathermites,,Coraciacarus Cuculi
-99,CORALLOBOTHRIUM FIMBRIATUM,Cestoda,LC,Good,Excellent,GBIF USNPC,,Corallobothrium Fimbriatum
-100,CORYNOSOMA CONSTRICTUM,Acanthocephala,LC,Fair,Good,GBIF USNPC,,Corynosoma Constrictum
-101,COSMOCERCOIDES DUKAE,Nematoda,LC,Fair,Weak,GBIF USNPC,,Cosmocercoides Dukae
-102,COSMOCERCOIDES VARIABILIS,Nematoda,LC,Good,Weak,GBIF USNPC,,Cosmocercoides Variabilis
+99,CORALLOBOTHRIUM FIMBRIATUM,Cestoda,LC,Good,Excellent,GBIF | USNPC,,Corallobothrium Fimbriatum
+100,CORYNOSOMA CONSTRICTUM,Acanthocephala,LC,Fair,Good,GBIF | USNPC,,Corynosoma Constrictum
+101,COSMOCERCOIDES DUKAE,Nematoda,LC,Fair,Weak,GBIF | USNPC,,Cosmocercoides Dukae
+102,COSMOCERCOIDES VARIABILIS,Nematoda,LC,Good,Weak,GBIF | USNPC,,Cosmocercoides Variabilis
 103,CRASSICUTIS CICHLASOMAE,Trematoda,LC,Excellent,Perfect,GBIF,,Crassicutis Cichlasomae
 104,CREPIDOSTOMUM COOPERI,Trematoda,LC,Good,Good,GBIF,,Crepidostomum Cooperi
 105,CREPIDOSTOMUM CORNUTUM,Trematoda,LC,Good,Good,GBIF,,Crepidostomum Cornutum

@@ -109,7 +109,7 @@
                 document.getElementById("uncertain-ver2").innerHTML = csvData.data[0].uncertain;
 
                 document.getElementById("clade-field").innerHTML = csvData.data[0].clade;
-                document.getElementById("source-field").innerHTML = csvData.data[0].sources; 
+                document.getElementById("source-field").innerHTML = csvData.data[0].sources;
 
                 for (var i = 2; i <= 19; i++) {
                     futureDisp.push(round2Fixed(csvData.data[i].tss));
@@ -172,7 +172,7 @@
                         <h3 style = "text-align: left"><strong id = "clade-field"></strong></h3>
                     </div>
                     <div class = "col-md-4">
-                        <h3 style = "text-align: left">Source: <strong id = "source-field"></strong></h3>
+                        <h3 style = "text-align: left">Source(s): <strong id = "source-field"></strong></h3>
                     </div>
                     <div class = "col-md-6"></div>
                 </div>
