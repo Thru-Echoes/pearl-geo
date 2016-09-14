@@ -1,24 +1,24 @@
 var express = require('express');
-var routerSPECIES_SPECIES = express.Router();
+var routerJELLISONIA_HAYESI = express.Router();
 var bodyParser = require('body-parser');
 var app = require('../app');
 
-routerSPECIES_SPECIES.get('/', function(req, res) {
+routerJELLISONIA_HAYESI.get('/', function(req, res) {
 
     var renderObj = {
-        title: "Species species",
-        currMap: "pdf/web/viewer.html?file=species-pages/SPECIES_SPECIES/SPECIES SPECIES current.pdf",
-        futMap: "pdf/web/viewer.html?file=species-pages/SPECIES_SPECIES/future-maps/future.pdf",
-        url: "/SPECIES_SPECIES",
-        urlCSV: "pdf/web/species-pages/SPECIES_SPECIES/SPECIES SPECIES pearldata.csv"
+        title: "Jellisonia hayesi",
+        currMap: "pdf/web/viewer.html?file=species-pages/JELLISONIA_HAYESI/JELLISONIA HAYESI current.pdf",
+        futMap: "pdf/web/viewer.html?file=species-pages/JELLISONIA_HAYESI/future-maps/future.pdf",
+        url: "/JELLISONIA_HAYESI",
+        urlCSV: "pdf/web/species-pages/JELLISONIA_HAYESI/JELLISONIA HAYESI pearldata.csv"
     };
-    res.render('SPECIES_SPECIES', renderObj);
+    res.render('JELLISONIA_HAYESI', renderObj);
 });
 
 // Grab data from document
-routerSPECIES_SPECIES.post('/', function(req, res) {
+routerJELLISONIA_HAYESI.post('/', function(req, res) {
 
     res.end();
 });
 
-module.exports = routerSPECIES_SPECIES;
+module.exports = routerJELLISONIA_HAYESI;

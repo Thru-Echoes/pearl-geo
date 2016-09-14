@@ -1,24 +1,24 @@
 var express = require('express');
-var routerSPECIES_SPECIES = express.Router();
+var routerKALICEPHALUS_COSTATUS_INDICUS = express.Router();
 var bodyParser = require('body-parser');
 var app = require('../app');
 
-routerSPECIES_SPECIES.get('/', function(req, res) {
+routerKALICEPHALUS_COSTATUS_INDICUS.get('/', function(req, res) {
 
     var renderObj = {
-        title: "Species species",
-        currMap: "pdf/web/viewer.html?file=species-pages/SPECIES_SPECIES/SPECIES SPECIES current.pdf",
-        futMap: "pdf/web/viewer.html?file=species-pages/SPECIES_SPECIES/future-maps/future.pdf",
-        url: "/SPECIES_SPECIES",
-        urlCSV: "pdf/web/species-pages/SPECIES_SPECIES/SPECIES SPECIES pearldata.csv"
+        title: "Kalicephalus costatus indicus",
+        currMap: "pdf/web/viewer.html?file=species-pages/KALICEPHALUS_COSTATUS_INDICUS/KALICEPHALUS COSTATUS INDICUS current.pdf",
+        futMap: "pdf/web/viewer.html?file=species-pages/KALICEPHALUS_COSTATUS_INDICUS/future-maps/future.pdf",
+        url: "/KALICEPHALUS_COSTATUS_INDICUS",
+        urlCSV: "pdf/web/species-pages/KALICEPHALUS_COSTATUS_INDICUS/KALICEPHALUS COSTATUS INDICUS pearldata.csv"
     };
-    res.render('SPECIES_SPECIES', renderObj);
+    res.render('KALICEPHALUS_COSTATUS_INDICUS', renderObj);
 });
 
 // Grab data from document
-routerSPECIES_SPECIES.post('/', function(req, res) {
+routerKALICEPHALUS_COSTATUS_INDICUS.post('/', function(req, res) {
 
     res.end();
 });
 
-module.exports = routerSPECIES_SPECIES;
+module.exports = routerKALICEPHALUS_COSTATUS_INDICUS;
